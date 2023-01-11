@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 
+
+ ### install Packets
+ npm install react-hook-form : [https://react-hook-form.com/get-started]
+ npm i react-router-dom :[https://www.npmjs.com/package/react-router-dom]
+ npm install --save styled-components : [https://styled-components.com/]
