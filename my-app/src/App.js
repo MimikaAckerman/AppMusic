@@ -10,7 +10,7 @@ function App() {
     <>
     <h1>holis</h1>
       <AppMusic />
-      <ArtistsContainer/>
+     
 
 
     </>
