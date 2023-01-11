@@ -1,0 +1,215 @@
+
+
+
+  
+.BtnContainer {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 29px;
+  grid-row-gap: 30px;
+  font-size: 25px;
+  
+}
+
+.BtnGenre {
+  grid-area: 2 / 1 / 10 / 4;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  
+}
+
+.BtnTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  grid-area: 1 / 1 / 2 / 4;
+  align-items: center;
+}
+
+.BtnPop {
+  border-radius: 8px;
+  font-weight: bold;
+  background: #eb94d0;
+  background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 3px 2px 1px #9daef5;
+  -webkit-box-shadow: 6px 5px 24px #666666;
+  -moz-box-shadow: 6px 5px 24px #666666;
+  box-shadow: 6px 5px 24px #666666;
+  font-family: Arial;
+  color: #fafafa;
+  font-size: 27px;
+  padding: 19px;
+  text-decoration: none;
+}
+
+.BtnPop:hover {
+  background: #2079b0;
+  background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+  text-decoration: none;
+}
+
+.BtnRagge {
+  border-radius: 8px;
+  font-weight: bold;
+  background: #c12336;
+  background-image: -webkit-linear-gradient(top, #ff0000, #ff7300);
+  background-image: -moz-linear-gradient(top, #48ff00, #fffb00);
+  background-image: -ms-linear-gradient(top, #00ffd5, #002bff,);
+  background-image: -o-linear-gradient(top, #7a00ff, #ff00c8);
+  background-image: linear-gradient(to bottom, #ff0000, #ff7300);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 3px 2px 1px #9daef5;
+  -webkit-box-shadow: 6px 5px 24px #666666;
+  -moz-box-shadow: 6px 5px 24px #666666;
+  box-shadow: 6px 5px 24px #666666;
+  font-family: Arial;
+  color: #fafafa;
+  font-size: 27px;
+  padding: 19px;
+  text-decoration: none;
+  
+}
+/* .BtnRagge:hover{
+  background: #fff959;
+  background-image: -webkit-linear-gradient(top, #fff959, #c12336);
+  background-image: -moz-linear-gradient(top, #fff959, #c12336);
+  background-image: -ms-linear-gradient(top, #fff959, #c12336);
+  background-image: -o-linear-gradient(top, #fff959, #c12336);
+  background-image: linear-gradient(to bottom, #fff959, #c12336);
+  text-decoration: none;
+} */
+
+.BtnRagge:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+
+.BtnRagge:active:after {
+    background: transparent;
+}
+
+.BtnRagge:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.BtnAlt {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnFunk {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnGroovy {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnFlok {
+  border-radius: 8px;
+  font-weight: bold;
+}
+.BtnElect {
+    border-radius: 8px;
+    font-weight: bold;
+    background: #eb94d0;
+    background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;
+    color: #fafafa;
+    font-size: 27px;
+    padding: 19px;
+    text-decoration: none
+}
+.BtnElect:hover{
+  background: #2079b0;
+  background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+  text-decoration: none;
+}
+
+
+.BtnPopRock {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnSoul {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnIndie {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnRock {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnChillout {
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.BtnPiano {
+  border-radius: 8px;
+  font-weight: bold;
+}

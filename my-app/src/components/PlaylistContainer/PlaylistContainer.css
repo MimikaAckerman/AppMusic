@@ -1,0 +1,9 @@
+.playlist_name {
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 1000;
+}
+.button_add{
+  border: solid red;
+}

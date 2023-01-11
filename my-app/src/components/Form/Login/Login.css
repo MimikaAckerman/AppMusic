@@ -1,0 +1,159 @@
+/* modal */
+/* =============================================== */
+
+.modal-container {
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  box-shadow: 0.4rem 0.4rem 2.4rem 0.2rem #00383e;
+}
+
+/* using :target */
+.modal-container:target {
+  display: flex;
+}
+
+.modal {
+  position: absolute;
+  margin-top: 25rem;
+  width: 25rem;
+  padding: 4rem 2rem;
+  border-radius: 0.8rem;
+  margin-top: 24rem;
+  color: var(--light);
+  background: var(--background);
+  box-shadow: 0.4rem 0.4rem 2.4rem 0.2rem #00383e;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.modal__btn {
+  padding: 1rem 1.6rem;
+  border: 1px solid #b3c4d7;
+  border-radius: 100rem;
+  color: inherit;
+  background: transparent;
+  font-size: 1.1rem;
+  font-family: inherit;
+  letter-spacing: 0.2rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+  border-color: #0f0105;
+  transform: translateY(-0.2rem);
+}
+
+/* links */
+/* =============================================== */
+.link-1 {
+  font-size: 1rem;
+  color: var(--light);
+  background: var(--background);
+  box-shadow: 0.4rem 0.4rem 2.4rem 0.2rem #b3c4d7;
+  border-radius: 100rem;
+  padding: 1.4rem 3.2rem;
+  margin-top: 10rem;
+  margin-left: 7rem;
+  position: absolute;
+
+  transition: 0.2s;
+}
+
+.link-1:hover,
+.link-1:focus {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0 4.4rem 0.2rem;
+}
+
+.link-2 {
+  width: 3rem;
+  height: 3rem;
+  margin-top: -1.2rem;
+  border: 1px solid;
+  border-radius: 100rem;
+
+  color: inherit;
+  font-size: 2.2rem;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.link-2::before {
+  content: "×";
+
+  transform: translateY(-0.1rem);
+}
+
+.link-2:hover,
+.link-2:focus {
+  border-color: hsla(0, 100%, 3%, 0.6);
+  transform: translateY(-0.2rem);
+}
+
+/* Second Version Link */
+/* =============================================== */
+.second-version-link,
+.second-version-link:link {
+  color: hsl(240, 100%, 1%);
+  padding: 0.8rem 1.6rem 0.8rem 0.2rem;
+  border-bottom: 2px solid hsl(240, 85%, 3%);
+
+  font-size: 1.4rem;
+  font-weight: bold;
+
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+
+.second-version-link::after {
+  content: "\2197";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  font-size: 0.9em;
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, 0.6);
+  font-size: 1.6rem;
+}
+body {
+  margin: 0;
+}
+
+.textbox {
+  position: relative;
+}
+.textbox input {
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  border: 0;
+
+  font-size: 16px;
+  font-family: inherit;
+  color: rgb(255, 255, 255 / 96%);
+  transition: 0.3s;
+}

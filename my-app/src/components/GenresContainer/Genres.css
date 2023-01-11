@@ -1,0 +1,50 @@
+.Btn_container{
+    /* margin-left: 10px;
+  margin-right: 10px; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 3px;
+  margin: 10px;
+  
+
+
+
+}
+.Btn-genre{
+/* 
+ margin-top: 2px;
+  display: inline-block; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  cursor: pointer;
+ font-size: 16px;
+ margin: 4px 2px;
+ padding: 10px 10px;
+ border-radius: 6px;
+ font-weight: bold;
+ position: relative;
+ transition: .4s ease-in;
+ z-index: 1;
+ text-decoration: none;
+ background-image: linear-gradient(to right top, #b3c4d7, #c4cedf, #d3d9e6, #e2e4ee, #efeff5, #e0e0e7, #d1d1da, #c2c3cc, #9598a8, #687084, #3c4a63, #0b2843);
+ /* border: none; */
+ 
+}
+
+.Btn-genre::before,
+.Btn-genre::after{
+    position: absolute;
+    z-index: -1;
+
+}
+.Btn-genre:hover{
+    background: #5191c1;
+    box-shadow: 0 0 5px #5191c1, 0 0 25px #5191c1,  0 0 50px #5191c1,  0 0 200px #5191c1 ;
+}
+h2{
+    margin: 10px;
+    font-weight: bold;
+    margin-top: 40px;
+}
