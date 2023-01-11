@@ -34,7 +34,7 @@ export default function Footer() {
           />
         </Link>
         <Link to="/AccountPage">
-          <BottomNavigationAction label="Acount" icon={<PersonIcon />} />
+          <BottomNavigationAction label="Account" icon={<PersonIcon />} />
         </Link>
       </BottomNavigation>
     </Box>

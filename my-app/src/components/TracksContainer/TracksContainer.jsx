@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import useFetchApi from "../../API/useFetchApi";
-import { Link } from "react-router-dom";
+
 import "./TracksContainer.css";
 
 

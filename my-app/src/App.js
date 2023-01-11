@@ -1,12 +1,17 @@
+import "./App.css";
 
-import './App.css';
-import AppMusic from './Router/AppMusic';
+
+
+import AppMusic from "./Router/AppMusic";
 
 function App() {
   return (
- <>
- <AppMusic/>
- </>
+    <>
+    <h1>holis</h1>
+      <AppMusic />
+
+
+    </>
   );
 }
 
