@@ -75,3 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
  npm i react-router-dom :[https://www.npmjs.com/package/react-router-dom]
  npm install --save styled-components : [https://styled-components.com/]
  npm i swiper : [https://swiperjs.com/react]
+ npm i react-h5-audio-player: [https://www.npmjs.com/package/react-h5-audio-player]
