@@ -1,4 +1,5 @@
 import "./App.css";
+import ArtistsContainer from "./components/ArtistContainer/ArtistsContainer";
 
 
 
@@ -9,6 +10,7 @@ function App() {
     <>
     <h1>holis</h1>
       <AppMusic />
+      <ArtistsContainer/>
 
 
     </>
