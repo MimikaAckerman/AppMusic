@@ -15,7 +15,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import {LoginContextProvider } from "../context/LoginContext";
 
 
-const CatPlayer = () => {
+const AppMusic = () => {
   return (
     <>
       <LoginContextProvider>
@@ -35,4 +35,4 @@ const CatPlayer = () => {
   );
 };
 
-export default CatPlayer;
+export default AppMusic;

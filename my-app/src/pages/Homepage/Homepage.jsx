@@ -9,14 +9,14 @@ import TextField from "@mui/material/TextField";
 import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContainer";
 import { useAuthContext } from "../../context/LoginContext";
 import Footer from "../../components/Footer/Footer";
-import { CartProvider } from "react-use-cart";
+
 
 const Homepage = (props) => {
   const { isAuthenticated } = useAuthContext();
   const user = JSON.parse(localStorage.getItem("name"));
   return (
     <>
-    <CartProvider>
+
       {isAuthenticated ? (
         <div>
           <span className="top_message">Welcome back, {user}</span>
@@ -38,7 +38,7 @@ const Homepage = (props) => {
       <GenresContainer />
      {/*  <TracksContainer/>  */}
      <Footer/>
-     </CartProvider>
+    
     </>
   );
 };

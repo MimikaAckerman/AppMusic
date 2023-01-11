@@ -1,15 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import LikeSongs from '../../components/LikeSongs/LikeSongs'
+import LikeSongs from "../../components/LikeSongs/LikeSongs";
 
 const LikePageSongs = () => {
   return (
     <>
-  
-    <LikeSongs/>
-
+      <LikeSongs />
     </>
-  )
-}
+  );
+};
 
-export default LikePageSongs
+export default LikePageSongs;

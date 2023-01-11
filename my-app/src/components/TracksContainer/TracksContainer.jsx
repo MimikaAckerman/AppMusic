@@ -5,51 +5,12 @@ import useFetchApi from "../../API/useFetchApi";
 import { Link } from "react-router-dom";
 import "./TracksContainer.css";
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
+
 
 
 const TracksContainer = () => {
 
 
-
-  const settings = {
-    dots: true,
-    infinite: false,
-    focusOnSelect: true,
-    speed: 500,
-    /*  slidesToShow: 7,
-    slidesToScroll: 4, */
-    initialSlide: 0,
-    responsive: [
-      {
-        //px in the screen
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ],
-  };
 
   const { tracks } = useFetchApi();
 
@@ -88,7 +49,7 @@ const TracksContainer = () => {
   return (
     <>
    {/*    <h5 className="title__suggestion">Suggestions You May Like </h5> */}
-      <Slider className="status__slider__tracks" {...settings}>
+
         {tracks
           .sort(() => Math.random() - 0.5)
           .slice(1, 4)
@@ -107,7 +68,7 @@ const TracksContainer = () => {
               </div>
             </div>
           ))}
-      </Slider>
+    
 
       {/*   listen music--------------------------------------------------------------------------------  */}
       <div className="containerBody">
