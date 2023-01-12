@@ -21,7 +21,7 @@ const ArtistsContainer = () => {
             <SwiperSlide>
               <img className="" src={artist.photoUrl} alt="" />
             </SwiperSlide>
-            <h2 className="artist_name">{artist.name}</h2>
+           
           </div>
         ))}
       </Swiper>

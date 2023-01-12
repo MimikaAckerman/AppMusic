@@ -26,6 +26,7 @@
     height: 468px;
   }
 }
-body {
-  background: #b3c4d7;
+body{
+  background-color: #ECE8E7;
+  font-family: monospace;
 }

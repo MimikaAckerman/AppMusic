@@ -1,27 +1,43 @@
-body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.img-alet-desing{
+  background-color: #ffc900;
+  border-radius: 47% 53% 52% 48% / 0% 0% 100% 100% ;
+  position: relative;
+  height: 40vh;
+  width: 56.6vh;
 }
-.containerTrack {
+.img-alet{
+  height: 10vh;
+  float: left;
+  margin-left: 6vh;
+  margin-top: 1rem;
+}
+
+
+
+/* .containerTrack {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 50px;
-}
+} */
 .imgTrack {
   border-radius: 3rem;
-  width: 150rem;
+  width: 18rem;
   margin-bottom: 20px;
-  margin-top: -3.2rem;
+  margin-top:-4rem;
+  margin-left: 10vh;
+  position: absolute;
+
+}
+.player{
+  margin-top: 15rem;
 }
 
-.containerBody {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
+.img-details{
+  position: relative;
+
+} 
 
 .trackContainer {
   position: relative;
@@ -30,14 +46,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 40px 0;
+
 }
 
 .trackContainer .trackCard {
   position: relative;
   width: 300px;
   height: 400px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(201, 14, 14, 0.05);
   margin: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
@@ -67,17 +83,17 @@ body {
   overflow: hidden;
 }
 
-.trackContainer .trackCard .content .trackImage img {
+/* .trackContainer .trackCard .content .trackImage img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
-.trackContainer .trackCard .content .contentBx h3 {
-  color: #fff;
+/* .trackContainer .trackCard .content .contentBx h3 {
+  color: red;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
@@ -85,7 +101,7 @@ body {
   text-align: center;
   margin: 20px 0 10px;
   line-height: 1.1em;
-}
+} */
 
 .trackContainer .trackCard .content .contentBx h3 {
   font-size: 12px;
@@ -93,13 +109,13 @@ body {
   text-transform: initial;
 }
 
-.trackContainer .trackCard .sci {
+/* .trackContainer .trackCard .sci {
   position: absolute;
   bottom: 10px;
   display: flex;
-}
+} */
 
-.trackContainer .trackCard .sci li {
+/* .trackContainer .trackCard .sci li {
   list-style: none;
   margin: 0 10px;
   transform: translateY(40px);
@@ -112,31 +128,4 @@ body {
   opacity: 1;
 }
 
-.status__slider__tracks {
-  align-items: center;
-  padding: 2%;
-  margin-top: -2rem;
-}
-
-.status__avatar__tracks {
-  height: 13%;
-  padding: 13%;
-  border-radius: 100%;
-  position: relative;
-  margin-top: 1rem;
-}
-
-.status__avatar__tracks > img {
-  cursor: pointer;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 20%;
-  box-shadow: 0.1vw 0.8vw 1vw rgba(0, 0, 0, 0.35);
-}
-.title__suggestion {
-  font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  margin-left: 18px;
-}
+ */

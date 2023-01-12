@@ -1,17 +1,17 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import useFetchApi from "../../API/useFetchApi";
 
 import "./TracksContainer.css";
 
-
-
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const TracksContainer = () => {
-
-
-
   const { tracks } = useFetchApi();
 
   const [currentTrack, setTrackIndex] = useState(0);
@@ -48,38 +48,40 @@ const TracksContainer = () => {
 
   return (
     <>
-   {/*    <h5 className="title__suggestion">Suggestions You May Like </h5> */}
-
-        {tracks
+    
+    <div className="img-alet-desing">
+      {tracks
           .sort(() => Math.random() - 0.5)
           .slice(1, 4)
           .map((track) => (
             <div key={track.id}>
-              <img
-                className="status__avatar__tracks"
-                src={track.thumbnail}
-                alt={track.name}
-              />
-              {/* <img src={track.url} alt={track.name} /> */}
-              <div className="contentBx">
-                {/*       <h3>{track.name}</h3> */}
-                {/*  <h3 className="trackArtist">{track.artist}</h3> */}
-                {/* <h3 className="trackGenre">{track.genre}</h3> */}
-              </div>
+          
+                <img src={track.thumbnail} alt={track.name} className='img-alet' />
+               
             </div>
           ))}
+   
+   </div>
+
+   
+
+
+
+      
     
 
       {/*   listen music--------------------------------------------------------------------------------  */}
       <div className="containerBody">
-        <section>
-          <div className="containerTrack">
             <img className="imgTrack" src={thumbnail} alt="" />
-            <p className="nameTracks">{name}</p>
-            <p className="trackartist">{artist}</p>
-            <p className="genreTrack">{genre}</p>
-            <p>{{ liked } === false ? "❤" : "💘"}</p>
 
+       <div className="img-details">
+            <p >{name}</p>
+            <p >{artist}</p>
+            <p >{genre}</p>
+            <p >{{ liked } === false ? "❤" : "💘"}</p>
+            </div>
+
+<div className="player">
             <AudioPlayer
               // autoPlay
               src={playlist}
@@ -91,8 +93,9 @@ const TracksContainer = () => {
               onClickPrevious={handleClickPrevious}
               onEnded={handleEnd}
             />
-          </div>
-        </section>
+            </div>
+          
+       
       </div>
     </>
   );
