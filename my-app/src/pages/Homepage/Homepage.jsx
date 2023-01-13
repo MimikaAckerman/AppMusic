@@ -34,7 +34,10 @@ const Homepage = () => {
       <ArtistsContainer />
       <GenresContainer />
      {/*  <TracksContainer/>  */}
+
+     <div className="footer">
      <Footer/>
+     </div>
     
     </>
   );
