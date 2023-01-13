@@ -15,7 +15,7 @@ const PlaylistContainer = () => {
     <>
       <h1>Playlist</h1>
 
-      <Swiper slidesPerView={2} spaceBetween={30} className="mySwiper">
+      <Swiper slidesPerView={1.5} spaceBetween={30} className="mySwiper">
         {playlist.map((playlist) => (
           <div key={playlist.id} >
             <Link to={`/TracksPage/${playlist.id}`}>

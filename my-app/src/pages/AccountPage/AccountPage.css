@@ -1,0 +1,33 @@
+
+.div-model{
+    background-color: #ff6e06;
+    border-radius:  2% 53% 53% 48% / 0% 0% 100% 100% ;
+    position: relative;
+    height: 50vh;
+    width: 70vh;
+    margin-top: -1rem;
+    margin-left: -2.5rem;
+}
+.name-user{
+    text-align: center;
+    font-size: 4vh;
+    margin-left: 17vh;   
+}
+.hi-user{
+    margin-top: 3rem;
+}
+.img-user{
+    margin-left: 17vh;
+    position: absolute;
+    margin-top: -12rem;
+}
+.setting{
+    margin-top: -20rem;
+    margin-left: 23rem;
+    position: absolute;
+}
+.bag{
+    position: absolute;
+    margin-top: -15rem;
+    margin-left: 23rem;
+}
