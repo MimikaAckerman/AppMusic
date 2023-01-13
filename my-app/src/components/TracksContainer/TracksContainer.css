@@ -25,13 +25,13 @@
   border-radius: 3rem;
   width: 18rem;
   margin-bottom: 20px;
-  margin-top:-4rem;
-  margin-left: 10vh;
+  margin-top:-22rem;
+  margin-left: 7vh;
   position: absolute;
 
 }
 .player{
-  margin-top: 15rem;
+  margin-top: 19.2rem;
 }
 
 .img-details{
@@ -49,21 +49,21 @@
 
 }
 
-.trackContainer .trackCard {
+/* .trackContainer .trackCard {
   position: relative;
   width: 300px;
   height: 400px;
-  background: rgba(201, 14, 14, 0.05);
+  background: red;
   margin: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 35px red;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(10px);
-}
+} */
 
-.trackContainer .trackCard .content {
+/* .trackContainer .trackCard .content {
   position: relative;
   display: flex;
   justify-content: center;
@@ -81,7 +81,7 @@
   width: 150px;
   height: 150px;
   overflow: hidden;
-}
+} */
 
 /* .trackContainer .trackCard .content .trackImage img {
   position: absolute;
@@ -103,11 +103,11 @@
   line-height: 1.1em;
 } */
 
-.trackContainer .trackCard .content .contentBx h3 {
+/* .trackContainer .trackCard .content .contentBx h3 {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
-}
+} */
 
 /* .trackContainer .trackCard .sci {
   position: absolute;
@@ -129,3 +129,23 @@
 }
 
  */
+.trackTitle{
+position: absolute;
+display: block;
+text-decoration: none;
+background-color: rgb(155,155,155);
+opacity: 0.6;
+margin-top: -35vh;
+margin-left: 7vh;
+border-radius: 10px 9px 45px 45px;
+height: 12vh;
+width: 43.3vh;
+}
+.tracks-description{
+text-align: center;
+}
+ 
+
+
+
+

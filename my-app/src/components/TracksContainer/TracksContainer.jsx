@@ -48,54 +48,44 @@ const TracksContainer = () => {
 
   return (
     <>
-    
-    <div className="img-alet-desing">
-      {tracks
+      <div className="img-alet-desing">
+        {tracks
           .sort(() => Math.random() - 0.5)
           .slice(1, 4)
           .map((track) => (
             <div key={track.id}>
-          
-                <img src={track.thumbnail} alt={track.name} className='img-alet' />
-               
+              <img
+                src={track.thumbnail}
+                alt={track.name}
+                className="img-alet"
+              />
             </div>
           ))}
-   
-   </div>
-
-   
-
-
-
-      
-    
+      </div>
 
       {/*   listen music--------------------------------------------------------------------------------  */}
       <div className="containerBody">
-            <img className="imgTrack" src={thumbnail} alt="" />
+        <img className="imgTrack" src={thumbnail} alt="" />
 
-       <div className="img-details">
-            <p >{name}</p>
-            <p >{artist}</p>
-            <p >{genre}</p>
-            <p >{{ liked } === false ? "❤" : "💘"}</p>
-            </div>
+        <div className="player">
+          <AudioPlayer
+            // autoPlay
+            src={playlist}
+            onPlay={(e) => console.log("onPlay")}
+            // other props here
+            showSkipControls={true}
+            showJumpControls={true}
+            onClickNext={handleClickNext}
+            onClickPrevious={handleClickPrevious}
+            onEnded={handleEnd}
+          />
+        </div>
 
-<div className="player">
-            <AudioPlayer
-              // autoPlay
-              src={playlist}
-              onPlay={(e) => console.log("onPlay")}
-              // other props here
-              showSkipControls={true}
-              showJumpControls={true}
-              onClickNext={handleClickNext}
-              onClickPrevious={handleClickPrevious}
-              onEnded={handleEnd}
-            />
-            </div>
-          
-       
+        <div className="trackTitle">
+          <h3 className="tracks-description">{name}</h3>
+          <h4 className="tracks-description">{artist}</h4>
+          {/*  <p className="tracks-description">{genre}</p> */}
+        </div>
       </div>
     </>
   );
