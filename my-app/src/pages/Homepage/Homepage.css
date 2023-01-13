@@ -2,12 +2,7 @@
   color: #2f3132;
   font-size: 18px;
   font-weight: 1000;
-  text-align: center;
-  margin-left: 30%;
-  margin-right: 10%;
+
   position: relative;
 }
-.search {
-  margin: 10px 10px 10px 10px;
-  width: 60%;
-}
+

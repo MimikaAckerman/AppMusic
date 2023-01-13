@@ -9,6 +9,7 @@ import "./Homepage.css";
 import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContainer";
  import { useAuthContext } from "../../context/LoginContext"; 
 import Footer from "../../components/Footer/Footer";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 
 const Homepage = () => {
@@ -16,16 +17,17 @@ const Homepage = () => {
   const user = JSON.parse(localStorage.getItem("name")); 
   return (
     <>
+      <SearchBar/>
 
       {isAuthenticated ? (
         <div>
-          <span className="top_message">Welcome back, {user}</span>
+          <span className="top_message">!Hello {user}¡</span>
         </div>
       ) : null}
       <div className="search">
         
       </div> 
-     
+      
    
       <PlaylistContainer />
       <AlbumContainer />

@@ -47,9 +47,9 @@ img{
   background-color: rgb(155,155,155);
   opacity: 0.5;
   height: 12vh;
-  width: 26vh;
-  margin-top: 55%;
-  border-radius:10.8%;
+  width: 38vh;
+  margin-top: 30vh;
+  border-radius:10px 9px 50px 50px;
 }
 .title-description{
  font-size: 2vh;
