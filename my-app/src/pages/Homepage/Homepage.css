@@ -8,4 +8,8 @@
 .footer{
   margin-top: -9vh;
 }
-
+.logo{
+/*   background-color: red; */
+  height: 4.5rem;
+  width: 5rem;
+}
