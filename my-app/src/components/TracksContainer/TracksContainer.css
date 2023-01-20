@@ -1,14 +1,15 @@
 .img-alet-desing{
   background-color: #ffc900;
-  border-radius: 47% 53% 52% 48% / 0% 0% 100% 100% ;
+ /*  border-radius: 47% 53% 52% 48% / 0% 0% 100% 100% ; */
   position: relative;
   height: 40vh;
-  width: 56.6vh;
+  width: 58.8vh;
+  text-align: center;
 }
 .img-alet{
   height: 10vh;
   float: left;
-  margin-left: 6vh;
+  margin-left: 7vh;
   margin-top: 1rem;
 }
 
@@ -25,7 +26,7 @@
   border-radius: 3rem;
   width: 18rem;
   margin-bottom: 20px;
-  margin-top:-22rem;
+  margin-top:-25rem;
   margin-left: 7vh;
   position: absolute;
 
@@ -135,7 +136,7 @@ display: block;
 text-decoration: none;
 background-color: rgb(155,155,155);
 opacity: 0.6;
-margin-top: -35vh;
+margin-top: -42vh;
 margin-left: 7vh;
 border-radius: 10px 9px 45px 45px;
 height: 12vh;
@@ -143,6 +144,7 @@ width: 43.3vh;
 }
 .tracks-description{
 text-align: center;
+margin-top: 2vh;
 }
  
 
