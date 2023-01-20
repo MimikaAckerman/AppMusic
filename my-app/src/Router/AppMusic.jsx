@@ -13,6 +13,7 @@ import GenresPage from "../pages/GenresPage/GenresPage";
 import TracksPage from "../pages/TracksPage/TracksPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import { LoginContextProvider } from "../context/LoginContext";
+import ImageContextProvider from "../context/ImageContext";
 
 
 
@@ -21,6 +22,7 @@ const AppMusic = () => {
 
   return (
     <>
+    <ImageContextProvider>
   <LoginContextProvider>
       <Router>
         <Routes>
@@ -34,6 +36,7 @@ const AppMusic = () => {
         </Routes>
       </Router>
       </LoginContextProvider>
+      </ImageContextProvider>
     </>
   );
 };
