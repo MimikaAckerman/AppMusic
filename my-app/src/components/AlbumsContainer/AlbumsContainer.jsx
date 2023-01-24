@@ -11,7 +11,8 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const AlbumContainer = () => {
   const { albums } = useFetchApi();
-
+/*   console.log(albums)
+ */
   return (
     <>
       <h1>Albums</h1>
@@ -31,7 +32,7 @@ const AlbumContainer = () => {
         className="mySwiper">
 
 
-      {albums[0]?.map((album) => (
+      {albums?.map((album) => (
         <div key={album.id} className="status">
        <SwiperSlide>
             <img src={album.imageUrl} alt=""/>

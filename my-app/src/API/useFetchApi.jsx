@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 
 const useFetchApi = () => {
-  const urlUsers = "http://localhost:8000/user";
 
-  const urlPlaylist = "http://localhost:8000/playlists";
-  const urlTracks = "http://localhost:8000/tracks";
-  const urlAlbums = "http://localhost:8000/albums";
-  const urlArtists = "http://localhost:8000/artists";
-  const urlGenres = "http://localhost:8000/genres";
+  
+/*   const urlUsers = "http://localhost:8000/user";
+ */ 
+  
+  const urlPlaylist = "http://localhost:4000/playlists/";
+  const urlTracks = "http://localhost:4000/tracks";
+  const urlAlbums = "http://localhost:4000/album/";
+  const urlArtists = "http://127.0.0.1:4000/artists/";
+  const urlGenres = "http://localhost:4000/genres";
 
-  const [users, setUsers] = useState([]);
+/*   const [users, setUsers] = useState([]);
+ */  
   const [playlist, setPlaylist] = useState([]);
   const [tracks, setTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
@@ -19,7 +23,9 @@ const useFetchApi = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+
+
+ /*  useEffect(() => {
     setError(false);
     setLoading(true);
     const fetchData = async () => {
@@ -33,8 +39,10 @@ const useFetchApi = () => {
       setLoading(false);
     };
     fetchData();
-  }, [urlUsers]);
+  }, [urlUsers]); */
 
+
+  //PLAYLIST fetch -------------------------
   useEffect(() => {
     setError(false);
     setLoading(true);
@@ -42,7 +50,7 @@ const useFetchApi = () => {
       try {
         const response = await fetch(urlPlaylist);
         const playLists = await response.json();
-        setPlaylist(playLists);
+        setPlaylist(playLists.data);
       } catch (error) {
         setError(true);
       }
@@ -51,25 +59,25 @@ const useFetchApi = () => {
     fetchData();
   }, [urlPlaylist]);
 
-  //tracks
+  //TRACKS fetch --------------------------------
 
-  useEffect(() => {
+ /*  useEffect(() => {
     setError(false);
     setLoading(true);
     const fetchData = async () => {
       try {
         const response = await fetch(urlTracks);
         const tracks = await response.json();
-        setTracks(tracks);
+        setTracks(tracks.data);
       } catch (error) {
         setError(true);
       }
       setLoading(false);
     };
     fetchData();
-  }, [urlTracks]);
+  }, [urlTracks]);  */
 
-  //albumbs
+  //ALBUMS fetch-----------------------------------
 
   useEffect(() => {
     setError(false);
@@ -78,8 +86,10 @@ const useFetchApi = () => {
       try {
         const response = await fetch(urlAlbums);
         const albums = await response.json();
-        setAlbums(albums);
-      } catch (error) {
+       setAlbums(albums.data);
+ 
+/* console.log(albums)     
+ */ } catch (error) {
         setError(true);
       }
       setLoading(false);
@@ -87,7 +97,7 @@ const useFetchApi = () => {
     fetchData();
   }, [urlAlbums]);
 
-  //artist
+  //ARTIST fetch -------------------------------
 
   useEffect(() => {
     setError(false);
@@ -96,25 +106,26 @@ const useFetchApi = () => {
       try {
         const response = await fetch(urlArtists);
         const artists = await response.json();
-        setArtists(artists);
-      } catch (error) {
+        setArtists(artists.data);
+/*         console.log(artists)
+ */      } catch (error) {
         setError(true);
       }
       setLoading(false);
     };
     fetchData();
-  }, [urlArtists]);
+  }, [urlArtists]); 
 
-  //genres
+  //GENRES fetch ----------------------------------------
 
-  useEffect(() => {
+ useEffect(() => {
     setError(false);
     setLoading(true);
     const fetchData = async () => {
       try {
         const response = await fetch(urlGenres);
         const genres = await response.json();
-        setGenres(genres);
+        setGenres(genres.data);
       } catch (error) {
         setError(true);
       }
@@ -122,8 +133,9 @@ const useFetchApi = () => {
     };
     fetchData();
   }, [urlGenres]);
+  
 
-  function getAllUsers() {
+/*   function getAllUsers() {
     return users;
   }
 
@@ -133,28 +145,34 @@ const useFetchApi = () => {
 
   function addNewUser(user) {
     fetch(urlUsers, {
+      const $addPlayslist ={
+          name:
+          img:
+      }
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(addplaylist),
     }).then((res) => res.json());
   }
-
+ */
   return {
     error,
     loading,
-    users,
+  /*   users, */
     playlist,
     tracks,
     albums,
     genres,
     artists,
-    setUsers,
+  /*   setUsers,
     getAllUsers,
     getUser,
-    addNewUser,
+    addNewUser, */
   };
 };
 
 export default useFetchApi;
+
+

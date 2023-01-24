@@ -35,7 +35,7 @@ const ArtistsContainer = () => {
 
 
 
-        {artists[0]?.map((artist) => (
+        {artists?.map((artist) => (
           <div key={artist.id} className="status">
             <SwiperSlide>
               <img className="" src={artist.photoUrl} alt="" />
