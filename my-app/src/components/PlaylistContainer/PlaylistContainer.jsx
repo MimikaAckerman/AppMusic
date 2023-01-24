@@ -25,14 +25,10 @@ const PlaylistContainer = () => {
                 <h2 className="title-description">{playlist.name}</h2>
                 </div>
               </SwiperSlide>
-            </Link>
-
-
-          
+            </Link>          
               <p>{playlist.isFollowed}</p>
               <p>{playlist.publicAccessible}</p>
             
-          
           </div>
         ))}
       </Swiper>
