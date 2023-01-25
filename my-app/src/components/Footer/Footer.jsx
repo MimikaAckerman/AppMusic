@@ -41,13 +41,18 @@ export default function Footer() {
   //creationPlaylist---------------------------------
 
   const { register, handleSubmit } = useForm();
-  const {movePlaylist} = useAddPlaylistContext() 
+
+
+
+const {playlist,setPlaylist} =useAddPlaylistContext()
+
   const onSubmit = (data) => {
-   movePlaylist()
-   addNewPlaylist(data)
- 
-  
-    /*    console.log(data); */
+    console.log(playlist)
+     addNewPlaylist(data,playlist,setPlaylist) 
+
+/*     setPlaylist([...playlist,data])
+ */  
+        console.log(data); 
   };
 
   return (

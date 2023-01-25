@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuthContext } from "../../context/LoginContext";
+/* import { useAuthContext } from "../../context/LoginContext"; */
 
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
@@ -7,19 +7,48 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 import { updateUserImageWithFormData } from "../../services/user";
+/* import "./AccountPage.css"; */
 
-import "./AccountPage.css";
+import {useAddPlaylistContext} from './../../context/AddPlaylistContext';
 
 const AccountPage = () => {
+
+
   //CLOUDINARY
   const [image, setImage] = useState("");
   console.log(image);
 
-  const { isAuthenticated } = useAuthContext();
-  const user = JSON.parse(localStorage.getItem("name"));
+  const {playlist,setPlaylist} =useAddPlaylistContext()
+  console.log(playlist)
+
+
+/*   const { isAuthenticated } = useAuthContext();
+  const user = JSON.parse(localStorage.getItem("name")); */
 
   return (
     <>
+    <h1>hola mundo</h1>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="div-model">
         {/* contenedor */}
         <div></div>
@@ -106,11 +135,11 @@ const AccountPage = () => {
           </div>
         </div>
 
-        <div className="hi-user">
+        {/* <div className="hi-user">
           {isAuthenticated ? (
             <span className="name-user">Hi! {user}</span>
           ) : null}
-        </div>
+        </div> */}
       </div>
     </>
   );

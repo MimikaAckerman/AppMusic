@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAddPlaylistContext } from "../context/AddPlaylistContext";
 
 const useFetchApi = () => {
 
@@ -14,7 +15,11 @@ const useFetchApi = () => {
 
 /*   const [users, setUsers] = useState([]);
  */  
-  const [playlist, setPlaylist] = useState([]);
+/*   const [playlist, setPlaylist] = useState([]);
+
+ */ 
+const {playlist,setPlaylist} =useAddPlaylistContext()
+
   const [tracks, setTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [artists, setArtists] = useState([]);
@@ -88,8 +93,8 @@ const useFetchApi = () => {
         const albums = await response.json();
        setAlbums(albums.data);
  
-/* console.log(albums)*/ 
-} catch (error) {
+/* console.log(albums)     
+ */ } catch (error) {
         setError(true);
       }
       setLoading(false);
@@ -144,9 +149,17 @@ const useFetchApi = () => {
   }
  */
 // FUNCTION CREATE PLAYLIST ---------
-
-
- 
+/* 
+  export function addNewPlaylist(playlist) {
+    fetch(urlPlaylist, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(playlist),
+    }).then((res) => res.json());
+  }
+  */
   return {
     error,
     loading,
@@ -157,7 +170,7 @@ const useFetchApi = () => {
     genres,
     artists,
 
-/*     addNewPlaylist */
+    /* addNewPlaylist */
   /*   setUsers,
     getAllUsers,
     getUser,
