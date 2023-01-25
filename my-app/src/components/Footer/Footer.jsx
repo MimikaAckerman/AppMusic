@@ -38,15 +38,15 @@ export default function Footer() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-/*   const {movePlaylist} = useAddPlaylistContext();
- */  //creationPlaylist---------------------------------
+  //creationPlaylist---------------------------------
 
   const { register, handleSubmit } = useForm();
-
+  const {movePlaylist} = useAddPlaylistContext() 
   const onSubmit = (data) => {
-   
-/*     localStorage.setItem( addNewPlaylist(data))
-    movePlaylist(); */
+   movePlaylist()
+   addNewPlaylist(data)
+ 
+  
     /*    console.log(data); */
   };
 

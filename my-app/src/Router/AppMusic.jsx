@@ -19,6 +19,7 @@ import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 const AppMusic = () => {
   return (
     <>
+    <AddPlaylistContextProvider>
       <ImageContextProvider>
         <LoginContextProvider>
           <Router>
@@ -34,6 +35,7 @@ const AppMusic = () => {
           </Router>
         </LoginContextProvider>
       </ImageContextProvider>
+      </AddPlaylistContextProvider>
     </>
   );
 };
