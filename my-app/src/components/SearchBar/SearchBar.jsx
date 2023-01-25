@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import './SearchBar.css'
 const SearchBar = () => {
   return (
@@ -17,4 +17,4 @@ const SearchBar = () => {
   )
 }
 
-export default SearchBar
+export default SearchBar */
