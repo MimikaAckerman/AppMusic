@@ -1,21 +1,22 @@
-import "./Footer.css";
 import * as React from "react";
+//material ui------------------
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import HomeIcon from "@mui/icons-material/Home";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
-import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import PersonIcon from "@mui/icons-material/Person";
-import { Link } from "react-router-dom";
-
-
-
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
+//REACT ROUTER
+import { Link, Navigate } from "react-router-dom";
+//Hook form
+import { useForm } from "react-hook-form";
+//function create playlist
+import { addNewPlaylist } from "../../utils/addNewPlaylist";
 
 const style = {
   position:'absolute',
@@ -38,6 +39,22 @@ export default function Footer() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+
+  //creationPlaylist---------------------------------
+  const {
+    register,
+    handleSubmit,
+  } = useForm();
+
+  
+
+  const onSubmit = (data) => {
+    addNewPlaylist(data)
+    console.log(data);
+  }; 
+
+
 
 
 
@@ -80,11 +97,26 @@ export default function Footer() {
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
 
 {/*         FORM WITH CREATE PLAYLIST*/}
-<input type="text" placeholder="enter name playlist" />
-<input type="text" placeholder="enter description playlist" />
-<input type="image"  placeholder="enter image for your playlist"/>
 
+<form onSubmit={handleSubmit(onSubmit)}>
+<input 
+{...register("name", {
+  required:"the name is required",
+  message:"the name playlist is necessary"
+})}
+type="text"
+ placeholder="enter name playlist" 
+/>
+<input 
+ {...register("description",{
+  message:"the description is necessary"
+ })}
+type="text" 
+placeholder="enter description playlist" 
+/>
 
+<input type="submit" value="create playlist" />
+</form>
 
     </Typography>
   </Box>

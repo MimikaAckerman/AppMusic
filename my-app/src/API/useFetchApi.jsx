@@ -88,8 +88,8 @@ const useFetchApi = () => {
         const albums = await response.json();
        setAlbums(albums.data);
  
-/* console.log(albums)     
- */ } catch (error) {
+/* console.log(albums)*/ 
+} catch (error) {
         setError(true);
       }
       setLoading(false);
@@ -142,21 +142,11 @@ const useFetchApi = () => {
   function getUser(username) {
     return users.find((user) => user.username === username);
   }
-
-  function addNewUser(user) {
-    fetch(urlUsers, {
-      const $addPlayslist ={
-          name:
-          img:
-      }
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(addplaylist),
-    }).then((res) => res.json());
-  }
  */
+// FUNCTION CREATE PLAYLIST ---------
+
+
+ 
   return {
     error,
     loading,
@@ -166,6 +156,8 @@ const useFetchApi = () => {
     albums,
     genres,
     artists,
+
+/*     addNewPlaylist */
   /*   setUsers,
     getAllUsers,
     getUser,
