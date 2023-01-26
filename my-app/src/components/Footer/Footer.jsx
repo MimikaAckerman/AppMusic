@@ -42,17 +42,15 @@ export default function Footer() {
 
   const { register, handleSubmit } = useForm();
 
-
-
-const {playlist,setPlaylist} =useAddPlaylistContext()
+  const { playlist, setPlaylist } = useAddPlaylistContext();
 
   const onSubmit = (data) => {
-    console.log(playlist)
-     addNewPlaylist(data,playlist,setPlaylist) 
+    console.log(playlist);
+    addNewPlaylist(data, playlist, setPlaylist);
 
-/*     setPlaylist([...playlist,data])
- */  
-        console.log(data); 
+    /*     setPlaylist([...playlist,data])
+     */
+    console.log(data);
   };
 
   return (
