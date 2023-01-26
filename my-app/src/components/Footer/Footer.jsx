@@ -10,7 +10,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import SearchIcon from '@mui/icons-material/Search';
+import Styled from 'styled-components'
 //REACT ROUTER
 import { Link } from "react-router-dom";
 //Hook form
@@ -18,6 +20,7 @@ import { useForm } from "react-hook-form";
 //function create playlist
 import { addNewPlaylist } from "../../utils/addNewPlaylist";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
+import { red } from "@mui/material/colors";
 
 const style = {
   position: "absolute",
@@ -29,6 +32,7 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  width:300,
 };
 
 export default function Footer() {
@@ -47,19 +51,16 @@ export default function Footer() {
 const {playlist,setPlaylist} =useAddPlaylistContext()
 
   const onSubmit = (data) => {
-    console.log(playlist)
-     addNewPlaylist(data,playlist,setPlaylist) 
-
-/*     setPlaylist([...playlist,data])
- */  
-        console.log(data); 
+     addNewPlaylist(data,playlist,setPlaylist)
   };
 
   return (
-    <Box sx={{ width: 427 }}>
+    <>
+    <Box sx={{ width: 427}}>
       <BottomNavigation
         showLabels
         value={value}
+        sx={{backgroundColor: '#5F5C57'}}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
@@ -67,16 +68,15 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
         <Link to="/">
           <BottomNavigationAction label="Home" icon={<HomeIcon />} />
         </Link>
-        <Link to="/LikeSongs">
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <Link to="/GenresPage">
+          <BottomNavigationAction label="Search" icon={<SearchIcon />} />
         </Link>
-
         {/* CREATE PLAYLIST --------------------------*/}
 
         <Button onClick={handleOpen}>
           <BottomNavigationAction
             label="Favorites"
-            icon={<PlaylistAddCheckIcon />}
+            icon={<PlaylistAddIcon />}
           />
         </Button>
         <Modal
@@ -92,7 +92,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               {/*         FORM WITH CREATE PLAYLIST*/}
 
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <FormModal onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("name", {
                     required: "the name is required",
@@ -101,6 +101,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
                   type="text"
                   placeholder="enter name playlist"
                 />
+                <br></br>
                 <input
                   {...register("description", {
                     message: "the description is necessary",
@@ -108,27 +109,38 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
                   type="text"
                   placeholder="enter description playlist"
                 />
-
+                <br></br>
                 <input type="submit" value="create playlist" />
-              </form>
+              </FormModal>
             </Typography>
           </Box>
         </Modal>
 
-        {/* 
-
-        <Link to="/ListPage">
-          <BottomNavigationAction
-            label="Playlist"
-            icon={<PlaylistPlayIcon />}
-          />
-        </Link>
- */}
 
         <Link to="/AccountPage">
           <BottomNavigationAction label="Account" icon={<PersonIcon />} />
         </Link>
       </BottomNavigation>
     </Box>
+    </>
   );
 }
+
+const FormModal = Styled.form`
+     background: #EBEBEB;
+    text-align: center; 
+    box-shadow: 0px 0px 20px 5px #AAA; 
+    border-radius: 10px;  
+    width: 45%; 
+    height: 400px;
+    margin: 30px auto 0 auto;
+    padding: 10px 10px;  
+    animation: bounce 1.5s infinite;
+`
+
+const InputModal = Styled.input`
+    background-color: #DF1B76;
+    border-bottom: 5px solid #B2175F;
+    color: white;
+    width:300px;
+`
