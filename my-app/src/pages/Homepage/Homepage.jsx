@@ -4,7 +4,7 @@ import ArtistsContainer from "../../components/ArtistContainer/ArtistsContainer"
 /* import GenresContainer from "../../components/GenresContainer/GenresContainer"; */
 /* import TracksContainer from "../../components/TracksContainer/TracksContainer"; */
 import "./Homepage.css";
-
+import { Logout } from "../../components/Form/Logout/Logout";
 import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContainer";
 /*  import { useAuthContext } from "../../context/LoginContext";
  */ import Footer from "../../components/Footer/Footer";
@@ -15,6 +15,7 @@ const Homepage = () => {
    */ /*   const user = JSON.parse(localStorage.getItem("name"));
    */ return (
     <>
+      <Logout />
       <PlaylistContainer />
       <AlbumContainer />
       <ArtistsContainer />
