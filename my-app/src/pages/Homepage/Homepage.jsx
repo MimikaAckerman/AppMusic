@@ -10,6 +10,8 @@ import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContai
 /*  import { useAuthContext } from "../../context/LoginContext"; 
  */import Footer from "../../components/Footer/Footer";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import { LogoutButton } from "../../components/Form/Logout/Logout";
+import { Profile } from "../../components/Form/Profile/Profile";
 
 
 const Homepage = () => {
@@ -17,6 +19,11 @@ const Homepage = () => {
  *//*   const user = JSON.parse(localStorage.getItem("name")); 
  */  return (
     <>
+
+ <LogoutButton/>
+
+<Profile/>
+
 
       <PlaylistContainer />
       <AlbumContainer />
