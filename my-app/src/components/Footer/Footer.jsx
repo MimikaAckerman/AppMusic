@@ -10,7 +10,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import SearchIcon from '@mui/icons-material/Search';
+import Styled from 'styled-components'
 //REACT ROUTER
 import { Link } from "react-router-dom";
 //Hook form
@@ -18,7 +20,6 @@ import { useForm } from "react-hook-form";
 //function create playlist
 import { addNewPlaylist } from "../../utils/addNewPlaylist";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
-import styled from "styled-components";
 
 const style = {
   position: "absolute",
@@ -30,10 +31,11 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  width:300,
 };
 
 
-const HomeButton = styled.button`
+const HomeButton = Styled.button`
 --glow-color: rgb(217, 176, 255);
  --glow-spread-color: rgba(191, 123, 255, 0.781);
  --enhanced-glow-color: rgb(231, 206, 255);
@@ -53,19 +55,8 @@ const HomeButton = styled.button`
  position: relative;
  transition: all 0.3s; 
 
- HomeButton::after{
-  pointer-events: none;
- content: "";
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(2em);
- opacity: .7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
- }
+ 
+ 
 `
 
 
@@ -82,18 +73,10 @@ export default function Footer() {
   //creationPlaylist---------------------------------
 
   const { register, handleSubmit } = useForm();
-
-
-
 const {playlist,setPlaylist} =useAddPlaylistContext()
 
   const onSubmit = (data) => {
-    console.log(playlist)
-     addNewPlaylist(data,playlist,setPlaylist) 
-
-/*     setPlaylist([...playlist,data])
- */  
-        console.log(data); 
+     addNewPlaylist(data,playlist,setPlaylist)
   };
 
   return (
@@ -105,10 +88,11 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
 
 
 
-    <Box sx={{ width: 427 }}>
+  <Box sx={{ width: 427 }}>
       <BottomNavigation
         showLabels
         value={value}
+        sx={{backgroundColor: '#5F5C57'}}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
@@ -116,16 +100,18 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
         <Link to="/">
           <BottomNavigationAction label="Home" icon={<HomeIcon />} />
         </Link>
-        <Link to="/LikeSongs">
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <Link to="/GenresPage">
+          <BottomNavigationAction label="Search" icon={<SearchIcon />} />
         </Link>
+
+
 
         {/* CREATE PLAYLIST --------------------------*/}
 
         <Button onClick={handleOpen}>
           <BottomNavigationAction
             label="Favorites"
-            icon={<PlaylistAddCheckIcon />}
+            icon={<PlaylistAddIcon />}
           />
         </Button>
         <Modal
@@ -139,6 +125,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
               create playlist
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+
               {/*         FORM WITH CREATE PLAYLIST*/}
 
               <form onSubmit={handleSubmit(onSubmit)}>
@@ -150,6 +137,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
                   type="text"
                   placeholder="enter name playlist"
                 />
+                <br></br>
                 <input
                   {...register("description", {
                     message: "the description is necessary",
@@ -157,28 +145,24 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
                   type="text"
                   placeholder="enter description playlist"
                 />
-
+                <br></br>
                 <input type="submit" value="create playlist" />
               </form>
+
             </Typography>
           </Box>
         </Modal>
 
-        {/* 
-
-        <Link to="/ListPage">
-          <BottomNavigationAction
-            label="Playlist"
-            icon={<PlaylistPlayIcon />}
-          />
-        </Link>
- */}
 
         <Link to="/AccountPage">
           <BottomNavigationAction label="Account" icon={<PersonIcon />} />
         </Link>
       </BottomNavigation>
-    </Box>
+    </Box> 
     </>
   );
 }
+
+
+
+
