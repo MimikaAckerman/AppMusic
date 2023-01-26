@@ -31,12 +31,15 @@ const Homepage = () => {
       {/* <GenresContainer /> */}
      {/*  <TracksContainer/>  */}
 
-     <div className="footer">
+  <br />
+  <br />
+  <br />
      <Footer/>
-     </div>
+ 
     
     </>
   );
 };
 
 export default Homepage;
+
