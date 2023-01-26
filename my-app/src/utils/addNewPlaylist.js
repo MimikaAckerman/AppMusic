@@ -7,7 +7,7 @@ export function addNewPlaylist(playlist,pl,setPlaylist) {
       },
       body: JSON.stringify(playlist),
     }).then((res) => res.json())
-    .then((res)  => {
+      .then((res)  => {
 
       setPlaylist([...pl,res.data])
       console.log(res)

@@ -5,13 +5,14 @@ import { useAuthContext } from '../../context/LoginContext';
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 
-import AttachFileIcon from '@mui/icons-material/AttachFile'
-
-import CloudUploadIcon from '@mui/icons-material/CloudUpload'
-import { updateUserImageWithFormData } from '../../services/user'
+import {useAddPlaylistContext} from './../../context/AddPlaylistContext';
+import styled from "styled-components";
 
 
-import './AccountPage.css';
+
+
+
+
 
 const AccountPage = () => {
 
@@ -97,3 +98,7 @@ const AccountPage = () => {
 };
 
 export default AccountPage;
+
+const Prueba = styled.div`
+background-color: red;
+`

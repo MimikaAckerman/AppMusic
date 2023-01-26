@@ -12,8 +12,8 @@ root.render(
 
 <React.StrictMode>
     <Auth0Provider
-      domain="app-music.eu.auth0.com"
-      clientId="kpWw1pPj0iJiVM1S2PLDioMOY1JOhiMz"
+      domain="myappmusic.eu.auth0.com"
+      clientId="GbQfnhSMyXjHv4AgJCWnw5LVqLFboafl"
       redirectUri={window.location.origin}
     >
       <App />
