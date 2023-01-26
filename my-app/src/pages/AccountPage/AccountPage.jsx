@@ -10,6 +10,13 @@ import { updateUserImageWithFormData } from "../../services/user";
 /* import "./AccountPage.css"; */
 
 import {useAddPlaylistContext} from './../../context/AddPlaylistContext';
+import styled from "styled-components";
+
+
+
+
+
+
 
 const AccountPage = () => {
 
@@ -27,7 +34,9 @@ const AccountPage = () => {
 
   return (
     <>
-    <h1>hola mundo</h1>
+    <Prueba>
+      <h1>hola mundo</h1>
+    </Prueba>
    
 
 
@@ -146,3 +155,7 @@ const AccountPage = () => {
 };
 
 export default AccountPage;
+
+const Prueba = styled.div`
+background-color: red;
+`
