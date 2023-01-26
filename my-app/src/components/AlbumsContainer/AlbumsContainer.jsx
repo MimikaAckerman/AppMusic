@@ -1,5 +1,4 @@
 import useFetchApi from "../../API/useFetchApi";
-import "./AlbumContainer.css";
 
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";

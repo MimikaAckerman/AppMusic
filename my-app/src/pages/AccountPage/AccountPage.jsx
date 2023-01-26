@@ -5,7 +5,6 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 
 import { useAddPlaylistContext } from "./../../context/AddPlaylistContext";
-import styled from "styled-components";
 
 const AccountPage = () => {
   //CLOUDINARY
@@ -109,6 +108,3 @@ const AccountPage = () => {
 
 export default AccountPage;
 
-const Prueba = styled.div`
-  background-color: red;
-`;

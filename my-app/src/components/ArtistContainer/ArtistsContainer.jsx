@@ -1,13 +1,12 @@
 import useFetchApi from "../../API/useFetchApi";
-import "./ArtistContainer.css";
-
+/* import "./ArtistContainer.css";
+ */
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination } from "swiper";
-
 
 const ArtistsContainer = () => {
   const { artists } = useFetchApi();
@@ -16,7 +15,8 @@ const ArtistsContainer = () => {
     <>
       <h1>Artist</h1>
 
-      <Swiper effect={"coverflow"}
+      <Swiper
+        effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={3}
@@ -29,18 +29,13 @@ const ArtistsContainer = () => {
         }}
         pagination={false}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper">
-
-
-
-
-
+        className="mySwiper"
+      >
         {artists?.map((artist) => (
           <div key={artist.id} className="status">
             <SwiperSlide>
               <img className="" src={artist.photoUrl} alt="" />
             </SwiperSlide>
-           
           </div>
         ))}
       </Swiper>
