@@ -14,7 +14,7 @@ root.render(
     <Auth0Provider
       domain="myappmusic.eu.auth0.com"
       clientId="GbQfnhSMyXjHv4AgJCWnw5LVqLFboafl"
-      redirectUri={window.location.origin}
+      redirectUri={window.location.origin + "/homepage"}
     >
       <App />
     </Auth0Provider>
