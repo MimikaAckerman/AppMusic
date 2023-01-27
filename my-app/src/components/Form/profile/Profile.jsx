@@ -5,7 +5,7 @@ export const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   //this is information the user for example TOKEN
-  console.log(user);
+ /*  console.log(user); */
 
   if (isLoading) {
     return <div>Loading...</div>;

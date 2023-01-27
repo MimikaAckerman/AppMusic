@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 //function create playlist
 import { addNewPlaylist } from "../../utils/addNewPlaylist";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Footer() {
   const [value, setValue] = React.useState(0);
@@ -26,10 +27,20 @@ export default function Footer() {
 
   const { register, handleSubmit } = useForm();
   const { playlist, setPlaylist } = useAddPlaylistContext();
+  const { user} = useAuth0();
+console.log(user); 
 
   const onSubmit = (data) => {
-    addNewPlaylist(data, playlist, setPlaylist);
-  };
+
+     const createPlaylist = {
+      ...data,
+      emailUser:user.email
+      
+    } 
+    console.log(createPlaylist);
+  
+   addNewPlaylist(createPlaylist, playlist, setPlaylist);
+ };
 
   return (
     <>

@@ -12,7 +12,6 @@ import AccountPage from "../pages/AccountPage/AccountPage";
 import GenresPage from "../pages/GenresPage/GenresPage";
 import TracksPage from "../pages/TracksPage/TracksPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import { LoginContextProvider } from "../context/LoginContext";
 import ImageContextProvider from "../context/ImageContext";
 import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformation";
@@ -22,7 +21,7 @@ const AppMusic = () => {
     <>
     <AddPlaylistContextProvider>
       <ImageContextProvider>
-        <LoginContextProvider>
+  
           <Router>
             <Routes>
               <Route path="/" element={<LoginPage />} />
@@ -35,7 +34,7 @@ const AppMusic = () => {
               <Route path="/TracksPage/:id" element={<TracksPage />} />
             </Routes>
           </Router>
-        </LoginContextProvider>
+       
       </ImageContextProvider>
       </AddPlaylistContextProvider>
     </>
