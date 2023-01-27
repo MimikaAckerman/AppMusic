@@ -33,6 +33,12 @@ const GenresContainer = () => {
 
 export default GenresContainer;
 
+
+
+
+//STYLED COMPONENT
+
+
 const ContainerGenres = styled.div`
 `
 const TitleContainer = styled.div`

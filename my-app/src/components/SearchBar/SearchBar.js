@@ -68,6 +68,8 @@ function SearchBar(props) {
 }
 export default SearchBar;
 
+
+//STYLED COMPONENT 
 const Search = styled.div`
   display: flex;
   justify-content: space-between;

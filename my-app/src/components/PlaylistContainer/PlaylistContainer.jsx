@@ -43,6 +43,7 @@ const PlaylistContainer = () => {
 };
 export default PlaylistContainer;
 
+//STYLED COMPONENT
 
 const Description = styled.div`
 background-color:#D8D6D7;

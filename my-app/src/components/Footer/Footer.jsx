@@ -10,11 +10,6 @@ import { useForm } from "react-hook-form";
 import { addNewPlaylist } from "../../utils/addNewPlaylist";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
 
-
-
-
-
-
 export default function Footer() {
   const [value, setValue] = React.useState(0);
 
@@ -95,32 +90,29 @@ export default function Footer() {
         aria-describedby="modal-modal-description"
       >
         <Card>
-          
-         
-            <TitleCreatePlaylist>Create Playlist</TitleCreatePlaylist>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <InputForm
-                {...register("name", {
-                  required: "the name is required",
-                  message: "the name playlist is necessary",
-                })}
-                type="text"
-                placeholder="Enter name playlist"
-              />
-              <br></br>
-              <br />
-              <InputForm
-                {...register("description", {
-                  message: "the description is necessary",
-                })}
-                type="text"
-                placeholder="Enter description playlist"
-              />
-              <br></br>
-             
-              <SubmitForm type="submit" value="Create Playlist" />
-            </form>
-         
+          <TitleCreatePlaylist>Create Playlist</TitleCreatePlaylist>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <InputForm
+              {...register("name", {
+                required: "the name is required",
+                message: "the name playlist is necessary",
+              })}
+              type="text"
+              placeholder="Enter name playlist"
+            />
+            <br></br>
+            <br />
+            <InputForm
+              {...register("description", {
+                message: "the description is necessary",
+              })}
+              type="text"
+              placeholder="Enter description playlist"
+            />
+            <br></br>
+
+            <SubmitForm type="submit" value="Create Playlist" />
+          </form>
         </Card>
       </Modal>
 
@@ -144,8 +136,6 @@ export default function Footer() {
 }
 
 //STYLED COMPONENT
-
-
 
 const HomeButton = styled.button`
   color: #090909;
@@ -206,18 +196,19 @@ const Profile = styled.button`
 `;
 
 const Card = styled.div`
-margin-left: 3rem;
-margin-top: 10rem;
-width: 20rem;
- height: 19rem;
- border-radius: 30px;
- background: lightgrey;
- box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
-`
+  margin-left: 3rem;
+  margin-top: 10rem;
+  width: 20rem;
+  height: 19rem;
+  border-radius: 30px;
+  background: lightgrey;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+`;
 const TitleCreatePlaylist = styled.h2`
-text-align: center;
-padding: 1.5rem;
-`
+  text-align: center;
+  padding: 1.5rem;
+`;
 
 const InputForm = styled.input`
   font-size: 1.2rem;
@@ -228,27 +219,24 @@ const InputForm = styled.input`
   padding: 0.8rem 2rem;
   border-radius: 30px;
   width: 11em;
-  transition: all ease-in-out .5s;
+  transition: all ease-in-out 0.5s;
 
-  
-
-  &:hover , &:focus{
-    box-shadow: 0 0 1em #C2C1C6;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 1em #c2c1c6;
   }
-  &:focus{
+  &:focus {
     outline: none;
-  background-color: #f0eeee;
+    background-color: #f0eeee;
   }
-  &::-webkit-input-placeholder{
+  &::-webkit-input-placeholder {
     font-weight: 100;
-  color: #ccc;
+    color: #ccc;
   }
-  
-`
+`;
 const SubmitForm = styled.input`
- border-radius: 30px;
- font-size: 1.2rem;
- margin-left: 6rem;
- margin-top: 3rem;
-
-`
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-left: 6rem;
+  margin-top: 3rem;
+`;
