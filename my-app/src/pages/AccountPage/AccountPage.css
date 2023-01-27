@@ -8,19 +8,19 @@
 .div-model{
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
   justify-content: center;
   align-items: center;
   display: flex;
   background: #eee;
 }
 .card-profile{
-  height: 500px;
-  width: 340px;
+  margin-top: 20px ;
+  height: 750px;
+  width: 540px;
   overflow: hidden;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgb(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
 }
@@ -137,4 +137,3 @@
   color: #1369ce;
   background-color: #f7f5ec;
 }
-
