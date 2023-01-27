@@ -12,8 +12,8 @@ const AccountPage = () => {
   const [image, setImage] = useState("");
   const { playlist, setPlaylist } = useAddPlaylistContext();
   console.log(playlist);
-  const { user } = useAuth0();
-  console.log(user);
+ const { user } = useAuth0();
+   console.log(user); 
 
   //la playlist que creo el usuario
   const myPlaylist = playlist.filter((pl) => pl.emailUser === user.email);
