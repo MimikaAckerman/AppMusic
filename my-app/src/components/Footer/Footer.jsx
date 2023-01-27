@@ -50,8 +50,8 @@ console.log(user);
           fill="currentColor"
           stroke-width="0"
           viewBox="0 0 1024 1024"
-          height="1.1em"
-          width="1.1em"
+          height="1em"
+          width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"></path>
@@ -66,8 +66,8 @@ console.log(user);
             fill="currentColor"
             stroke-width="0"
             viewBox="0 0 24 24"
-            height="1.1em"
-            width="1.3em"
+            height="1em"
+            width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <g>
@@ -86,8 +86,8 @@ console.log(user);
           fill="currentColor"
           stroke-width="0"
           viewBox="0 0 24 24"
-          height="1.1em"
-          width="1.3em"
+          height="1em"
+          width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
@@ -133,8 +133,8 @@ console.log(user);
           fill="currentColor"
           stroke-width="0"
           viewBox="0 0 16 16"
-          height="1.1em"
-          width="1.3em"
+          height="1em"
+          width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"></path>
@@ -159,8 +159,8 @@ console.log(user);
             fill="currentColor"
             stroke-width="0"
             viewBox="0 0 16 16"
-            height="1.1em"
-            width="1.3em"
+            height="1em"
+            width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -184,7 +184,7 @@ console.log(user);
 
 const HomeButton = styled.button`
   color: #090909;
-  padding: 0.7em 1.7em;
+  padding: 0.7em 1.5em;
   font-size: 18px;
   border-radius: 0.5em;
   background: #e8e8e8;
@@ -200,7 +200,7 @@ const HomeButton = styled.button`
 
 const SearchButton = styled.button`
   color: #090909;
-  padding: 0.7em 1.7em;
+  padding: 0.7em 1.5em;
   font-size: 18px;
   border-radius: 0.5em;
   background: #e8e8e8;

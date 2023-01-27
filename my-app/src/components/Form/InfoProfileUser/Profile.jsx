@@ -13,11 +13,11 @@ export const Profile = () => {
   return (
     isAuthenticated && (
       <div>
-        <h1>{user.name}</h1>
+        <h1>Hi! {user.nickname}🎧</h1>
 
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>Email: {user.email}</p>
+       {/*  <img src={user.picture} alt={user.name} /> */}
+    {/*     <h2>{user.name}</h2> */}
+    {/*     <p>Email: {user.email}</p> */}
       </div>
     )
   );
