@@ -171,5 +171,5 @@ const Bag = styled.button`
 
 const FondoDesing = styled.div`
   background-color: #b5b6b5;
-  height: 25rem;
+  height: 25.5rem;
 `;

@@ -74,7 +74,7 @@ const Search = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 5rem;
-  margin-top: 1rem;
+  margin-top: -2.5rem;
 
 `
 const InputSearch = styled.input`
