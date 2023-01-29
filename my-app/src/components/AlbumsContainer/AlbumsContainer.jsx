@@ -6,6 +6,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination } from "swiper";
+import styled from "styled-components";
+
+
 
 const AlbumContainer = () => {
   const { albums } = useFetchApi();
@@ -36,13 +39,15 @@ const AlbumContainer = () => {
               <div className="class">
                 <img src={album.imageUrl} alt="" />
 
+              {/*iconos de agregar y me gusta  */}
+              <Icons>
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 24 24"
                   height="1.5em"
-                  width="1.5em"
+                  width="2em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
@@ -54,7 +59,7 @@ const AlbumContainer = () => {
                   stroke-width="0"
                   viewBox="0 0 512 512"
                   height="1em"
-                  width="1em"
+                  width="2em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -62,6 +67,7 @@ const AlbumContainer = () => {
                     fill-rule="evenodd"
                   ></path>
                 </svg>
+                </Icons>
               </div>
             </SwiperSlide>
             <div>
@@ -74,3 +80,7 @@ const AlbumContainer = () => {
   );
 };
 export default AlbumContainer;
+
+const Icons = styled.div`
+padding: 1rem ;
+`

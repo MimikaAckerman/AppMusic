@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AccountPerfile from "../../components/perfileUser/AccountPerfile";
-import "./AccountPage.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 

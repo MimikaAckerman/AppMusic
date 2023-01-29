@@ -28,8 +28,8 @@ export default function Footer() {
   const { register, handleSubmit } = useForm();
   const { playlist, setPlaylist } = useAddPlaylistContext();
   const { user} = useAuth0();
-console.log(user); 
-
+/* console.log(user); 
+ */
   const onSubmit = (data) => {
 
      const createPlaylist = {
@@ -37,8 +37,8 @@ console.log(user);
       emailUser:user.email
       
     } 
-    console.log(createPlaylist);
-  
+/*     console.log(createPlaylist);
+ */  
    addNewPlaylist(createPlaylist, playlist, setPlaylist);
  };
 
