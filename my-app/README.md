@@ -78,3 +78,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
  npm i react-h5-audio-player: [https://www.npmjs.com/package/react-h5-audio-player]
  npm install @mui/material @emotion/react @emotion/styled: [https://mui.com/]
  npm i @mui/icons-material : [https://www.npmjs.com/package/@mui/icons-material]
+ npm i redux
+ npm i react-router-dom
