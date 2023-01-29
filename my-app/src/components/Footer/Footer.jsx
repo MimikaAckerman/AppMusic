@@ -14,6 +14,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 export default function Footer() {
   const [value, setValue] = React.useState(0);
 
+  //modal form
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
