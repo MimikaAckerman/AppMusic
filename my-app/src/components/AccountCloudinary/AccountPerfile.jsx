@@ -7,25 +7,21 @@ import { ImageContext } from "../../context/ImageContext";
 import { useAuth0 } from "@auth0/auth0-react";
 import { updateUserImg } from "../../services/user";
 
-
 const AccountPerfile = () => {
-  const { getAccessTokenSilently } = useAuth0()
+  const { getAccessTokenSilently } = useAuth0();
   const { image } = useContext(ImageContext);
 
   const handleUpload = async () => {
-    const token = await getAccessTokenSilently()
-        const response = await updateUserImg('63adcfe8425e2c04cb0d9e9d', image, token)
-        console.log(response) 
+    const token = await getAccessTokenSilently();
+    const response = await updateUserImg(
+      "63adcfe8425e2c04cb0d9e9d",
+      image,
+      token
+    );
+    console.log(response);
   };
 
-
-    //playlist user
-
-
-
-
-
-
+  //playlist user
 
   return (
     <>

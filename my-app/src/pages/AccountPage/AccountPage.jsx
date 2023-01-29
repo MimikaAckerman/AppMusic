@@ -9,11 +9,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/grid";
 import "swiper/css/pagination";
 
 // import required modules
-import { Grid, Pagination } from "swiper";
+import {  Pagination } from "swiper";
 import styled from "styled-components";
 
 const AccountPage = () => {
@@ -106,16 +105,13 @@ const AccountPage = () => {
 
 <MyPlaylist>My Playlist</MyPlaylist>
 <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 2,
-        }}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Grid, Pagination]}
-        className="mySwiper"
+         slidesPerView={3}
+         spaceBetween={30}
+         pagination={{
+           clickable: true,
+         }}
+         modules={[Pagination]}
+         className="mySwiper"
       >
         {myPlaylist.map((playlist) => {
           return (
