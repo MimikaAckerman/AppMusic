@@ -1,19 +1,5 @@
-/* 
-.card-backgroud{
-   width: 340px;
-   height: 100px;
-   background: blue;
 
-} */
-.div-model{
-  margin: 0;
-  padding: 0;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background: #eee;
-}
+
 .card-profile{
   margin-top: 20px ;
   height: 750px;
