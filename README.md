@@ -2,9 +2,17 @@
 <img width="86" alt="Captura de pantalla_20230124_174015" src="https://user-images.githubusercontent.com/110461673/214558686-1735a62c-f649-4989-893f-2303f724dbdb.png">
 
 # Description
-In this frontend project, we have a fetch to api. And we render this in the localhost. 
-We use one root on different files. and then we make a backend and use different built-in tools, for example mongoDB https://github.com/MimikaAckerman/ServerAppMusic.git.
-we make cool styling using css, mui and tailwind library
+my betamusic is a music application based on the old walkman players where its purpose was to
+storing music on a device for playback.
+my betamusic is the beta version of the application until reaching the alphamusic version which would be the final version
+
+the operation of beta music is that the user can by downloading on the device itself or by
+from the laptop import songs and create a playlist so that the user can upload songs created by himself
+as well as create a playlist based on your music or by other users.
+
+our goal is to get to the alpha version where you can not only perform the functionalities of a
+music any if not also can interact with users.
+upload podtcas and lives where you can play live or interact with your followers
 
 ![33d35db8934632ded132d7cb171c8a21](https://user-images.githubusercontent.com/110461673/214562519-35dda891-0d74-4739-a07a-92ac5fe1d6a1.gif)
 
