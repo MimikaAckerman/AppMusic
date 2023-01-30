@@ -12,6 +12,8 @@ import '../../assets/carousel/Swipper.css'
 
 //STYLED COMPONENT
 import styled from "styled-components";
+import { deleteplaylist } from "../../utils/deletePlaylist";
+
 
 
 
@@ -27,15 +29,17 @@ const AccountPerfile = () => {
   const myPlaylist = playlist.filter((pl) => pl.emailUser === user.email);
 
 
-  //delete playlist 
 
-function deletePlaylist(name){
-  const removePlaylist = playlist.filter((pl) => pl.name !== name)
+
+function removePlaylist(playlistRemove){
+  //elimina la playlist visualmente y por consola
+    const removePlaylist = playlist.filter((pl) => pl._id !== playlistRemove._id)
 
   setPlaylist(removePlaylist)
-  console.log(name);
-
-}
+  console.log(playlist.name);  
+   
+deleteplaylist(playlistRemove._id)
+} 
 
 
  
@@ -64,7 +68,7 @@ function deletePlaylist(name){
               </PlaylistDescription>
 
                   {/*icon delete */}
-             <Icon  onClick={() => deletePlaylist(playlist.name)}>delete</Icon>
+             <Icon  onClick={() => removePlaylist(playlist)}>delete</Icon>
             
             </SwiperSlide>
          

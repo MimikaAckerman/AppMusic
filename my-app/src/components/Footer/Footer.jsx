@@ -129,6 +129,7 @@ export default function Footer() {
       </Modal>
 
       <Mysongs>
+        <Link to="/MySongsPage">
         <svg
           stroke="currentColor"
           fill="currentColor"
@@ -151,6 +152,7 @@ export default function Footer() {
             clip-rule="evenodd"
           ></path>
         </svg>
+        </Link>
       </Mysongs>
 
       <Profile>
