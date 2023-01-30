@@ -142,6 +142,7 @@ const style = {
 };
 
 const BottonBack = styled.button`
+  margin-top:1rem ;
   color: #090909;
   padding: 0.2em 1.2em;
   font-size: 18px;
