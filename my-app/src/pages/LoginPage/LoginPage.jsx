@@ -10,15 +10,19 @@ const LoginPage = () => {
 
   return (
     <>
-      <ButtonLogin>
       
-          <LoginButton />
-        
-      </ButtonLogin>
 
       <video autoPlay loop muted playsInline className="background-video">
         <source src={cover} type="video/mp4" />
+       
+
+
       </video>
+      <ButtonLogin>
+      
+      <LoginButton />
+    
+  </ButtonLogin>
     </>
   );
 };
@@ -27,7 +31,9 @@ export default LoginPage;
 
 const ButtonLogin = styled.div`
 position: absolute ;
-margin-left:5rem ;
+margin-top: 40rem ;
+margin-left:10rem ;
+
 
 
 `
