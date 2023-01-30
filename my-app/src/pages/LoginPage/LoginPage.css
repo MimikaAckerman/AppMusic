@@ -1,5 +1,15 @@
-.background-video{
-  background-size: cover;
-  background-position: center;
+video {
+  width: 100%;
+  /*adaptar el video a la imagen para 600px*/
+  max-width: 600px;
+  max-height: 600px;
+}
+video {
+  width: 100%;
   height: 100%;
 }
+.App{
+  width:560px;
+  margin:auto;
+}
+

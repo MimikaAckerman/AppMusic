@@ -18,6 +18,7 @@ function SearchBar(props) {
   const [value, setValue] = useState("");
   const [result, setResult] = useState([]);
   // onChange quitar useEffect y poner la funcion = sin el
+ 
   useEffect(() => {
     if (value.length > 0) {
       fetch(
@@ -43,6 +44,7 @@ function SearchBar(props) {
         });
     } else {
       setResult([]);
+      
     }
   }, [value]);
 
@@ -57,7 +59,9 @@ function SearchBar(props) {
         {result.map((result, index) => (
           <SearchButton>
             <Link href="#" key={index}>
-              <div className="searchEntry">{result}</div>
+              <div className="searchEntry">{result}
+              
+              </div>
             </Link>
         
           </SearchButton>

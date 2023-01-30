@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import cover from "../../assets/img/background.mp4";
 
 
@@ -9,11 +10,11 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="App">
+      <ButtonLogin>
       
           <LoginButton />
         
-      </div>
+      </ButtonLogin>
 
       <video autoPlay loop muted playsInline className="background-video">
         <source src={cover} type="video/mp4" />
@@ -23,3 +24,10 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+const ButtonLogin = styled.div`
+position: absolute ;
+margin-left:5rem ;
+
+
+`
