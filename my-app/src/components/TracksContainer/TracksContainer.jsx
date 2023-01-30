@@ -7,9 +7,9 @@ import ListItemButton from "@mui/material/ListItemButton";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 // Import Swiper React components
 
-import { EffectCoverflow, Pagination } from "swiper";
 import { List, Box, Button } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 const TracksContainer = () => {
@@ -22,8 +22,8 @@ const TracksContainer = () => {
   const thumbnail = tracks[currentTrack]?.thumbnail;
   const name = tracks[currentTrack]?.name;
   const artist = tracks[currentTrack]?.artist;
-  const genre = tracks[currentTrack]?.genre;
-  const liked = tracks[currentTrack]?.liked;
+  /*   const genre = tracks[currentTrack]?.genre;
+  const liked = tracks[currentTrack]?.liked; */
   /* 
   console.log(playlist); */
 
@@ -60,12 +60,14 @@ const TracksContainer = () => {
             >
               <List>
                 <ListItemButton>
-                  <img
-                    src={track.thumbnail}
-                    alt={track.name}
-                    className="img-alet"
-                  />
-                  <h3 className="track_name">{track.name}</h3>
+                  <Link to={"/TracksPage/${:id}"}>
+                    <img
+                      src={track.thumbnail}
+                      alt={track.name}
+                      className="img-alet"
+                    />
+                    <h3 className="track_name">{track.name}</h3>
+                  </Link>
                 </ListItemButton>
                 <Button>
                   <MoreHorizIcon />
@@ -77,7 +79,7 @@ const TracksContainer = () => {
       </div>
       {/*  <p className="tracks-description">{genre}</p> */}
       {/*   listen music--------------------------------------------------------------------------------  */}
-      {/*       <div className="containerBody">
+      <div className="containerBody">
         <img className="imgTrack" src={thumbnail} alt="" />
 
         <div className="player">
@@ -97,9 +99,8 @@ const TracksContainer = () => {
         <div className="trackTitle">
           <h3 className="tracks-description">{name}</h3>
           <h4 className="tracks-description">{artist}</h4>
-         
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

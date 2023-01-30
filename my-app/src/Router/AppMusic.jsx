@@ -35,7 +35,7 @@ const AppMusic = () => {
                 <Route path="/LikeSongs" element={<LikeSongs />} />
                 <Route path="/AccountPage" element={<AccountPage />} />
                 <Route path="/GenresPage" element={<GenresPage />} />
-                <Route path="/TracksPage" element={<TracksPage />} />
+                <Route path="/TracksPage/:id" element={<TracksPage />} />
               </Routes>
             </Router>
           </LoginContextProvider>

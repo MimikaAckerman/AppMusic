@@ -26,7 +26,6 @@ const Homepage = () => {
       <AlbumContainer />
       <ArtistsContainer />
       {/* <GenresContainer /> */}
-      <TracksContainer />
 
       {/*  <TracksContainer/>  */}
 
