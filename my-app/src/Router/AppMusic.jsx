@@ -20,23 +20,26 @@ import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformatio
 const AppMusic = () => {
   return (
     <>
-    <AddPlaylistContextProvider>
-      <ImageContextProvider>
-        <LoginContextProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<LoginPage />} />
-              <Route path="/HomePage" element={<Homepage />} />
-              
-              <Route path="/PlaylistInformation" element={<PlaylistInformation/>}/>
-              <Route path="/LikeSongs" element={<LikeSongs />} />
-              <Route path="/AccountPage" element={<AccountPage />} />
-              <Route path="/GenresPage" element={<GenresPage />} />
-              <Route path="/TracksPage/:id" element={<TracksPage />} />
-            </Routes>
-          </Router>
-        </LoginContextProvider>
-      </ImageContextProvider>
+      <AddPlaylistContextProvider>
+        <ImageContextProvider>
+          <LoginContextProvider>
+            <Router>
+              <Routes>
+                <Route path="/" element={<LoginPage />} />
+                <Route path="/HomePage" element={<Homepage />} />
+
+                <Route
+                  path="/PlaylistInformation"
+                  element={<PlaylistInformation />}
+                />
+                <Route path="/LikeSongs" element={<LikeSongs />} />
+                <Route path="/AccountPage" element={<AccountPage />} />
+                <Route path="/GenresPage" element={<GenresPage />} />
+                <Route path="/TracksPage" element={<TracksPage />} />
+              </Routes>
+            </Router>
+          </LoginContextProvider>
+        </ImageContextProvider>
       </AddPlaylistContextProvider>
     </>
   );

@@ -5,14 +5,24 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 
 import { useAddPlaylistContext } from "./../../context/AddPlaylistContext";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
 
 const AccountPage = () => {
   //CLOUDINARY
   const [image, setImage] = useState("");
   console.log(image);
 
-  const { isAuthenticated } = useAuthContext();
-  const user = JSON.parse(localStorage.getItem("name"));
+/*   const { isAuthenticated } = useAuthContext();
+ const user = JSON.parse(localStorage.getItem("name"));  */
+
+ const { user} = useAuth0();
+
+
+
+
+
 
   return (
     <>

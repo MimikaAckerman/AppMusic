@@ -2,35 +2,29 @@ import { useState, useEffect } from "react";
 import { useAddPlaylistContext } from "../context/AddPlaylistContext";
 
 const useFetchApi = () => {
+  /*   const urlUsers = "http://localhost:8000/user";
+   */
 
-  
-/*   const urlUsers = "http://localhost:8000/user";
- */ 
-  
   const urlPlaylist = "http://localhost:4000/playlists/";
-  const urlTracks = "http://localhost:4000/tracks";
+  const urlTracks = "http://localhost:4000/tracks/";
   const urlAlbums = "http://localhost:4000/album/";
-  const urlArtists = "http://127.0.0.1:4000/artists/";
-  const urlGenres = "http://localhost:4000/genres";
+  const urlArtists = "http://127.0.0.1:4000/artists/"; //!what is this
+  const urlGenres = "http://localhost:4000/genres/";
 
-/*   const [users, setUsers] = useState([]);
- */  
-/*   const [playlist, setPlaylist] = useState([]);
+  /*   const [users, setUsers] = useState([]);
+   */
+  /*   const [playlist, setPlaylist] = useState([]);
 
- */ 
-const {playlist,setPlaylist} =useAddPlaylistContext()
-
+ */
+  const { playlist, setPlaylist } = useAddPlaylistContext();
   const [tracks, setTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [artists, setArtists] = useState([]);
   const [genres, setGenres] = useState([]);
-
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
-
- /*  useEffect(() => {
+  /*  useEffect(() => {
     setError(false);
     setLoading(true);
     const fetchData = async () => {
@@ -45,7 +39,6 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
     };
     fetchData();
   }, [urlUsers]); */
-
 
   //PLAYLIST fetch -------------------------
   useEffect(() => {
@@ -66,7 +59,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
 
   //TRACKS fetch --------------------------------
 
- /*  useEffect(() => {
+  useEffect(() => {
     setError(false);
     setLoading(true);
     const fetchData = async () => {
@@ -80,7 +73,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
       setLoading(false);
     };
     fetchData();
-  }, [urlTracks]);  */
+  }, [urlTracks]);
 
   //ALBUMS fetch-----------------------------------
 
@@ -91,10 +84,11 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
       try {
         const response = await fetch(urlAlbums);
         const albums = await response.json();
-       setAlbums(albums.data);
- 
-/* console.log(albums)     
- */ } catch (error) {
+        setAlbums(albums.data);
+
+        /* console.log(albums)
+         */
+      } catch (error) {
         setError(true);
       }
       setLoading(false);
@@ -112,18 +106,19 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
         const response = await fetch(urlArtists);
         const artists = await response.json();
         setArtists(artists.data);
-/*         console.log(artists)
- */      } catch (error) {
+        /*         console.log(artists)
+         */
+      } catch (error) {
         setError(true);
       }
       setLoading(false);
     };
     fetchData();
-  }, [urlArtists]); 
+  }, [urlArtists]);
 
   //GENRES fetch ----------------------------------------
 
- useEffect(() => {
+  useEffect(() => {
     setError(false);
     setLoading(true);
     const fetchData = async () => {
@@ -138,9 +133,8 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
     };
     fetchData();
   }, [urlGenres]);
-  
 
-/*   function getAllUsers() {
+  /*   function getAllUsers() {
     return users;
   }
 
@@ -148,8 +142,8 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
     return users.find((user) => user.username === username);
   }
  */
-// FUNCTION CREATE PLAYLIST ---------
-/* 
+  // FUNCTION CREATE PLAYLIST ---------
+  /* 
   export function addNewPlaylist(playlist) {
     fetch(urlPlaylist, {
       method: "POST",
@@ -163,7 +157,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
   return {
     error,
     loading,
-  /*   users, */
+    /*   users, */
     playlist,
     tracks,
     albums,
@@ -171,7 +165,7 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
     artists,
 
     /* addNewPlaylist */
-  /*   setUsers,
+    /*   setUsers,
     getAllUsers,
     getUser,
     addNewUser, */
@@ -179,5 +173,3 @@ const {playlist,setPlaylist} =useAddPlaylistContext()
 };
 
 export default useFetchApi;
-
-

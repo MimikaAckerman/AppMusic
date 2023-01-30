@@ -10,7 +10,7 @@ export function addNewPlaylist(playlist,pl,setPlaylist) {
       .then((res)  => {
 
       setPlaylist([...pl,res.data])
-      console.log(res)
+     /*  console.log(res) */
     });
     
   }

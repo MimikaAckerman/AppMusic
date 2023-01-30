@@ -2,31 +2,30 @@ import React, { useState } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import useFetchApi from "../../API/useFetchApi";
-
 import "./TracksContainer.css";
-
+import ListItemButton from "@mui/material/ListItemButton";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 
+import { EffectCoverflow, Pagination } from "swiper";
+import { List, Box, Button } from "@mui/material";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 const TracksContainer = () => {
   const { tracks } = useFetchApi();
 
   const [currentTrack, setTrackIndex] = useState(0);
-  console.log(currentTrack);
+  /*  console.log(currentTrack); */
   // Wasn't working until i put optional chaining operator "?" before url in playlist
   const playlist = tracks[currentTrack]?.url;
   const thumbnail = tracks[currentTrack]?.thumbnail;
   const name = tracks[currentTrack]?.name;
-
   const artist = tracks[currentTrack]?.artist;
-
   const genre = tracks[currentTrack]?.genre;
   const liked = tracks[currentTrack]?.liked;
-
-  console.log(playlist);
+  /* 
+  console.log(playlist); */
 
   const handleClickNext = () => {
     setTrackIndex((currentTrack) =>
@@ -35,7 +34,7 @@ const TracksContainer = () => {
   };
 
   const handleClickPrevious = () => {
-    setTrackIndex((currentTrack) =>
+    setTrackIndex((currentTrack, swiperTrack) =>
       currentTrack < tracks.length - 1 ? currentTrack - 1 : 0
     );
   };
@@ -48,23 +47,37 @@ const TracksContainer = () => {
 
   return (
     <>
-      <div className="img-alet-desing">
-        {tracks
-          .sort(() => Math.random() - 0.5)
-          .slice(1, 4)
-          .map((track) => (
-            <div key={track.id}>
-              <img
-                src={track.thumbnail}
-                alt={track.name}
-                className="img-alet"
-              />
-            </div>
-          ))}
-      </div>
+      <h1>Tracks</h1>
 
+      <div className="img-alet-desing">
+        {tracks.map((track) => (
+          <div key={track.id}>
+            <Box
+              sx={{
+                width: "100%",
+                bgcolor: "background.paper",
+              }}
+            >
+              <List>
+                <ListItemButton>
+                  <img
+                    src={track.thumbnail}
+                    alt={track.name}
+                    className="img-alet"
+                  />
+                  <h3 className="track_name">{track.name}</h3>
+                </ListItemButton>
+                <Button>
+                  <MoreHorizIcon />
+                </Button>
+              </List>
+            </Box>
+          </div>
+        ))}
+      </div>
+      {/*  <p className="tracks-description">{genre}</p> */}
       {/*   listen music--------------------------------------------------------------------------------  */}
-      <div className="containerBody">
+      {/*       <div className="containerBody">
         <img className="imgTrack" src={thumbnail} alt="" />
 
         <div className="player">
@@ -84,9 +97,9 @@ const TracksContainer = () => {
         <div className="trackTitle">
           <h3 className="tracks-description">{name}</h3>
           <h4 className="tracks-description">{artist}</h4>
-          {/*  <p className="tracks-description">{genre}</p> */}
+         
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

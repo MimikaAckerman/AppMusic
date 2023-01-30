@@ -11,6 +11,7 @@ import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContai
 /* import SearchBar from "../../components/SearchBar/SearchBar"; */
 import { LogoutButton } from "../../components/Form/Logout/Logout";
 import { Profile } from "../../components/Form/profile/Profile";
+import styled from "styled-components";
 
 const Homepage = () => {
   /*  const { isAuthenticated } = useAuthContext();
@@ -27,12 +28,15 @@ const Homepage = () => {
       {/* <GenresContainer /> */}
       <TracksContainer />
 
-      <br />
-      <br />
-      <br />
-      <Footer />
+      {/*  <TracksContainer/>  */}
+
+      <FooterContainer>
+        <Footer />
+      </FooterContainer>
     </>
   );
 };
 
 export default Homepage;
+
+const FooterContainer = styled.div``;
