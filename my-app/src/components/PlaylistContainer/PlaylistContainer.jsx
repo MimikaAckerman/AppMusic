@@ -57,7 +57,7 @@ const Description = styled.div`
 background-color:#D8D6D7;
 position: absolute;
 height: 5rem;
-width: 16.5rem;
+width: 16rem;
 margin-top: 11rem;
 border-radius: 5px  5px 25px 25px;
 
