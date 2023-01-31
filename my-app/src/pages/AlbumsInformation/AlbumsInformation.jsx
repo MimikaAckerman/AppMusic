@@ -13,7 +13,7 @@ const AlbumsInformation = () => {
   //realizamos un filter que nos permita sacar la informacion de cada uno de los albumes que queremos visualizar
   const albumsDetails = albums.filter((al) => al.name === name);
 
-  console.log(albumsDetails);
+ /*  console.log(albumsDetails); */
 
   return (
     <>
@@ -25,7 +25,7 @@ const AlbumsInformation = () => {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               version="1.2"
               baseProfile="tiny"
               viewBox="0 0 24 24"
@@ -38,11 +38,58 @@ const AlbumsInformation = () => {
           </Link>
         </BottonBack>
 
+       {/*diseño de sonido*/}
+       <div className="loader">
+    <div className="bar bar1"></div>
+    <div className="bar bar2"></div>
+    <div className="bar bar3"></div>
+    <div className="bar bar4"></div>
+    <div className="bar bar5"></div>
+    <div className="bar bar6"></div>
+    <div className="bar bar7"></div>
+    <div className="bar bar8"></div>
+    <div className="bar bar9"></div>
+    <div className="bar bar10"></div>
+    <div className="bar bar11"></div>
+    <div className="bar bar12"></div>
+    <div className="bar bar13"></div>
+    <div className="bar bar14"></div>
+    <div className="bar bar15"></div>
+    <div className="bar bar16"></div>
+    <div className="bar bar17"></div>
+    <div className="bar bar18"></div>
+    <div className="bar bar19"></div>
+    <div className="bar bar20"></div>
+    <div className="bar bar21"></div>
+    <div className="bar bar22"></div>
+    <div className="bar bar23"></div>
+    <div className="bar bar24"></div>
+    <div className="bar bar25"></div>
+    <div className="bar bar26"></div>
+    <div className="bar bar27"></div>
+    <div className="bar bar28"></div>
+    <div className="bar bar29"></div>
+    <div className="bar bar30"></div>
+    <div className="bar bar31"></div>
+    <div className="bar bar32"></div>
+    <div className="bar bar33"></div>
+    <div className="bar bar34"></div>
+    <div className="bar bar35"></div>
+    <div className="bar bar36"></div>
+    <div className="bar bar37"></div>
+    <div className="bar bar38"></div>
+    <div className="bar bar39"></div>
+    <div className="bar bar40"></div>
+</div>
+
+
+
+
         {/*map para sacar la informacion del album seleccionado*/}
 
         <ContainerAlbumtDetails>
           {albumsDetails.map((al) => (
-            <div key={al.id}>
+            <div key={al}>
               <ContainerImg>
                 <img
                   src={al.imageUrl}
@@ -99,7 +146,7 @@ const BottonBack = styled.button`
 `;
 
 const ContainerAlbumtDetails = styled.div`
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
 
 const ContainerImg = styled.div`
@@ -119,7 +166,7 @@ margin-top: 18rem;
 
 `
 const AlbumName = styled.h1`
-margin-top: -15rem;
+margin-top: -16rem;
 margin-left: 5rem;
 font-size: 1.5rem;
 color: white;

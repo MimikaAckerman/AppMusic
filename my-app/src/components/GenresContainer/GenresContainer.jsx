@@ -14,9 +14,9 @@ const GenresContainer = () => {
 
         <BtnContainer>
           {genres.map((genre) => (
-            <div key={genre.id}>
+            <GenresComponent key={genre}>
               <BtnGenres>{genre.name}</BtnGenres>
-            </div>
+            </GenresComponent>
           ))}
         </BtnContainer>
       </ContainerGenres>
@@ -28,6 +28,8 @@ export default GenresContainer;
 
 //STYLED COMPONENT
 
+
+const GenresComponent = styled.div``
 const ContainerGenres = styled.div``;
 const TitleContainer = styled.div`
   text-align: center;

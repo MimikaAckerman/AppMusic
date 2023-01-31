@@ -13,7 +13,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Homepage = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user,isLoading } = useAuth0();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -56,7 +56,7 @@ body{
 `;
 
 const FooterContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 3rem;
 `;
 
 const NameUser = styled.div`

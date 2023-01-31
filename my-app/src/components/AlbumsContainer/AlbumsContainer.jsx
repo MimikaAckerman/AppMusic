@@ -8,11 +8,11 @@ import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination } from "swiper";
 
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const AlbumContainer = () => {
   const { albums } = useFetchApi();
-  /*   console.log(albums)[]
-   */
+   /* console.log(albums);  */
   return (
     <>
       <h1>Albums</h1>
@@ -32,20 +32,38 @@ const AlbumContainer = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {albums?.map((album) => (
-          <div key={album.id} className="status">
+        {albums?.map((album,_id) => (
+          <AlbumComponent album={album} key={album._id}>
             <SwiperSlide>
               <Link to={`/AlbumsInformation/${album.name}`}>
-                <img src={album.imageUrl} alt="" />
+                <img src={album.imageUrl} alt={album.name} />
               </Link>
             </SwiperSlide>
-            <div>
-              <h2 className="album_name">{album.name}</h2>
-            </div>
-          </div>
+          </AlbumComponent>
         ))}
       </Swiper>
     </>
   );
 };
 export default AlbumContainer;
+
+
+const AlbumComponent=styled.div`
+`
+
+
+const Description = styled.div`
+  background-color: red;
+  opacity: 0.6;
+  position: absolute;
+  height: 6rem;
+  width: 14rem;
+  margin-top: 11rem;
+  border-radius: 5px 5px 25px 25px;
+`;
+
+const NameAlbum = styled.h1`
+  font-size: 5rem;
+  margin-top: 1.5rem;
+  color: black;
+`;

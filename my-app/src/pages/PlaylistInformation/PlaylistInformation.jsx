@@ -30,7 +30,7 @@ const PlaylistInformation = () => {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               version="1.2"
               baseProfile="tiny"
               viewBox="0 0 24 24"
@@ -102,7 +102,7 @@ const PlaylistInformation = () => {
         {/*informacion de la playlist seleccionada*/}
         <ContainerPlaylistDetails>
           {playlistDetails.map((pl) => (
-            <div key={pl.id}>
+            <div key={pl}>
               <ContainerImg>
                 <img
                   src={pl.thumbnail}
