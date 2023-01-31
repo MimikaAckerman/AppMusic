@@ -9,7 +9,7 @@ import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContai
 /*  import { useAuthContext } from "../../context/LoginContext";
  */ import Footer from "../../components/Footer/Footer";
 import { LogoutButton } from "../../components/Form/Logout/Logout";
-import { Profile } from "../../components/Form/Profile/Profile";
+import { Profile } from "../../components/Form/profile/Profile";
 import styled from "styled-components";
 
 const Homepage = () => {
