@@ -19,8 +19,8 @@ import { deleteplaylist } from "../../utils/deletePlaylist";
 
 const AccountPerfile = () => {
   const { playlist, setPlaylist } = useAddPlaylistContext();
- console.log(playlist); 
-
+/*  console.log(playlist); 
+ */
   //auth0 -> sacar la imagen y el nombre del usuario
   const { user } = useAuth0();
   /* console.log(user); */

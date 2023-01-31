@@ -8,12 +8,21 @@ import { Link } from "react-router-dom";
 const PlaylistInformation = () => {
   
   let { name } = useParams();
-/*   console.log(name);
- */  const { playlist } = useFetchApi();
-  /* console.log(playlist); */
+   console.log(name)
 
-  const playlistDetails = playlist.filter(name => playlist.name);
-  console.log(playlistDetails);
+   /* const playlistDetails = playlist.filter(name => playlist.name); */
+   const { playlist } = useFetchApi();
+/*    console.log(playlist); 
+ */  const playlistDetails = playlist.find((pl) => pl.name === name)
+ 
+console.log(playlistDetails);
+const {description,thumbnail} = playlistDetails
+  
+ 
+
+
+  
+  
  
   return (
     <>
@@ -36,7 +45,14 @@ const PlaylistInformation = () => {
           </Link>
         </BottonBack>
 
+    {/*informacion de la playlist seleccionada*/}
+    <section>
+      <img src={thumbnail} alt={description} />
+      <h1>{description}</h1>
+      <h2>{name}</h2>
 
+
+    </section>
     
 
 

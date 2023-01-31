@@ -49,7 +49,7 @@ export default Homepage;
 const GlobalStyle = createGlobalStyle`
 body{
   color: ${(props) => (props.blackColor ? "black" : "black")};
-   background-color: #F0EFEB;
+   background-color: #E0E4E7;
    color: #2f3132;
     font-size: 18px ;
     font-weight: 1000 ;
