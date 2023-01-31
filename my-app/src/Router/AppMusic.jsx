@@ -7,35 +7,35 @@ import {
 
 import Homepage from "../pages/Homepage/Homepage";
 
-import LikeSongs from "../pages/LikePageSongs/LikePageSongs";
+
 import AccountPage from "../pages/AccountPage/AccountPage";
 import GenresPage from "../pages/GenresPage/GenresPage";
 import TracksPage from "../pages/TracksPage/TracksPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import { LoginContextProvider } from "../context/LoginContext";
 import ImageContextProvider from "../context/ImageContext";
 import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformation";
+import MySongsPage from "../pages/MySong/MySongsPage";
 
 const AppMusic = () => {
   return (
     <>
     <AddPlaylistContextProvider>
       <ImageContextProvider>
-        <LoginContextProvider>
+  
           <Router>
             <Routes>
               <Route path="/" element={<LoginPage />} />
               <Route path="/HomePage" element={<Homepage />} />
               
-              <Route path="/PlaylistInformation" element={<PlaylistInformation/>}/>
-              <Route path="/LikeSongs" element={<LikeSongs />} />
+              <Route path="/PlaylistInformation/:name" element={<PlaylistInformation/>}/>
+             <Route path="/MySongsPage" element={<MySongsPage/>}/>
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
-              <Route path="/TracksPage/:id" element={<TracksPage />} />
+              <Route path="/TracksPage/:name" element={<TracksPage />} />
             </Routes>
           </Router>
-        </LoginContextProvider>
+       
       </ImageContextProvider>
       </AddPlaylistContextProvider>
     </>

@@ -1,39 +1,69 @@
 import React from "react";
 import AlbumContainer from "../../components/AlbumsContainer/AlbumsContainer";
 import ArtistsContainer from "../../components/ArtistContainer/ArtistsContainer";
-import GenresContainer from "../../components/GenresContainer/GenresContainer";
-/* import TracksContainer from "../../components/TracksContainer/TracksContainer"; */
-import "./Homepage.css";
 
 import PlaylistContainer from "../../components/PlaylistContainer/PlaylistContainer";
-/*  import { useAuthContext } from "../../context/LoginContext";
- */ import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { LogoutButton } from "../../components/Form/Logout/Logout";
-import { Profile } from "../../components/Form/profile/Profile";
-import styled from "styled-components";
+import { Profile } from "../../components/Form/InfoProfileUser/Profile";
+
+//STYLED COMPONENT
+import styled, { createGlobalStyle } from "styled-components";
+
+//AUTH0
+import { useAuth0 } from "@auth0/auth0-react";
+import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
+
+
 
 const Homepage = () => {
-  /*  const { isAuthenticated } = useAuthContext();
-   */ /*   const user = JSON.parse(localStorage.getItem("name"));
-   */ return (
-    <>
-      <LogoutButton />
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-      <Profile />
+
+  return (
+    <>
+      <GlobalStyle />
+        <NavBarMenu/>
+      <NameUser>
+        <h1>Hi! {user.nickname}🎧</h1>
+        </NameUser>
+        <FooterContainer>
+        <Footer />
+      </FooterContainer>
+
+        <ArtistsContainer />
 
       <PlaylistContainer />
       <AlbumContainer />
-      <ArtistsContainer />
       {/* <GenresContainer /> */}
       {/*  <TracksContainer/>  */}
-
-      <FooterContainer>
-        <Footer />
-      </FooterContainer>
+      <LogoutButton />
     </>
   );
 };
 
 export default Homepage;
 
-const FooterContainer = styled.div``;
+const GlobalStyle = createGlobalStyle`
+body{
+  color: ${(props) => (props.blackColor ? "black" : "black")};
+   background-color: #F0EFEB;
+   color: #2f3132;
+    font-size: 18px ;
+    font-weight: 1000 ;
+    font-family: 'Rokkitt', serif;
+
+  }
+`
+
+const FooterContainer = styled.div`
+  display: inline;
+
+`;
+
+const NameUser = styled.div`
+  text-align: right;
+`

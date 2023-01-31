@@ -9,10 +9,12 @@ import { useForm } from "react-hook-form";
 //function create playlist
 import { addNewPlaylist } from "../../utils/addNewPlaylist";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Footer() {
   const [value, setValue] = React.useState(0);
 
+  //modal form
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -26,10 +28,20 @@ export default function Footer() {
 
   const { register, handleSubmit } = useForm();
   const { playlist, setPlaylist } = useAddPlaylistContext();
-
+  const { user} = useAuth0();
+/* console.log(user); 
+ */
   const onSubmit = (data) => {
-    addNewPlaylist(data, playlist, setPlaylist);
-  };
+
+     const createPlaylist = {
+      ...data,
+      emailUser:user.email
+      
+    } 
+/*     console.log(createPlaylist);
+ */  
+   addNewPlaylist(createPlaylist, playlist, setPlaylist);
+ };
 
   return (
     <>
@@ -41,8 +53,8 @@ export default function Footer() {
           fill="currentColor"
           stroke-width="0"
           viewBox="0 0 1024 1024"
-          height="2em"
-          width="2.2em"
+          height="1em"
+          width="1em"
           xmlns="http://www.w3.org/2000/svg"
           >
           <path d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"></path>
@@ -56,8 +68,8 @@ export default function Footer() {
             fill="currentColor"
             stroke-width="0"
             viewBox="0 0 24 24"
-            height="2em"
-            width="2.2em"
+            height="1em"
+            width="1em"
             xmlns="http://www.w3.org/2000/svg"
             >
             <g>
@@ -76,8 +88,8 @@ export default function Footer() {
           fill="currentColor"
           stroke-width="0"
           viewBox="0 0 24 24"
-          height="2em"
-          width="2.2em"
+          height="1em"
+          width="1em"
           xmlns="http://www.w3.org/2000/svg"
           >
           <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
@@ -117,18 +129,54 @@ export default function Footer() {
         </Card>
       </Modal>
 
+      <Mysongs>
+        <Link to="/MySongsPage">
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 16 16"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"></path>
+          <path
+            fill-rule="evenodd"
+            d="M12 3v10h-1V3h1z"
+            clip-rule="evenodd"
+          ></path>
+          <path d="M11 2.82a1 1 0 01.804-.98l3-.6A1 1 0 0116 2.22V4l-5 1V2.82z"></path>
+          <path
+            fill-rule="evenodd"
+            d="M0 11.5a.5.5 0 01.5-.5H4a.5.5 0 010 1H.5a.5.5 0 01-.5-.5zm0-4A.5.5 0 01.5 7H8a.5.5 0 010 1H.5a.5.5 0 01-.5-.5zm0-4A.5.5 0 01.5 3H8a.5.5 0 010 1H.5a.5.5 0 01-.5-.5z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        </Link>
+      </Mysongs>
+
       <Profile>
         <Link to="/AccountPage">
           <svg
             stroke="currentColor"
             fill="currentColor"
             stroke-width="0"
-            viewBox="0 0 24 24"
-            height="2em"
-            width="2.2em"
+            viewBox="0 0 16 16"
+            height="1em"
+            width="1em"
             xmlns="http://www.w3.org/2000/svg"
-            >
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.5 1a.5.5 0 00-.5.5v3a.5.5 0 01-1 0v-3A1.5 1.5 0 011.5 0h3a.5.5 0 010 1h-3zM11 .5a.5.5 0 01.5-.5h3A1.5 1.5 0 0116 1.5v3a.5.5 0 01-1 0v-3a.5.5 0 00-.5-.5h-3a.5.5 0 01-.5-.5zM.5 11a.5.5 0 01.5.5v3a.5.5 0 00.5.5h3a.5.5 0 010 1h-3A1.5 1.5 0 010 14.5v-3a.5.5 0 01.5-.5zm15 0a.5.5 0 01.5.5v3a1.5 1.5 0 01-1.5 1.5h-3a.5.5 0 010-1h3a.5.5 0 00.5-.5v-3a.5.5 0 01.5-.5z"
+              clip-rule="evenodd"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+              clip-rule="evenodd"
+            ></path>
           </svg>
         </Link>
       </Profile>
@@ -141,18 +189,19 @@ export default function Footer() {
 //STYLED COMPONENT
 
 const FooterDiv = styled.div`
-  display: block;
+  text-align: center;
 `
 
 
 const HomeButton = styled.button`
   color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 18px;
+  padding: 0.7em 1.5em;
+  font-size: 14px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
+  text-decoration: none;
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   &:active {
     color: #666;
@@ -162,12 +211,13 @@ const HomeButton = styled.button`
 
 const SearchButton = styled.button`
   color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 18px;
+  padding: 0.7em 1.5em;
+  font-size: 14px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
+  text-decoration: none;
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   &:active {
     color: #666;
@@ -177,7 +227,7 @@ const SearchButton = styled.button`
 const CreatePlaylist = styled.button`
   color: #090909;
   padding: 0.7em 1.7em;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
@@ -191,7 +241,7 @@ const CreatePlaylist = styled.button`
 const Profile = styled.button`
   color: #090909;
   padding: 0.7em 1.7em;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
@@ -247,4 +297,19 @@ const SubmitForm = styled.input`
   font-size: 1.2rem;
   margin-left: 6rem;
   margin-top: 3rem;
+`;
+
+const Mysongs = styled.button`
+color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 14px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  &:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
 `;

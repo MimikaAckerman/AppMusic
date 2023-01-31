@@ -62,4 +62,8 @@ const ArtistsContainer = () => {
 
 export default ArtistsContainer;
 
-const ContainerArtist = styled.div``;
+const ContainerArtist = styled.div`
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+`;
