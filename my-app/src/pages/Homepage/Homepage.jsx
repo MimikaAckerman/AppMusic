@@ -12,14 +12,11 @@ import styled, { createGlobalStyle } from "styled-components";
 //AUTH0
 import { useAuth0 } from "@auth0/auth0-react";
 
-
-
 const Homepage = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
 
   return (
     <>
@@ -28,9 +25,9 @@ const Homepage = () => {
 
       <NameUser>
         <h1>Hi! {user.nickname}🎧</h1>
-        </NameUser>
-     
-        <ArtistsContainer />
+      </NameUser>
+
+      <ArtistsContainer />
 
       <PlaylistContainer />
       <AlbumContainer />
@@ -63,7 +60,6 @@ const FooterContainer = styled.div`
 `;
 
 const NameUser = styled.div`
-margin-top: -4rem;
-margin-left: 11rem;
-
-`
+  margin-top: -4rem;
+  margin-left: 11rem;
+`;

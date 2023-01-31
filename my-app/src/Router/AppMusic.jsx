@@ -7,7 +7,6 @@ import {
 
 import Homepage from "../pages/Homepage/Homepage";
 
-
 import AccountPage from "../pages/AccountPage/AccountPage";
 import GenresPage from "../pages/GenresPage/GenresPage";
 import TracksPage from "../pages/TracksPage/TracksPage";
@@ -16,27 +15,38 @@ import ImageContextProvider from "../context/ImageContext";
 import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformation";
 import MySongsPage from "../pages/MySong/MySongsPage";
+import AlbumsInformation from "../pages/AlbumsInformation/AlbumsInformation";
 
 const AppMusic = () => {
   return (
     <>
-    <AddPlaylistContextProvider>
-      <ImageContextProvider>
-  
+      <AddPlaylistContextProvider>
+        <ImageContextProvider>
           <Router>
             <Routes>
+              {/*   paginas principales*/}
+
               <Route path="/" element={<LoginPage />} />
               <Route path="/HomePage" element={<Homepage />} />
-              
-              <Route path="/PlaylistInformation/:name" element={<PlaylistInformation/>}/>
-             <Route path="/MySongsPage" element={<MySongsPage/>}/>
+
+              {/*   pagina de informacion de playlist */}
+              <Route
+                path="/PlaylistInformation/:name"
+                element={<PlaylistInformation />}
+              />
+              {/*   pagina de informacion de albums*/}
+              <Route
+                path="/AlbumsInformation/:name"
+                element={<AlbumsInformation />}
+              />
+
+              <Route path="/MySongsPage" element={<MySongsPage />} />
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
               <Route path="/TracksPage/:name" element={<TracksPage />} />
             </Routes>
           </Router>
-       
-      </ImageContextProvider>
+        </ImageContextProvider>
       </AddPlaylistContextProvider>
     </>
   );
