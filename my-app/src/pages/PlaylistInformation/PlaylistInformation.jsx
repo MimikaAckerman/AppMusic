@@ -1,33 +1,31 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import styled from 'styled-components';
-import useFetchApi from '../../API/useFetchApi';
+import styled from "styled-components";
+import { keyframes } from "styled-components";
+import useFetchApi from "../../API/useFetchApi";
 import { Link } from "react-router-dom";
+import  './animationImg.css';
+
 
 const PlaylistInformation = () => {
-  
   let { name } = useParams();
-   console.log(name)
+  /*   console.log(name);
+   */
+  /* const playlistDetails = playlist.filter(name => playlist.name); */
+  const { playlist } = useFetchApi();
+  /*    console.log(playlist);
+  //realizamos un filtro que nos permita sacar el nombre de la playlist seleecionada
+   */ const playlistDetails = playlist.filter((pl) => pl.name === name);
 
-   /* const playlistDetails = playlist.filter(name => playlist.name); */
-   const { playlist } = useFetchApi();
-/*    console.log(playlist); 
- */  const playlistDetails = playlist.find((pl) => pl.name === name)
- 
-console.log(playlistDetails);
-const {description,thumbnail} = playlistDetails
-  
- 
+  console.log(playlistDetails);
+  /*   const { description, thumbnail ,primaryColor,tracks} = playlistDetails; */
 
-
-  
-  
- 
   return (
     <>
-     {/*boton de regreso a la homePage*/}
-     <BottonBack>
+      <Globalcontainer>
+        {/*boton de regreso a la homePage*/}
+        <BottonBack>
           <Link to="/homePage">
             <svg
               stroke="currentColor"
@@ -45,28 +43,44 @@ const {description,thumbnail} = playlistDetails
           </Link>
         </BottonBack>
 
-    {/*informacion de la playlist seleccionada*/}
-    <section>
-      <img src={thumbnail} alt={description} />
-      <h1>{description}</h1>
-      <h2>{name}</h2>
+        {/*informacion de la playlist seleccionada*/}
 
-
-    </section>
-    
-
-
-
-
-
+        {/*   <img src={thumbnail} alt={description} />
+        <h1>{description}</h1>
+        <h2>{name}</h2> */}
+        <ContainerPlaylistDetails>
+          {playlistDetails.map((pl) => (
+            <div key={pl.id}>
+              <ContainerImg>
+                <img
+                  src={pl.thumbnail}
+                  alt=""
+                  style={{ width: 200, height: 200, borderRadius: 200 }}
+                  className="animationImg"
+                />
+              </ContainerImg>
+              <ContainerInformation>
+                <h1>{pl.description}</h1>
+                <h1>{pl.name}</h1>
+              </ContainerInformation>
+            </div>
+          ))}
+        </ContainerPlaylistDetails>
+      </Globalcontainer>
     </>
-  )
-}
+  );
+};
 
-export default PlaylistInformation
+export default PlaylistInformation;
+
+const Globalcontainer = styled.div`
+  background-color: red;
+  height: 25rem;
+`;
 
 const BottonBack = styled.button`
-  margin-top:1rem ;
+  margin-top: 1rem;
+  margin-left: 1rem;
   color: #090909;
   padding: 0.2em 1.2em;
   font-size: 18px;
@@ -81,4 +95,20 @@ const BottonBack = styled.button`
   &:active {
     box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
   }
+`;
+
+const ContainerPlaylistDetails = styled.div`
+  margin-top: 5rem;
+`;
+const ContainerImg = styled.div`
+/*   background-color: green;
+ */  height: 8rem;
+  margin-left: 6rem;
+
+  
+  
+`;
+
+const ContainerInformation = styled.div`
+  margin-top: 10rem;
 `;

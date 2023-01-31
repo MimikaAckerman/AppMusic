@@ -60,6 +60,7 @@ deleteplaylist(playlistRemove._id)
       <Swiper slidesPerView={1.5} spaceBetween={30}
         className="mySwiper">
         {myPlaylist.map((playlist) => (
+          <div key={playlist.id}>
             <SwiperSlide>
               <img src={playlist.thumbnail} alt="" />
               
@@ -71,6 +72,7 @@ deleteplaylist(playlistRemove._id)
              <Icon  onClick={() => removePlaylist(playlist)}>delete</Icon>
             
             </SwiperSlide>
+            </div>
          
         ))}
      
