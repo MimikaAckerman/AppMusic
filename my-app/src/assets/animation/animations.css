@@ -17,15 +17,20 @@
   /*diseño de sonido*/
   
   .loader {
-    top: 43.5%;
-    left: 50%;
+    top: 43%;
+    left: 11.9rem;
+    /* background-color: red; */
+    height: 3rem;
+    width: 25rem;
     transform: translate(-50%, -50%);
     position: absolute;
+
   }
   
   .bar {
+  
     width: 10px;
-    height: 70px;
+    height: 60px;
     background: hsl(0, 100%, 50%);
     display: inline-block;
     transform-origin: bottom center;
@@ -66,6 +71,93 @@
     animation-delay: 0.8s;
   }
   
+  .bar9 {
+    animation-delay: 0.9s;
+  }
+  .bar10 {
+    animation-delay: 0.10s;
+  }
+  .bar11 {
+    animation-delay: 0.1s;
+  }
+  .bar12 {
+    animation-delay: 0.2s;
+  }
+  .bar13 {
+    animation-delay: 0.3s;
+  }
+  .bar14 {
+    animation-delay: 0.4s;
+  }
+  .bar15 {
+    animation-delay: 0.5s;
+  }
+  .bar16 {
+    animation-delay: 0.6s;
+  }
+  .bar17 {
+    animation-delay: 0.7s;
+  }
+  .bar18 {
+    animation-delay: 0.8s;
+  } 
+  .bar18 {
+    animation-delay: 0.8s;
+  } 
+  .bar18 {
+    animation-delay: 0.8s;
+  } 
+  .bar19 {
+    animation-delay: 0.9s;
+  }  
+  .bar20 {
+    animation-delay: 0.10s;
+  }  
+  .bar21 {
+    animation-delay: 0.1s;
+  }  
+  .bar22 {
+    animation-delay: 0.2s;
+  } 
+   .bar23 {
+    animation-delay: 0.3s;
+  }  .bar24 {
+    animation-delay: 0.4s;
+  }  .bar25 {
+    animation-delay: 0.5s;
+  }  .bar26 {
+    animation-delay: 0.6s;
+  }  .bar27 {
+    animation-delay: 0.7s;
+  }  .bar28 {
+    animation-delay: 0.8s;
+  }  .bar29 {
+    animation-delay: 0.9s;
+  }  .bar30 {
+    animation-delay: 0.10s;
+  }  .bar31 {
+    animation-delay: 0.1s;
+  }  .bar32 {
+    animation-delay: 0.2s;
+  }  .bar33 {
+    animation-delay: 0.3s;
+  }  .bar34 {
+    animation-delay: 0.4s;
+  }  .bar35 {
+    animation-delay: 0.5s;
+  } 
+  .bar36 {
+    animation-delay: 0.6s;
+  }  .bar37 {
+    animation-delay: 0.7s;
+  }  .bar38 {
+    animation-delay: 0.8s;
+  } 
+  .bar39 {
+    animation-delay: 0.9s;
+  }  .bar40 {
+    animation-delay: 0.10s;
+  } 
   @keyframes loader8913 {
     0% {
       transform: scaleY(0.1);

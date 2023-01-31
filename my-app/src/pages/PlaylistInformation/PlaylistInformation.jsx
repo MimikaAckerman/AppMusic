@@ -55,6 +55,38 @@ const PlaylistInformation = () => {
     <div className="bar bar6"></div>
     <div className="bar bar7"></div>
     <div className="bar bar8"></div>
+    <div className="bar bar9"></div>
+    <div className="bar bar10"></div>
+    <div className="bar bar11"></div>
+    <div className="bar bar12"></div>
+    <div className="bar bar13"></div>
+    <div className="bar bar14"></div>
+    <div className="bar bar15"></div>
+    <div className="bar bar16"></div>
+    <div className="bar bar17"></div>
+    <div className="bar bar18"></div>
+    <div className="bar bar19"></div>
+    <div className="bar bar20"></div>
+    <div className="bar bar21"></div>
+    <div className="bar bar22"></div>
+    <div className="bar bar23"></div>
+    <div className="bar bar24"></div>
+    <div className="bar bar25"></div>
+    <div className="bar bar26"></div>
+    <div className="bar bar27"></div>
+    <div className="bar bar28"></div>
+    <div className="bar bar29"></div>
+    <div className="bar bar30"></div>
+    <div className="bar bar31"></div>
+    <div className="bar bar32"></div>
+    <div className="bar bar33"></div>
+    <div className="bar bar34"></div>
+    <div className="bar bar35"></div>
+    <div className="bar bar36"></div>
+    <div className="bar bar37"></div>
+    <div className="bar bar38"></div>
+    <div className="bar bar39"></div>
+    <div className="bar bar40"></div>
 </div>
 
 
