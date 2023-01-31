@@ -9,9 +9,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
 // Import Swiper React components
-
 import { List, Box, Button } from "@mui/material";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+
+import TracksMenu from "../TracksMenu/TracksMenu";
+
 const TracksContainer = () => {
   const { tracks } = useFetchApi();
 
@@ -60,7 +61,7 @@ const TracksContainer = () => {
             >
               <List>
                 <ListItemButton>
-                  <Link to={"/TracksPage/${:id}"}>
+                  <Link to={"/TracksPage/$id"}>
                     <img
                       src={track.thumbnail}
                       alt={track.name}
@@ -70,16 +71,17 @@ const TracksContainer = () => {
                   </Link>
                 </ListItemButton>
                 <Button>
-                  <MoreHorizIcon />
+                  <TracksMenu />
                 </Button>
               </List>
             </Box>
           </div>
         ))}
       </div>
+
       {/*  <p className="tracks-description">{genre}</p> */}
       {/*   listen music--------------------------------------------------------------------------------  */}
-      <div className="containerBody">
+      {/*       <div className="containerBody">
         <img className="imgTrack" src={thumbnail} alt="" />
 
         <div className="player">
@@ -100,7 +102,7 @@ const TracksContainer = () => {
           <h3 className="tracks-description">{name}</h3>
           <h4 className="tracks-description">{artist}</h4>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

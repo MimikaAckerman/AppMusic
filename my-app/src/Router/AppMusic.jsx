@@ -16,30 +16,33 @@ import { LoginContextProvider } from "../context/LoginContext";
 import ImageContextProvider from "../context/ImageContext";
 import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformation";
+import { AddTracksContextProvider } from "../context/AddTrackContext";
 
 const AppMusic = () => {
   return (
     <>
       <AddPlaylistContextProvider>
-        <ImageContextProvider>
-          <LoginContextProvider>
-            <Router>
-              <Routes>
-                <Route path="/" element={<LoginPage />} />
-                <Route path="/HomePage" element={<Homepage />} />
-
-                <Route
-                  path="/PlaylistInformation"
-                  element={<PlaylistInformation />}
-                />
-                <Route path="/LikeSongs" element={<LikeSongs />} />
-                <Route path="/AccountPage" element={<AccountPage />} />
-                <Route path="/GenresPage" element={<GenresPage />} />
-                <Route path="/TracksPage/:id" element={<TracksPage />} />
-              </Routes>
-            </Router>
-          </LoginContextProvider>
-        </ImageContextProvider>
+        <AddTracksContextProvider>
+          <ImageContextProvider>
+            <LoginContextProvider>
+              <Router>
+                <Routes>
+                  <Route path="/" element={<LoginPage />} />
+                  <Route path="/HomePage" element={<Homepage />} />
+                  <Route
+                    path="/PlaylistInformation"
+                    element={<PlaylistInformation />}
+                  />
+                  <Route path="/LikeSongs" element={<LikeSongs />} />
+                  <Route path="/AccountPage" element={<AccountPage />} />
+                  <Route path="/GenresPage" element={<GenresPage />} />
+                  <Route path="/TracksPage" element={<TracksPage />} />
+                  {/* /:id */}
+                </Routes>
+              </Router>
+            </LoginContextProvider>
+          </ImageContextProvider>
+        </AddTracksContextProvider>
       </AddPlaylistContextProvider>
     </>
   );
