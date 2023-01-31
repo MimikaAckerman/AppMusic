@@ -30,10 +30,10 @@ const Homepage = () => {
         <h1>Hi! {user.nickname}🎧</h1>
         </NameUser>
      
+        <ArtistsContainer />
 
       <PlaylistContainer />
       <AlbumContainer />
-      <ArtistsContainer />
       {/* <GenresContainer /> */}
       {/*  <TracksContainer/>  */}
 

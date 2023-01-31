@@ -20,9 +20,11 @@ const PlaylistContainer = () => {
       <Swiper slidesPerView={1.5} spaceBetween={30} className="mySwiper">
         {playlist.map((playlist) => (
           <div key={playlist.id} >
-            <Link to={`/PlaylistInformation/${playlist.id}`}>
+        
               <SwiperSlide>
+              <Link to={`/PlaylistInformation/${playlist.name}`}>
                 <img src={playlist.thumbnail} alt={playlist.name} />
+                </Link> 
                 <Description>
                 <h2 className="title-description">{playlist.name}</h2>
                 <svg 
@@ -39,7 +41,7 @@ const PlaylistContainer = () => {
 
                 </Description>
               </SwiperSlide>
-            </Link>          
+                    
             {/*   <p>{playlist.isFollowed}</p>
               <p>{playlist.publicAccessible}</p> */}
             

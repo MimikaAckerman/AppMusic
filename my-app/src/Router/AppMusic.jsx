@@ -28,11 +28,11 @@ const AppMusic = () => {
               <Route path="/" element={<LoginPage />} />
               <Route path="/HomePage" element={<Homepage />} />
               
-              <Route path="/PlaylistInformation" element={<PlaylistInformation/>}/>
+              <Route path="/PlaylistInformation/:name" element={<PlaylistInformation/>}/>
              <Route path="/MySongsPage" element={<MySongsPage/>}/>
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
-              <Route path="/TracksPage/:id" element={<TracksPage />} />
+              <Route path="/TracksPage/:name" element={<TracksPage />} />
             </Routes>
           </Router>
        
