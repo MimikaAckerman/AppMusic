@@ -35,7 +35,7 @@ const PlaylistContainer = () => {
         className="mySwiper"
       >
         {playlist.map((playlist) => (
-          <PlaylistComponent key={playlist}>
+          <PlaylistComponent key={playlist._id}>
             <SwiperSlide>
               <Link to={`/PlaylistInformation/${playlist.name}`}>
                 <img src={playlist.thumbnail} alt={playlist.name} />
