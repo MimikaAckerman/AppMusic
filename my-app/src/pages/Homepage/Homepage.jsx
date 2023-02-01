@@ -13,6 +13,7 @@ import styled, { createGlobalStyle } from "styled-components";
 //AUTH0
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
+import { NavBarTop } from "../../components/NavBarMenu/NavBarTop";
 
 const Homepage = () => {
   const { user,isLoading } = useAuth0();
@@ -24,17 +25,13 @@ const Homepage = () => {
     <>
       <GlobalStyle />
         <NavBarMenu/>
-      <NameUser>
-        <h1>Hi! {user.nickname}🎧</h1>
-      </NameUser>
-
+      <NavBarTop/>
+      
       <ArtistsContainer />
-
       <PlaylistContainer />
       <AlbumContainer />
-      {/* <GenresContainer /> */}
-      {/*  <TracksContainer/>  */}
       <Footer/>
+      
       <LogoutButton />
 
     </>

@@ -187,6 +187,10 @@ export default function Footer() {
 
 const FooterDiv = styled.div`
   text-align: center;
+  display: none;
+  @media (max-width: 428px) {
+    display: list-item;
+  }
 `
 
 
