@@ -16,6 +16,7 @@ import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformation";
 import MySongsPage from "../pages/MySong/MySongsPage";
 import AlbumsInformation from "../pages/AlbumsInformation/AlbumsInformation";
+import ArtistInformation from "../pages/ArtistInformation/ArtistInformation";
 
 const AppMusic = () => {
   return (
@@ -39,10 +40,16 @@ const AppMusic = () => {
                 path="/AlbumsInformation/:name"
                 element={<AlbumsInformation />}
               />
+              {/*   pagina de informacion de usuario*/}
+              <Route
+              path="/ArtistInformation/:name"
+              element={<ArtistInformation/>}
+              />
 
               <Route path="/MySongsPage" element={<MySongsPage />} />
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
+              
               <Route path="/TracksPage/:name" element={<TracksPage />} />
             </Routes>
           </Router>
