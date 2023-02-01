@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import useFetchApi from "../../API/useFetchApi";
+
 // Import Swiper styles
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import '../../assets/carousel/Swipper.css'
-import styled from "styled-components";
+import "swiper/css/effect-coverflow";
+import { EffectCoverflow, Pagination } from "swiper";
 
+import styled from "styled-components";
 
 const PlaylistContainer = () => {
   const { playlist } = useFetchApi();
@@ -17,27 +18,37 @@ const PlaylistContainer = () => {
 
       <h1>Playlist</h1>
 
-      <Swiper effect={"coverflow"}
+      {/*carousel de imagenes de playlist */}
+      <Swiper
+        effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={2}
+        slidesPerView={3}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
         pagination={false}
-         spaceBetween={30}
-         className="mySwiper">
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
         {playlist.map((playlist) => (
-          <div key={playlist.id} >
-            <Link to={`/PlaylistInformation/${playlist.id}`}>
-              <SwiperSlide >
-
+          <PlaylistComponent key={playlist}>
+            <SwiperSlide>
+              <Link to={`/PlaylistInformation/${playlist.name}`}>
                 <img src={playlist.thumbnail} alt={playlist.name} />
-                <DescriptionDiv>
-                <h2 className="title-description">{playlist.name}</h2>
-                </DescriptionDiv>
-              </SwiperSlide>
-            </Link>
+              </Link>
+              <Description>
+                <NamePlaylist>{playlist.name}</NamePlaylist>
+              </Description>
+            </SwiperSlide>
+
             {/*   <p>{playlist.isFollowed}</p>
               <p>{playlist.publicAccessible}</p> */}
-          </div>
+          </PlaylistComponent>
         ))}
       </Swiper>
     </>
@@ -46,12 +57,19 @@ const PlaylistContainer = () => {
 export default PlaylistContainer;
 
 //STYLED COMPONENT
+const PlaylistComponent = styled.div``
 
-const DescriptionDiv = styled.div`
-background-color:#D8D6D766;
-position: absolute;
-height: 50%;
-width: 100%;
-margin-top: 60%;
-border-radius: 5px 5px 25px 25px;
-`
+const Description = styled.div`
+  /* background-color:#D8D6D7; */
+  opacity: 0.6;
+  position: absolute;
+  height: 5rem;
+  width: 14rem;
+  margin-top: 11rem;
+  border-radius: 5px 5px 25px 25px;
+`;
+const NamePlaylist = styled.h2`
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  color: black;
+`;

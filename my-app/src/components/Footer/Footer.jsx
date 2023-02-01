@@ -51,7 +51,7 @@ export default function Footer() {
         <svg
           stroke="currentColor"
           fill="currentColor"
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 1024 1024"
           height="1em"
           width="1em"
@@ -66,7 +66,7 @@ export default function Footer() {
           <svg
             stroke="currentColor"
             fill="currentColor"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 24 24"
             height="1em"
             width="1em"
@@ -86,7 +86,7 @@ export default function Footer() {
         <svg
           stroke="currentColor"
           fill="currentColor"
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 24 24"
           height="1em"
           width="1em"
@@ -134,7 +134,7 @@ export default function Footer() {
         <svg
           stroke="currentColor"
           fill="currentColor"
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 16 16"
           height="1em"
           width="1em"
@@ -142,15 +142,15 @@ export default function Footer() {
         >
           <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"></path>
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M12 3v10h-1V3h1z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           ></path>
           <path d="M11 2.82a1 1 0 01.804-.98l3-.6A1 1 0 0116 2.22V4l-5 1V2.82z"></path>
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M0 11.5a.5.5 0 01.5-.5H4a.5.5 0 010 1H.5a.5.5 0 01-.5-.5zm0-4A.5.5 0 01.5 7H8a.5.5 0 010 1H.5a.5.5 0 01-.5-.5zm0-4A.5.5 0 01.5 3H8a.5.5 0 010 1H.5a.5.5 0 01-.5-.5z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           ></path>
         </svg>
         </Link>
@@ -161,21 +161,21 @@ export default function Footer() {
           <svg
             stroke="currentColor"
             fill="currentColor"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 16 16"
             height="1em"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M1.5 1a.5.5 0 00-.5.5v3a.5.5 0 01-1 0v-3A1.5 1.5 0 011.5 0h3a.5.5 0 010 1h-3zM11 .5a.5.5 0 01.5-.5h3A1.5 1.5 0 0116 1.5v3a.5.5 0 01-1 0v-3a.5.5 0 00-.5-.5h-3a.5.5 0 01-.5-.5zM.5 11a.5.5 0 01.5.5v3a.5.5 0 00.5.5h3a.5.5 0 010 1h-3A1.5 1.5 0 010 14.5v-3a.5.5 0 01.5-.5zm15 0a.5.5 0 01.5.5v3a1.5 1.5 0 01-1.5 1.5h-3a.5.5 0 010-1h3a.5.5 0 00.5-.5v-3a.5.5 0 01.5-.5z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </Link>

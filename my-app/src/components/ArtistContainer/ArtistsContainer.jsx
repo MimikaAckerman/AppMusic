@@ -11,7 +11,9 @@ import styled from "styled-components";
 
 const ArtistsContainer = () => {
   const { artists } = useFetchApi();
+ /*  console.log(artists); */
 
+ 
   return (
     <>
       <h1>Artist</h1>
@@ -32,21 +34,28 @@ const ArtistsContainer = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {artists?.map((artist) => (
-          <div key={artist.id} className="status">
+        {artists?.map((artist,_id) => (
+          <ArtistComponent artist={artist} key={artist._id}>
             <SwiperSlide>
               <ContainerArtist>
-                <img src={artist.photoUrl} alt="" />
+                <img src={artist.photoUrl} alt={artist.name} />
+            
               </ContainerArtist>
             </SwiperSlide>
-          </div>
+          </ArtistComponent>
         ))}
       </Swiper>
     </>
   );
+  
 };
 
+
 export default ArtistsContainer;
+
+
+const ArtistComponent = styled.div`
+`
 
 const ContainerArtist = styled.div`
   width: 300px;

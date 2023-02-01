@@ -1,28 +1,23 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import styled, { createGlobalStyle } from "styled-components";
 import useFetchApi from "../../API/useFetchApi";
+import styled, { createGlobalStyle } from "styled-components";
 import { Link } from "react-router-dom";
-import "./../../assets/animation/animations.css";
-
-const PlaylistInformation = () => {
+import '../../assets/animation/animations.css'
+const AlbumsInformation = () => {
   let { name } = useParams();
-  /*   console.log(name);
-   */
-  /* const playlistDetails = playlist.filter(name => playlist.name); */
-  const { playlist } = useFetchApi();
-  /*    console.log(playlist);
-  //realizamos un filtro que nos permita sacar el nombre de la playlist seleecionada
-   */ const playlistDetails = playlist.filter((pl) => pl.name === name);
+  /*   console.log(name); */
+  const { albums } = useFetchApi();
+  /* console.log(albums); */
 
-  /* console.log(playlistDetails); */
-  /*   const { description, thumbnail ,primaryColor,tracks} = playlistDetails; */
+  //realizamos un filter que nos permita sacar la informacion de cada uno de los albumes que queremos visualizar
+  const albumsDetails = albums.filter((al) => al.name === name);
+
+ /*  console.log(albumsDetails); */
 
   return (
     <>
       <GlobalStyle />
-
       <Globalcontainer>
         {/*boton de regreso a la homePage*/}
         <BottonBack>
@@ -43,10 +38,8 @@ const PlaylistInformation = () => {
           </Link>
         </BottonBack>
 
-
-
-          {/*diseño de sonido*/}
-          <div className="loader">
+       {/*diseño de sonido*/}
+       <div className="loader">
     <div className="bar bar1"></div>
     <div className="bar bar2"></div>
     <div className="bar bar3"></div>
@@ -91,41 +84,32 @@ const PlaylistInformation = () => {
 
 
 
-        {/*informacion de la playlist seleccionada*/}
-        <ContainerPlaylistDetails>
-          {playlistDetails.map((pl,_id) => (
-            <div key={pl._id}>
+
+        {/*map para sacar la informacion del album seleccionado*/}
+
+        <ContainerAlbumtDetails>
+          {albumsDetails.map((al) => (
+            <div key={al}>
               <ContainerImg>
                 <img
-                  src={pl.thumbnail}
+                  src={al.imageUrl}
                   alt=""
                   style={{ width: 200, height: 200, borderRadius: 200 }}
                   className="animationImg"
                 />
               </ContainerImg>
-              <NamePlaylist>{pl.name}</NamePlaylist>
-
-              <HDesciption>Description</HDesciption>
-              <Description>{pl.description}</Description>
-
-              <YourTracks>Tracks</YourTracks>
-
-              {/*icono de añadir la playlist */}
-              <IconAdd>
-                <TextIconAdd>
-                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
-                </TextIconAdd>
-            </IconAdd>
-
+              <Hartist>Artist</Hartist>
+              <AlbumArtist>{al.artist}</AlbumArtist>
+              <AlbumName>{al.name}</AlbumName>
             </div>
           ))}
-        </ContainerPlaylistDetails>
+        </ContainerAlbumtDetails>
       </Globalcontainer>
     </>
   );
 };
 
-export default PlaylistInformation;
+export default AlbumsInformation;
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -138,12 +122,10 @@ body{
   
 }
 `;
-
 const Globalcontainer = styled.div`
   background-color: #989a97;
   height: 25rem;
 `;
-
 const BottonBack = styled.button`
   margin-top: 1rem;
   margin-left: 1rem;
@@ -163,60 +145,29 @@ const BottonBack = styled.button`
   }
 `;
 
-const ContainerPlaylistDetails = styled.div`
-  margin-top: 2rem;
+const ContainerAlbumtDetails = styled.div`
+  margin-top: 1rem;
 `;
+
 const ContainerImg = styled.div`
   /*   background-color: green;
  */
   height: 8rem;
   margin-left: 7rem;
 `;
-
-const NamePlaylist = styled.h1`
-  margin-top: 6rem;
-  text-align: center;
-  font-size: 1.3rem;
-  color: white;
-`;
-
-const HDesciption = styled.h1`
-margin-top: 5rem;
-font-size: 3;
+const Hartist = styled.h1`
+margin-top: 15rem;
+position: absolute;
+`
+const AlbumArtist = styled.h1`
+color: black;
+margin-top: 18rem;
 
 
 `
-const Description = styled.h1`
-  color: black;
-  font-size: 1.5rem;
-  width: 10rem;
-  margin-top: 3rem;
-  margin-left: 1rem;
-`;
-
-const YourTracks = styled.h1`
-margin-left: 16rem;
-`
-const IconAdd = styled.button`
-width: 100px;
-  height: 100px;
-  background: repeating-radial-gradient(circle at 50% 50%, rgba(200,200,200,.2) 0%, rgba(200,200,200,.2) 2%, transparent 2%, transparent 3%, rgba(200,200,200,.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
-  border-radius: 50%;
-  box-shadow: 0 0px 20px #0005, 0 -0px 20px #fff2;
-  outline: 1px solid #fff;
-  outline-offset: -2px;
-  transition: 1s;
-
-  &:hover{
-    transform: rotate(90deg);
-  }
-
-`
-const TextIconAdd = styled.span`
-font-size: 20px;
-  font-weight: 700;
-  color: #aaa;
-  text-align: center;
-  text-shadow: 1px 1px 1px #fff;
-
+const AlbumName = styled.h1`
+margin-top: -16rem;
+margin-left: 5rem;
+font-size: 1.5rem;
+color: white;
 `

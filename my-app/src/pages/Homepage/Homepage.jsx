@@ -14,14 +14,11 @@ import styled, { createGlobalStyle } from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
 
-
-
 const Homepage = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user,isLoading } = useAuth0();
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
 
   return (
     <>
@@ -29,12 +26,9 @@ const Homepage = () => {
         <NavBarMenu/>
       <NameUser>
         <h1>Hi! {user.nickname}🎧</h1>
-        </NameUser>
-        <FooterContainer>
-        <Footer />
-      </FooterContainer>
+      </NameUser>
 
-        <ArtistsContainer />
+      <ArtistsContainer />
 
       <PlaylistContainer />
       <AlbumContainer />
@@ -50,7 +44,7 @@ export default Homepage;
 const GlobalStyle = createGlobalStyle`
 body{
   color: ${(props) => (props.blackColor ? "black" : "black")};
-   background-color: #F0EFEB;
+   background-color: #E0E4E7;
    color: #2f3132;
     font-size: 18px ;
     font-weight: 1000 ;
@@ -60,10 +54,10 @@ body{
 `
 
 const FooterContainer = styled.div`
-  display: inline;
-
+  margin-top: 3rem;
 `;
 
 const NameUser = styled.div`
-  text-align: right;
-`
+  margin-top: -4rem;
+  margin-left: 11rem;
+`;

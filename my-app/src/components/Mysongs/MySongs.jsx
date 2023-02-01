@@ -3,11 +3,15 @@ import useFetchApi from '../../API/useFetchApi'
 
 const MySongs = () => {
     const {tracks} = useFetchApi()
+   /*  console.log(tracks); */
   return (
     <>
+
     {tracks?.map((tracks) =>(
-        <h1>{tracks.name}</h1>
-       
+      <div key={tracks._id}>
+        <h2>{tracks.name}</h2>
+        <button>add</button>
+      </div>       
     ))}
     
     

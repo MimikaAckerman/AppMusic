@@ -1,0 +1,176 @@
+/*animacion de la imagen para que sea rotativa*/
+.animationImg {
+    animation: 5s linear infinite rotate;
+  
+    margin-left: -1rem;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /*diseño de sonido*/
+  
+  .loader {
+    top: 43%;
+    left: 11.9rem;
+    /* background-color: red; */
+    height: 3rem;
+    width: 25rem;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+  }
+  
+  .bar {
+  
+    width: 10px;
+    height: 60px;
+    background: hsl(0, 100%, 50%);
+    display: inline-block;
+    transform-origin: bottom center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    animation: loader8913 1.2s linear infinite;
+  }
+  
+  .bar1 {
+    animation-delay: 0.1s;
+  }
+  
+  .bar2 {
+    animation-delay: 0.2s;
+  }
+  
+  .bar3 {
+    animation-delay: 0.3s;
+  }
+  
+  .bar4 {
+    animation-delay: 0.4s;
+  }
+  
+  .bar5 {
+    animation-delay: 0.5s;
+  }
+  
+  .bar6 {
+    animation-delay: 0.6s;
+  }
+  
+  .bar7 {
+    animation-delay: 0.7s;
+  }
+  
+  .bar8 {
+    animation-delay: 0.8s;
+  }
+  
+  .bar9 {
+    animation-delay: 0.9s;
+  }
+  .bar10 {
+    animation-delay: 0.10s;
+  }
+  .bar11 {
+    animation-delay: 0.9s;
+  }
+  .bar12 {
+    animation-delay: 0.8s;
+  }
+  .bar13 {
+    animation-delay: 0.7s;
+  }
+  .bar14 {
+    animation-delay: 0.6s;
+  }
+  .bar15 {
+    animation-delay: 0.5s;
+  }
+  .bar16 {
+    animation-delay: 0.4s;
+  }
+  .bar17 {
+    animation-delay: 0.3s;
+  }
+  .bar18 {
+    animation-delay: 0.2s;
+  } 
+  .bar18 {
+    animation-delay: 0.1s;
+  } 
+  .bar18 {
+    animation-delay: 0.2s;
+  } 
+  .bar19 {
+    animation-delay: 0.3s;
+  }  
+  .bar20 {
+    animation-delay: 0.4s;
+  }  
+  .bar21 {
+    animation-delay: 0.5s;
+  }  
+  .bar22 {
+    animation-delay: 0.6s;
+  } 
+   .bar23 {
+    animation-delay: 0.7s;
+  }  .bar24 {
+    animation-delay: 0.8s;
+  }  .bar25 {
+    animation-delay: 0.9s;
+  }  .bar26 {
+    animation-delay: 0.10s;
+  }  .bar27 {
+    animation-delay: 0.1s;
+  }  .bar28 {
+    animation-delay: 0.2s;
+  }  .bar29 {
+    animation-delay: 0.3s;
+  }  .bar30 {
+    animation-delay: 0.4s;
+  }  .bar31 {
+    animation-delay: 0.5s;
+  }  .bar32 {
+    animation-delay: 0.6s;
+  }  .bar33 {
+    animation-delay: 0.7s;
+  }  .bar34 {
+    animation-delay: 0.8s;
+  }  .bar35 {
+    animation-delay: 0.9s;
+  } 
+  .bar36 {
+    animation-delay: 0.10s;
+  }  .bar37 {
+    animation-delay: 0.9s;
+  }  .bar38 {
+    animation-delay: 0.8s;
+  } 
+  .bar39 {
+    animation-delay: 0.7s;
+  }  .bar40 {
+    animation-delay: 0.6s;
+  } 
+  @keyframes loader8913 {
+    0% {
+      transform: scaleY(0.1);
+    }
+  
+    50% {
+      transform: scaleY(1);
+      background: yellowgreen;
+    }
+  
+    100% {
+      transform: scaleY(0.1);
+      background: transparent;
+    }
+  }
+  

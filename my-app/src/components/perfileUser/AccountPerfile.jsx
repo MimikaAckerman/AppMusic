@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import '../../assets/carousel/Swipper.css'
+import '../../assets/animation/Swipper.css'
 
 //STYLED COMPONENT
 import styled from "styled-components";
@@ -19,8 +19,8 @@ import { deleteplaylist } from "../../utils/deletePlaylist";
 
 const AccountPerfile = () => {
   const { playlist, setPlaylist } = useAddPlaylistContext();
- console.log(playlist); 
-
+/*  console.log(playlist); 
+ */
   //auth0 -> sacar la imagen y el nombre del usuario
   const { user } = useAuth0();
   /* console.log(user); */
@@ -60,6 +60,7 @@ deleteplaylist(playlistRemove._id)
       <Swiper slidesPerView={1.5} spaceBetween={30}
         className="mySwiper">
         {myPlaylist.map((playlist) => (
+          <div key={playlist.id}>
             <SwiperSlide>
               <img src={playlist.thumbnail} alt="" />
               
@@ -71,6 +72,7 @@ deleteplaylist(playlistRemove._id)
              <Icon  onClick={() => removePlaylist(playlist)}>delete</Icon>
             
             </SwiperSlide>
+            </div>
          
         ))}
      
