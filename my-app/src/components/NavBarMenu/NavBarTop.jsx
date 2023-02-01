@@ -36,7 +36,6 @@ const NavBarTopStyle = styled.div`
     background-color: green;
     width: 100%;
     height: auto;
-    display: inline-block;
     margin: 0 5px;
     line-height: 80px;
 

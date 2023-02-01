@@ -31,7 +31,6 @@ export const LogoutButton = () => {
 
 const ButtonLogout = styled.button`
   text-align: right;
-  position: relative;
   height: 50%;
   margin-top: 10px;
   margin-bottom: auto;

@@ -190,6 +190,9 @@ const FooterDiv = styled.div`
   display: none;
   @media (max-width: 428px) {
     display: list-item;
+    margin: 30px;
+    font-size: 30px;
+    list-style: none;
   }
 `
 

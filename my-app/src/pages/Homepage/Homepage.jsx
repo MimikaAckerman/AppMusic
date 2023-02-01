@@ -16,7 +16,7 @@ import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
 import { NavBarTop } from "../../components/NavBarMenu/NavBarTop";
 
 const Homepage = () => {
-  const { user,isLoading } = useAuth0();
+  const {isLoading } = useAuth0();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -24,15 +24,24 @@ const Homepage = () => {
   return (
     <>
       <GlobalStyle />
+
+ 
+        {/* <DivGrid2> */}
         <NavBarMenu/>
+        {/* </DivGrid2>
+
+        <DivGrid1> */}
       <NavBarTop/>
-      
+        {/* </DivGrid1>
+        <DivGrid3> */}
+        <GridHomepage>
       <ArtistsContainer />
       <PlaylistContainer />
       <AlbumContainer />
       <Footer/>
-      
       <LogoutButton />
+        {/* </DivGrid3> */}
+       </GridHomepage>
 
     </>
   );
@@ -48,14 +57,29 @@ body{
     font-size: 18px ;
     font-weight: 1000 ;
     font-family: 'Rokkitt', serif;
-
   }
 `
+const GridHomepage = styled.div`
+    width: 70%;
+    margin-left: 30%;
+    text-align: center;
+    @media (max-width:762px) {
+      width: 100%;
+      margin-left: 0%;
+    }
+    `
 
-const FooterContainer = styled.div`
-  margin-top: 3rem;
-`;
 
-const NameUser = styled.div`
-  text-align: right
-`
+// const DivGrid1 = styled.div`
+//   grid-area: 1 / 2 / 2 / 6;
+// `
+
+
+// const DivGrid2 = styled.div`
+//   grid-area: 1 / 1 / 6 / 2;
+// `
+
+
+// const DivGrid3 = styled.div`
+//   grid-area: 2 / 2 / 6 / 6;
+// `
