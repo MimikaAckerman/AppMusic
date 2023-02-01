@@ -11,9 +11,8 @@ import styled from "styled-components";
 
 const ArtistsContainer = () => {
   const { artists } = useFetchApi();
- /*  console.log(artists); */
+  /*  console.log(artists); */
 
- 
   return (
     <>
       <h1>Artist</h1>
@@ -21,7 +20,7 @@ const ArtistsContainer = () => {
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
+        centeredSlides={false}
         slidesPerView={3}
         coverflowEffect={{
           rotate: 50,
@@ -34,12 +33,11 @@ const ArtistsContainer = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {artists?.map((artist,_id) => (
+        {artists?.map((artist, _id) => (
           <ArtistComponent artist={artist} key={artist._id}>
             <SwiperSlide>
               <ContainerArtist>
                 <img src={artist.photoUrl} alt={artist.name} />
-            
               </ContainerArtist>
             </SwiperSlide>
           </ArtistComponent>
@@ -47,15 +45,11 @@ const ArtistsContainer = () => {
       </Swiper>
     </>
   );
-  
 };
-
 
 export default ArtistsContainer;
 
-
-const ArtistComponent = styled.div`
-`
+const ArtistComponent = styled.div``;
 
 const ContainerArtist = styled.div`
   width: 300px;

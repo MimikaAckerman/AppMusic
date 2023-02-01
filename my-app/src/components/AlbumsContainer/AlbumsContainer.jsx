@@ -12,14 +12,14 @@ import styled from "styled-components";
 
 const AlbumContainer = () => {
   const { albums } = useFetchApi();
-   /* console.log(albums);  */
+  /* console.log(albums);  */
   return (
     <>
       <h1>Albums</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
+        centeredSlides={false}
         slidesPerView={3}
         coverflowEffect={{
           rotate: 50,
@@ -32,7 +32,7 @@ const AlbumContainer = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {albums?.map((album,_id) => (
+        {albums?.map((album, _id) => (
           <AlbumComponent album={album} key={album._id}>
             <SwiperSlide>
               <Link to={`/AlbumsInformation/${album.name}`}>
@@ -47,10 +47,7 @@ const AlbumContainer = () => {
 };
 export default AlbumContainer;
 
-
-const AlbumComponent=styled.div`
-`
-
+const AlbumComponent = styled.div``;
 
 const Description = styled.div`
   background-color: red;
