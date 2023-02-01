@@ -36,7 +36,7 @@ function removePlaylist(playlistRemove){
     const removePlaylist = playlist.filter((pl) => pl._id !== playlistRemove._id)
 
   setPlaylist(removePlaylist)
-  console.log(playlist.name);  
+  /* console.log(playlist.name);   */
    
 deleteplaylist(playlistRemove._id)
 } 
