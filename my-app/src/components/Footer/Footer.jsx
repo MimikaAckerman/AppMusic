@@ -29,17 +29,14 @@ export default function Footer() {
   const { register, handleSubmit } = useForm();
   const { playlist, setPlaylist } = useAddPlaylistContext();
   const { user} = useAuth0();
-/* console.log(user); 
- */
+
   const onSubmit = (data) => {
 
      const createPlaylist = {
       ...data,
       emailUser:user.email
-      
-    } 
-/*     console.log(createPlaylist);
- */  
+    }
+
    addNewPlaylist(createPlaylist, playlist, setPlaylist);
  };
 

@@ -44,7 +44,7 @@ export const NavBarMenu = () => {
         </Link>
       </NavLiMenuLeft>
 
-      <NavLiMenuLeft>
+      <NavLiMenuLeft>q
         <Link>
         <NavPMenuLeft>
           MY PROFILE
@@ -63,10 +63,15 @@ export const NavBarMenu = () => {
 
 const SideBarMenuLeft = styled.div`
   position: fixed;
+  display: list-item;
   width: 25%;
   height: 100vh;
   background: #C9C6C4;
   font-size: 0.65em;
+  @media (max-width: 840px){
+    display: none;
+  }
+
 `
 const NavMenuLeft = styled.nav`
     position: relative;

@@ -34,7 +34,9 @@ const Homepage = () => {
       <AlbumContainer />
       {/* <GenresContainer /> */}
       {/*  <TracksContainer/>  */}
+      <Footer/>
       <LogoutButton />
+
     </>
   );
 };
@@ -58,6 +60,5 @@ const FooterContainer = styled.div`
 `;
 
 const NameUser = styled.div`
-  margin-top: -4rem;
-  margin-left: 11rem;
-`;
+  text-align: right
+`
