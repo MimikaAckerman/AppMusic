@@ -13,6 +13,8 @@ import GenresPage from "../pages/GenresPage/GenresPage";
 import TracksPage from "../pages/TracksPage/TracksPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import { LoginContextProvider } from "../context/LoginContext";
+import WishListPage from "../pages/WishListPage/WishListPage";
+
 
 
 
@@ -31,6 +33,7 @@ const AppMusic = () => {
           <Route path="/AccountPage" element={<AccountPage />} />
           <Route path="/GenresPage" element={<GenresPage />} />
           <Route path="/TracksPage/:id" element={<TracksPage />} />
+          <Route path="/WishListPage" element={<WishListPage />} />
         </Routes>
       </Router>
       </LoginContextProvider>
