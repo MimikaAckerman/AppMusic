@@ -11,7 +11,7 @@ const MySongs = () => {
    /* console.log(tracks);  */
 
   //por medio del context muevo la lista de playlist asi me aparecen al hacer click
-  const { playlist, setPlaylist } = useAddPlaylistContext();
+  const { playlist} = useAddPlaylistContext();
   //nos importamos el auth0 para identificar el usuario
   const { user } = useAuth0();
   /*  console.log(user); */ 

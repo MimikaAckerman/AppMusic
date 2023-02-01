@@ -36,7 +36,15 @@ const ArtistInformation = () => {
     
     {artistsDetails.map((art,_id) =>(
       <div key={art._id}>
-        <img src={art.photoUrl} alt={art.name} />
+        <FondoImg>
+        <ImgContainer>
+        <img 
+        src={art.photoUrl} 
+        alt={art.name} 
+        style={{ width: 200, height: 200}}
+        />
+        </ImgContainer>
+        </FondoImg>
         <h1>{art.name}</h1>
         <h2>{art.popularity}</h2>
       </div>
@@ -74,3 +82,61 @@ const BottonBack = styled.button`
     box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
   }
 `;
+
+const ImgContainer = styled.div`
+margin-top: 2rem;
+margin-left: 2rem;
+
+
+--color: #181818;
+ background: var(--color);
+ color: var(--color);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 14rem;
+ height: 15rem;
+ overflow: visible;
+ border-radius: .7rem;
+
+ &:hover{
+  color: #f7ba2b;
+ transition: color 1s;
+ }
+
+`
+const FondoImg = styled.div`
+--background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+margin-top: 7rem;
+margin-left: 3rem;
+width: 18rem;
+ height: 20rem;
+ padding: 5px;
+ border-radius: 1rem;
+ overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
+
+ &:after{
+  position: absolute;
+ content: "";
+ top: 30px;
+ left: 0;
+ right: 0;
+ z-index: -1;
+ height: 100%;
+ width: 100%;
+ transform: scale(0.8);
+ filter: blur(25px);
+ background: #f7ba2b;
+ background: var(--background);
+ transition: opacity .5s;
+
+ &:hover::after{
+  opacity: 0;
+
+ }
+ }
+`

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+
+import React from "react";
 import { useParams } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import useFetchApi from "../../API/useFetchApi";
