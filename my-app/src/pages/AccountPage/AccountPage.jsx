@@ -11,6 +11,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
+//MY FAVORITE SONGS 
+
+import { getItem, setItem } from '../../services/LocalStorageFuncs';
+import { CiCircleRemove } from 'react-icons/ci'
+
+
 const AccountPage = () => {
   //CLOUDINARY
   const [image, setImage] = useState("");
@@ -134,6 +140,7 @@ const AccountPage = () => {
         {/*Component con la funcion de playlist*/}
         <AccountPerfile />
       </FondoDesing>
+      
     </>
   );
 };

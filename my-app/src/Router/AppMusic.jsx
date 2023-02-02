@@ -16,8 +16,11 @@ import { AddPlaylistContextProvider } from "../context/AddPlaylistContext";
 import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformation";
 import MySongsPage from "../pages/MySong/MySongsPage";
 import AlbumsInformation from "../pages/AlbumsInformation/AlbumsInformation";
+
+import ArtistInformation from "../pages/ArtistInformation/ArtistInformation";
+
 import SearchPage from "../pages/SearchPage/SearchPage";
-import ArtistInformation from "../pages/ArtistInformation/ArtistInformation"
+
 
 const AppMusic = () => {
   return (
@@ -48,6 +51,9 @@ const AppMusic = () => {
                 element={<ArtistInformation />}
               />
               {/*donde se visualiza todas las canciones*/}
+
+              <Route path="/search" element={<SearchPage />} />"
+
               <Route path="/MySongsPage" element={<MySongsPage />} />
 
               {/*donde se visualiza la informacion de la playlist creada*/}

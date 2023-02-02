@@ -9,7 +9,7 @@ import { addTrackInPlaylist } from "../../utils/addTrackInPlaylist";
 
 const MySongs = () => {
   const { tracks } = useFetchApi();
-/*     console.log(tracks);  */
+    console.log(tracks);   
 
   //por medio del context muevo la lista de playlist asi me aparecen al hacer click
   const { playlist} = useAddPlaylistContext();
@@ -24,15 +24,25 @@ const MySongs = () => {
    ))*/
 
   /*  console.log(showAllPlaylist)  */
-
+  const ReloadAdd = (e,track) =>{
+    e.preventDefault()
+    console.log(track);
+    addTrackInPlaylist(track)    
+  }
   return (
     <>
+     {/*devuelveme la lista de los tracks */}
       {tracks?.map((track) => (
         <div key={track._id}>
           <Link to={`/TracksPage/${track.name}`}>
           <h2>{track.name}</h2>
           </Link>
           <h3>{track.artist}</h3>
+          <img src={tracks.playlists} alt="" />
+
+
+
+
 
           {/*devuelveme la lista de playlist */}
           <form action="#">
@@ -43,8 +53,9 @@ const MySongs = () => {
           
             ))}
           </select>
-          <button onClick={() => addTrackInPlaylist()} >add</button>
+          <button onClick={(e) =>ReloadAdd(e,track)} >add</button>
           </form>
+
           
         </div>
       ))}

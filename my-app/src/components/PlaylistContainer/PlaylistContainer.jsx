@@ -12,6 +12,7 @@ import styled from "styled-components";
 
 const PlaylistContainer = () => {
   const { playlist } = useFetchApi();
+  console.log(playlist);
 
   return (
     <>

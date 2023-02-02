@@ -16,7 +16,7 @@ const PlaylistInformation = () => {
   //realizamos un filtro que nos permita sacar el nombre de la playlist seleecionada
    */ const playlistDetails = playlist.filter((pl) => pl.name === name);
 
-  /* console.log(playlistDetails); */
+  console.log(playlistDetails);
   /*   const { description, thumbnail ,primaryColor,tracks} = playlistDetails; */
 
   return (
