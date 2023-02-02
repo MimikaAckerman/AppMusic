@@ -1,5 +1,6 @@
 import Searchbar1 from "../../components/SearchBar/Searchbar1";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 const SearchPage = () => {
   return (
     <>
@@ -20,8 +21,15 @@ const SearchPage = () => {
           </svg>
         </Link>
       </button>
-      <Searchbar1 />
+      <StyleSearch>
+        <Searchbar1 />
+      </StyleSearch>
     </>
   );
 };
 export default SearchPage;
+
+const StyleSearch = styled.div`
+  display: flex;
+  justify-content: center;
+`;

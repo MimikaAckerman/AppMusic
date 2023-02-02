@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import useFetchApi from "../../API/useFetchApi";
@@ -7,22 +6,14 @@ import { Link } from "react-router-dom";
 import "./../../assets/animation/animations.css";
 
 const PlaylistInformation = () => {
+  const { tracks } = useFetchApi();
   let { name } = useParams();
-  /*   console.log(name);
-   */
-  /* const playlistDetails = playlist.filter(name => playlist.name); */
   const { playlist } = useFetchApi();
-  /*    console.log(playlist);
-  //realizamos un filtro que nos permita sacar el nombre de la playlist seleecionada
-   */ const playlistDetails = playlist.filter((pl) => pl.name === name);
-
-  /* console.log(playlistDetails); */
-  /*   const { description, thumbnail ,primaryColor,tracks} = playlistDetails; */
+  const playlistDetails = playlist.filter((pl) => pl.name === name);
 
   return (
     <>
       <GlobalStyle />
-
       <Globalcontainer>
         {/*boton de regreso a la homePage*/}
         <BottonBack>
@@ -42,81 +33,60 @@ const PlaylistInformation = () => {
             </svg>
           </Link>
         </BottonBack>
-
-
-
-          {/*diseño de sonido*/}
-          <div className="loader">
-    <div className="bar bar1"></div>
-    <div className="bar bar2"></div>
-    <div className="bar bar3"></div>
-    <div className="bar bar4"></div>
-    <div className="bar bar5"></div>
-    <div className="bar bar6"></div>
-    <div className="bar bar7"></div>
-    <div className="bar bar8"></div>
-    <div className="bar bar9"></div>
-    <div className="bar bar10"></div>
-    <div className="bar bar11"></div>
-    <div className="bar bar12"></div>
-    <div className="bar bar13"></div>
-    <div className="bar bar14"></div>
-    <div className="bar bar15"></div>
-    <div className="bar bar16"></div>
-    <div className="bar bar17"></div>
-    <div className="bar bar18"></div>
-    <div className="bar bar19"></div>
-    <div className="bar bar20"></div>
-    <div className="bar bar21"></div>
-    <div className="bar bar22"></div>
-    <div className="bar bar23"></div>
-    <div className="bar bar24"></div>
-    <div className="bar bar25"></div>
-    <div className="bar bar26"></div>
-    <div className="bar bar27"></div>
-    <div className="bar bar28"></div>
-    <div className="bar bar29"></div>
-    <div className="bar bar30"></div>
-    <div className="bar bar31"></div>
-    <div className="bar bar32"></div>
-    <div className="bar bar33"></div>
-    <div className="bar bar34"></div>
-    <div className="bar bar35"></div>
-    <div className="bar bar36"></div>
-    <div className="bar bar37"></div>
-    <div className="bar bar38"></div>
-    <div className="bar bar39"></div>
-    <div className="bar bar40"></div>
-</div>
-
-
-
         {/*informacion de la playlist seleccionada*/}
         <ContainerPlaylistDetails>
-          {playlistDetails.map((pl,_id) => (
+          {playlistDetails.map((pl, _id) => (
             <div key={pl._id}>
-              <ContainerImg>
-                <img
-                  src={pl.thumbnail}
-                  alt=""
-                  style={{ width: 200, height: 200, borderRadius: 200 }}
-                  className="animationImg"
-                />
-              </ContainerImg>
-              <NamePlaylist>{pl.name}</NamePlaylist>
+              <NavbarImg>
+                <ContainerImg>
+                  <img
+                    src={pl.thumbnail}
+                    alt=""
+                    style={{ width: 400, height: 400, borderRadius: 400 }}
+                    className="animationImg"
+                  />
+                </ContainerImg>
+                <NamePlaylist>
+                  <Name>{pl.name}</Name>
+                  <br />
+                  Description
+                  <br />
+                  {pl.description}
+                </NamePlaylist>
+                <IconAdd>
+                  <TextIconAdd>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 24 24"
+                      height="2em"
+                      width="2em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path>
+                    </svg>
+                  </TextIconAdd>
+                </IconAdd>
+              </NavbarImg>
 
-              <HDesciption>Description</HDesciption>
-              <Description>{pl.description}</Description>
+              <TracksStyle>
+                <YourTracks>Tracks</YourTracks>
+                {tracks?.map((track) => (
+                  <div key={track._id}>
+                    <Link
+                      to={`/TracksPage/${track.name}`}
+                      style={{ textDecoration: "none", color: "#114358" }}
+                    >
+                      <h2>{track.name}</h2>
+                    </Link>
 
-              <YourTracks>Tracks</YourTracks>
+                    <p>{track.artist}</p>
+                  </div>
+                ))}
+              </TracksStyle>
 
               {/*icono de añadir la playlist */}
-              <IconAdd>
-                <TextIconAdd>
-                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
-                </TextIconAdd>
-            </IconAdd>
-
             </div>
           ))}
         </ContainerPlaylistDetails>
@@ -138,10 +108,21 @@ body{
   
 }
 `;
-
+const Name = styled.h1`
+  font-size: 40px;
+`;
+const NavbarImg = styled.div`
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 100px;
+`;
 const Globalcontainer = styled.div`
   background-color: #114358;
   height: 25rem;
+`;
+const TracksStyle = styled.div`
+  display: block;
+  text-align: right;
 `;
 
 const BottonBack = styled.button`
@@ -170,53 +151,58 @@ const ContainerImg = styled.div`
   /*   background-color: green;
  */
   height: 8rem;
-  margin-left: 7rem;
+  margin-left: 8rem;
+  margin-bottom: 7rem;
 `;
 
 const NamePlaylist = styled.h1`
-  margin-top: 6rem;
-  text-align: center;
+  margin-left: 50px;
+  text-align: flex-end;
   font-size: 1.3rem;
   color: white;
 `;
 
-const HDesciption = styled.h1`
-margin-top: 5rem;
-font-size: 3;
-
-
-`
-const Description = styled.h1`
-  color: black;
-  font-size: 1.5rem;
-  width: 10rem;
-  margin-top: 3rem;
-  margin-left: 1rem;
-`;
-
 const YourTracks = styled.h1`
-margin-left: 16rem;
-`
+  display: block;
+  text-align: right;
+`;
 const IconAdd = styled.button`
-width: 100px;
+  width: 100px;
   height: 100px;
-  background: repeating-radial-gradient(circle at 50% 50%, rgba(200,200,200,.2) 0%, rgba(200,200,200,.2) 2%, transparent 2%, transparent 3%, rgba(200,200,200,.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
+  background: repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(200, 200, 200, 0.2) 0%,
+      rgba(200, 200, 200, 0.2) 2%,
+      transparent 2%,
+      transparent 3%,
+      rgba(200, 200, 200, 0.2) 3%,
+      transparent 3%
+    ),
+    conic-gradient(
+      white 0%,
+      silver 10%,
+      white 35%,
+      silver 45%,
+      white 60%,
+      silver 70%,
+      white 80%,
+      silver 95%,
+      white 100%
+    );
   border-radius: 50%;
   box-shadow: 0 0px 20px #0005, 0 -0px 20px #fff2;
   outline: 1px solid #fff;
   outline-offset: -2px;
   transition: 1s;
 
-  &:hover{
+  &:hover {
     transform: rotate(90deg);
   }
-
-`
+`;
 const TextIconAdd = styled.span`
-font-size: 20px;
+  font-size: 20px;
   font-weight: 700;
   color: #aaa;
   text-align: center;
   text-shadow: 1px 1px 1px #fff;
-
-`
+`;

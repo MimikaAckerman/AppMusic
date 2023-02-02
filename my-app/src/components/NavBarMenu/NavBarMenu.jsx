@@ -7,6 +7,7 @@ import AddchartIcon from "@mui/icons-material/Addchart";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import PersonIcon from "@mui/icons-material/Person";
 import { LogoutButton } from "../Form/Logout/Logout";
+import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 
 export const NavBarMenu = () => {
   return (
@@ -15,7 +16,10 @@ export const NavBarMenu = () => {
         <NavMenuLeft>
           <NavUlMenuLeft>
             <NavLiMenuLeft>
-              <Link>
+              <Link
+                to="/HomePage"
+                style={{ textDecoration: "none", color: "#114358" }}
+              >
                 <NavPMenuLeft>
                   <MenuIcon>
                     <HomeIcon fontSize="small" />
@@ -26,7 +30,10 @@ export const NavBarMenu = () => {
             </NavLiMenuLeft>
 
             <NavLiMenuLeft>
-              <Link>
+              <Link
+                to="/search"
+                style={{ textDecoration: "none", color: "#114358" }}
+              >
                 <NavPMenuLeft>
                   <MenuIcon>
                     <SearchIcon fontSize="small" />
@@ -37,7 +44,7 @@ export const NavBarMenu = () => {
             </NavLiMenuLeft>
 
             <NavLiMenuLeft>
-              <Link>
+              <Link style={{ textDecoration: "none", color: "#114358" }}>
                 <NavPMenuLeft>
                   <MenuIcon>
                     <AddchartIcon />
@@ -48,7 +55,7 @@ export const NavBarMenu = () => {
             </NavLiMenuLeft>
 
             <NavLiMenuLeft>
-              <Link>
+              <Link style={{ textDecoration: "none", color: "#114358" }}>
                 <NavPMenuLeft>
                   <MenuIcon>
                     <AudiotrackIcon />
@@ -57,9 +64,24 @@ export const NavBarMenu = () => {
                 </NavPMenuLeft>
               </Link>
             </NavLiMenuLeft>
-
             <NavLiMenuLeft>
-              <Link>
+              <Link
+                to="/MySongsPage"
+                style={{ textDecoration: "none", color: "#114358" }}
+              >
+                <NavPMenuLeft>
+                  <MenuIcon>
+                    <LibraryMusicIcon />
+                  </MenuIcon>
+                  MY SONG
+                </NavPMenuLeft>
+              </Link>
+            </NavLiMenuLeft>
+            <NavLiMenuLeft>
+              <Link
+                to="/AccountPage"
+                style={{ textDecoration: "none", color: "#114358" }}
+              >
                 <NavPMenuLeft>
                   <MenuIcon>
                     <PersonIcon />
@@ -69,7 +91,6 @@ export const NavBarMenu = () => {
               </Link>
             </NavLiMenuLeft>
             <NavPMenuLeft>
-              {" "}
               <LogoutButton />
             </NavPMenuLeft>
           </NavUlMenuLeft>
