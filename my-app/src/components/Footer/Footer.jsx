@@ -190,14 +190,14 @@ const HomeButton = styled.button`
   padding: 0.7em 1.5em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
+  background: #F2AA1F;
+  border: 1px solid #114358;
   transition: all 0.3s;
   text-decoration: none;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+
   &:active {
     color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    box-shadow: inset 4px 4px 12px #114358, inset -4px -4px 12px;
   }
 `;
 
@@ -206,14 +206,13 @@ const SearchButton = styled.button`
   padding: 0.7em 1.5em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
+  background: #F2AA1F;
+  border: 1px solid #114358;
   transition: all 0.3s;
-  text-decoration: none;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+ text-decoration: none;
   &:active {
     color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    box-shadow: inset 4px 4px 12px #114358, inset -4px -4px 12px;
   }
 `;
 const CreatePlaylist = styled.button`
@@ -221,13 +220,13 @@ const CreatePlaylist = styled.button`
   padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
+  background: #F2AA1F;
+  border: 1px solid #114358;
   transition: all 0.3s;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  text-decoration: none;
   &:active {
     color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    box-shadow: inset 4px 4px 12px #114358, inset -4px -4px 12px ;
   }
 `;
 const Profile = styled.button`
@@ -235,13 +234,13 @@ const Profile = styled.button`
   padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
+  background: #F2AA1F;
+  border: 1px solid #114358;
   transition: all 0.3s;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  text-decoration: none;
   &:active {
     color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    box-shadow: inset 4px 4px 12px #114358, inset -4px -4px 12px ;
   }
 `;
 
@@ -296,12 +295,12 @@ color: #090909;
   padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
+  background: #F2AA1F;
+  border: 1px solid #114358;
   transition: all 0.3s;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  text-decoration: none;
   &:active {
     color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px ;
   }
 `;

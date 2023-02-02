@@ -45,11 +45,11 @@ const AppMusic = () => {
               path="/ArtistInformation/:name"
               element={<ArtistInformation/>}
               />
-
+                {/*donde se visualiza todas las canciones*/}
               <Route path="/MySongsPage" element={<MySongsPage />} />
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
-              
+                {/*el reproductor que reproduce la cancion especifica*/}
               <Route path="/TracksPage/:name" element={<TracksPage />} />
             </Routes>
           </Router>

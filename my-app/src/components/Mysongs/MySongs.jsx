@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
+import { Link } from "react-router-dom";
 import useFetchApi from "../../API/useFetchApi";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
 
@@ -8,7 +9,7 @@ import { addTrackInPlaylist } from "../../utils/addTrackInPlaylist";
 
 const MySongs = () => {
   const { tracks } = useFetchApi();
-   /* console.log(tracks);  */
+    console.log(tracks); 
 
   //por medio del context muevo la lista de playlist asi me aparecen al hacer click
   const { playlist} = useAddPlaylistContext();
@@ -28,7 +29,10 @@ const MySongs = () => {
     <>
       {tracks?.map((track) => (
         <div key={track._id}>
+          <Link to={`/TracksPage/${track.name}`}>
           <h2>{track.name}</h2>
+          </Link>
+          <h3>{track.artist}</h3>
 
           {/*devuelveme la lista de playlist */}
           <form action="#">
