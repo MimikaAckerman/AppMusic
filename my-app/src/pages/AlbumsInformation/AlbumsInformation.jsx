@@ -1,17 +1,17 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetchApi from "../../API/useFetchApi";
 import styled, { createGlobalStyle } from "styled-components";
 import { Link } from "react-router-dom";
-import '../../assets/animation/animations.css'
-import { AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai'
-import { getItem, setItem } from '../../services/LocalStorageFuncs';
+import "../../assets/animation/animations.css";
+import { IoIosAddCircleOutline, IoIosAddCircle } from "react-icons/io";
+import { getItem, setItem } from "../../services/LocalStorageFuncs";
 
 const AlbumsInformation = () => {
   let { name } = useParams();
   /*   console.log(name); */
 
-  const [like, setLike ] = useState( getItem('likeSongs') || []); 
+  const [like, setLike] = useState(getItem("likeSongs") || []);
 
   const { albums } = useFetchApi();
   /* console.log(albums); */
@@ -19,19 +19,19 @@ const AlbumsInformation = () => {
   //realizamos un filter que nos permita sacar la informacion de cada uno de los albumes que queremos visualizar
   const albumsDetails = albums.filter((al) => al.name === name);
 
- /*  console.log(albumsDetails); */
+  /*  console.log(albumsDetails); */
 
- const handleClick = (obj) => {
-  const element = like.find((al) => al.id === obj.id)
-  if(element){
-    const arrFilter = like.filter((al) => al.id !== obj.id)
-    setLike(arrFilter)
-    setItem('likeSongs', arrFilter)
-  } else {
-    setLike([...like, obj])
-    setItem('likeSongs', [...like, obj])
-  }
- }
+  const handleClick = (obj) => {
+    const element = like.find((al) => al.id === obj.id);
+    if (element) {
+      const arrFilter = like.filter((al) => al.id !== obj.id);
+      setLike(arrFilter);
+      setItem("likeSongs", arrFilter);
+    } else {
+      setLike([...like, obj]);
+      setItem("likeSongs", [...like, obj]);
+    }
+  };
 
   return (
     <>
@@ -56,53 +56,6 @@ const AlbumsInformation = () => {
           </Link>
         </BottonBack>
 
-       {/*diseño de sonido*/}
-       <div className="loader">
-    <div className="bar bar1"></div>
-    <div className="bar bar2"></div>
-    <div className="bar bar3"></div>
-    <div className="bar bar4"></div>
-    <div className="bar bar5"></div>
-    <div className="bar bar6"></div>
-    <div className="bar bar7"></div>
-    <div className="bar bar8"></div>
-    <div className="bar bar9"></div>
-    <div className="bar bar10"></div>
-    <div className="bar bar11"></div>
-    <div className="bar bar12"></div>
-    <div className="bar bar13"></div>
-    <div className="bar bar14"></div>
-    <div className="bar bar15"></div>
-    <div className="bar bar16"></div>
-    <div className="bar bar17"></div>
-    <div className="bar bar18"></div>
-    <div className="bar bar19"></div>
-    <div className="bar bar20"></div>
-    <div className="bar bar21"></div>
-    <div className="bar bar22"></div>
-    <div className="bar bar23"></div>
-    <div className="bar bar24"></div>
-    <div className="bar bar25"></div>
-    <div className="bar bar26"></div>
-    <div className="bar bar27"></div>
-    <div className="bar bar28"></div>
-    <div className="bar bar29"></div>
-    <div className="bar bar30"></div>
-    <div className="bar bar31"></div>
-    <div className="bar bar32"></div>
-    <div className="bar bar33"></div>
-    <div className="bar bar34"></div>
-    <div className="bar bar35"></div>
-    <div className="bar bar36"></div>
-    <div className="bar bar37"></div>
-    <div className="bar bar38"></div>
-    <div className="bar bar39"></div>
-    <div className="bar bar40"></div>
-</div>
-
-
-
-
         {/*map para sacar la informacion del album seleccionado*/}
 
         <ContainerAlbumtDetails>
@@ -119,25 +72,18 @@ const AlbumsInformation = () => {
               <Hartist>Artist</Hartist>
               <AlbumArtist>{al.artist}</AlbumArtist>
               <AlbumName>{al.name}</AlbumName>
-              <button onClick={() => handleClick(al)}>
-                {
-                  like.some((itemLike)=> itemLike.id === al.id) ? (
-                      <AiTwotoneHeart/>
+              <IconAdd>
+                <button onClick={() => handleClick(al)}>
+                  {like.some((itemLike) => itemLike.id === al.id) ? (
+                    <IoIosAddCircleOutline />
                   ) : (
-                    <AiOutlineHeart/>
-                  )
-                }
-              </button>
+                    <IoIosAddCircle />
+                  )}
+                </button>
+              </IconAdd>
             </div>
           ))}
         </ContainerAlbumtDetails>
-
-        {/*icono de añadir la playlist */}
-        <IconAdd>
-                <TextIconAdd>
-                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
-                </TextIconAdd>
-            </IconAdd>
       </Globalcontainer>
     </>
   );
@@ -190,43 +136,58 @@ const ContainerImg = styled.div`
   margin-left: 7rem;
 `;
 const Hartist = styled.h1`
-margin-top: 15rem;
-position: absolute;
-`
+  margin-top: 15rem;
+  position: absolute;
+`;
 const AlbumArtist = styled.h1`
-color: black;
-margin-top: 18rem;
-
-
-`
+  color: black;
+  margin-top: 18rem;
+`;
 const AlbumName = styled.h1`
-margin-top: -16rem;
-margin-left: 5rem;
-font-size: 1.5rem;
-color: white;
-`
+  margin-top: -16rem;
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  color: white;
+`;
 const IconAdd = styled.button`
-margin-top: 22rem;
-margin-left: 17rem;
-width: 100px;
+  margin-top: 22rem;
+  margin-left: 17rem;
+  width: 100px;
   height: 100px;
-  background: repeating-radial-gradient(circle at 50% 50%, rgba(200,200,200,.2) 0%, rgba(200,200,200,.2) 2%, transparent 2%, transparent 3%, rgba(200,200,200,.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
+  background: repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(200, 200, 200, 0.2) 0%,
+      rgba(200, 200, 200, 0.2) 2%,
+      transparent 2%,
+      transparent 3%,
+      rgba(200, 200, 200, 0.2) 3%,
+      transparent 3%
+    ),
+    conic-gradient(
+      white 0%,
+      silver 10%,
+      white 35%,
+      silver 45%,
+      white 60%,
+      silver 70%,
+      white 80%,
+      silver 95%,
+      white 100%
+    );
   border-radius: 50%;
   box-shadow: 0 0px 20px #0005, 0 -0px 20px #fff2;
   outline: 1px solid #fff;
   outline-offset: -2px;
   transition: 1s;
 
-  &:hover{
+  &:hover {
     transform: rotate(90deg);
   }
-
-`
+`;
 const TextIconAdd = styled.span`
-font-size: 20px;
+  font-size: 20px;
   font-weight: 700;
   color: #aaa;
   text-align: center;
   text-shadow: 1px 1px 1px #fff;
-
-`
+`;
