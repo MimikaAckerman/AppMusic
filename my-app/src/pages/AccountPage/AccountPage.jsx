@@ -10,29 +10,32 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
+
+
+
+const Card = styled.div`
+ width: 250px;
+ height: 260px;
+ border-radius: 50px;
+ background: #e0e0e0;
+ box-shadow: 20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
+margin-top: 2rem;
+margin-left: 4rem;
+position: absolute;
+`
+
+
+
+
 const AccountPage = () => {
   //CLOUDINARY
   const [image, setImage] = useState("");
-  /*   const { playlist, setPlaylist } = useAddPlaylistContext(); */
-  /* console.log(playlist); */
-
-  //auth0 -> sacar la imagen y el nombre del usuario
-  /*   const { user } = useAuth0(); */
-  /* console.log(user); */
-
-  //creamos una constante que haga un filtrado de las playlist y que estas sean igual al usuario que las ha creado
-  /*  const myPlaylist = playlist.filter((pl) => pl.emailUser === user.email); */
-
-  /*  console.log(myPlaylist); */
-
-  //modal form
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+ 
   return (
     <>
-      <FondoDesing>
+
+    
         {/*boton de regreso a la homePage*/}
         <BottonBack>
           <Link to="/homePage">
@@ -52,74 +55,55 @@ const AccountPage = () => {
           </Link>
         </BottonBack>
 
+<Card>
+<AccountPerfile/>
+
+
+
+
+</Card>
+
+
         {/* iconos de funciones -> settings y la de moneda */}
-        <Settings onClick={handleOpen}>
-          <svg
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.95263 16.9123L8.59323 18.3608L2.03082 12.2016L8.18994 5.63922L9.64826 7.00791L4.85783 12.112L9.95212 16.8932L9.95263 16.9123Z"
-              fill="currentColor"
-            />
-            <path
-              d="M14.0474 16.9123L15.4068 18.3608L21.9692 12.2016L15.8101 5.63922L14.3517 7.00791L19.1422 12.112L14.0479 16.8932L14.0474 16.9123Z"
-              fill="currentColor"
-            />
-          </svg>
-        </Settings>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              <h3>Edit information user Account</h3>
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              aqui ira la informacion del usuario que se quiera editar
-            </Typography>
-          </Box>
-        </Modal>
+      
 
-        <Bag onClick={handleOpen}>
-          <svg
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M5 4H19C19.5523 4 20 4.44771 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44771 4 5 4ZM2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM12 12C9.23858 12 7 9.31371 7 6H9C9 8.56606 10.6691 10 12 10C13.3309 10 15 8.56606 15 6H17C17 9.31371 14.7614 12 12 12Z"
-              fill="currentColor"
-            />
-          </svg>
-        </Bag>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              <button>Suscribirte</button>
-              <button>Donar</button>
-            </Typography>
-          </Box>
-        </Modal>
+        <MonedaContenedor>
+          <div className="coin">
+            <div className="side heads">
+              {/*simbolo del euro frontal*/}
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M13.464,6c1.43,0,2.779,0.613,3.799,1.726l1.475-1.352C17.334,4.843,15.461,4,13.464,4c-1.998,0-3.87,0.843-5.272,2.375 C7.491,7.139,6.951,8.031,6.589,9H4v2h2.114c-0.038,0.33-0.064,0.663-0.064,1s0.026,0.67,0.064,1H4v2h2.589 c0.362,0.97,0.901,1.861,1.603,2.626C9.594,19.157,11.466,20,13.464,20c1.997,0,3.87-0.843,5.273-2.374l-1.475-1.352 C16.243,17.387,14.894,18,13.464,18s-2.778-0.612-3.798-1.726C9.316,15.893,9.041,15.457,8.801,15H13v-2H8.139 c-0.05-0.328-0.089-0.66-0.089-1s0.039-0.672,0.089-1H13V9H8.801c0.24-0.457,0.516-0.893,0.865-1.274 C10.686,6.613,12.034,6,13.464,6z"></path>
+              </svg>
+            </div>
 
-        {/*Component con la funcion de playlist*/}
-        <AccountPerfile />
-      </FondoDesing>
+            <div className="side tails">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M13.464,6c1.43,0,2.779,0.613,3.799,1.726l1.475-1.352C17.334,4.843,15.461,4,13.464,4c-1.998,0-3.87,0.843-5.272,2.375 C7.491,7.139,6.951,8.031,6.589,9H4v2h2.114c-0.038,0.33-0.064,0.663-0.064,1s0.026,0.67,0.064,1H4v2h2.589 c0.362,0.97,0.901,1.861,1.603,2.626C9.594,19.157,11.466,20,13.464,20c1.997,0,3.87-0.843,5.273-2.374l-1.475-1.352 C16.243,17.387,14.894,18,13.464,18s-2.778-0.612-3.798-1.726C9.316,15.893,9.041,15.457,8.801,15H13v-2H8.139 c-0.05-0.328-0.089-0.66-0.089-1s0.039-0.672,0.089-1H13V9H8.801c0.24-0.457,0.516-0.893,0.865-1.274 C10.686,6.613,12.034,6,13.464,6z"></path>
+              </svg>
+            </div>
+          </div>
+
+        </MonedaContenedor>
+
+
+        
+  
     </>
   );
 };
@@ -128,21 +112,42 @@ export default AccountPage;
 
 //STYLED COMPONENT----------------------
 
-//modal for setting and bag
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  /*   border: '2px solid #000', */
-  boxShadow: 24,
-  p: 4,
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const BtnAjustes = styled.button`
+  background: none;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 10px;
+  margin-top: -41rem;
+  margin-left: 10.3rem;
+  position: absolute;
+
+  &:hover {
+    background: #f2aa1f;
+    transition: 0.5s;
+  }
+`;
 
 const BottonBack = styled.button`
-  margin-top:1rem ;
+  margin-top: 1rem;
   color: #090909;
   padding: 0.2em 1.2em;
   font-size: 18px;
@@ -159,18 +164,13 @@ const BottonBack = styled.button`
   }
 `;
 
-const Settings = styled.button`
-  position: absolute;
-  margin-top: 14rem;
-  margin-left: 4.5rem;
-`;
-const Bag = styled.button`
-  position: absolute;
-  margin-top: 17rem;
-  margin-left: 4.5rem;
+const FondoDesing = styled.div`
+  background-color: red;
+ 
+  height: 27rem;
+  width: 24.5rem;
 `;
 
-const FondoDesing = styled.div`
-  background-color: #b5b6b5;
-  height: 25.5rem;
+const MonedaContenedor = styled.div`
+
 `;

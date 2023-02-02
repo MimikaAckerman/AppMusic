@@ -31,7 +31,7 @@
     object-fit: cover;
   }
   img{
-    /* border-radius: 10%; */
+    border-radius: 10%; 
   }
   .description{
     position: absolute;
