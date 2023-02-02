@@ -3,7 +3,8 @@ import AccountPerfile from "../../components/perfileUser/AccountPerfile";
 //REACT ROUTER
 import { Link } from "react-router-dom";
 //STYLED COMPONENT
-import styled from "styled-components";
+
+import styled, { createGlobalStyle } from "styled-components";
 //material ui for modal
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -32,6 +33,7 @@ const AccountPage = () => {
 
   return (
     <>
+        <GlobalStyle />
       <FondoDesing>
         {/*boton de regreso a la homePage*/}
         <BottonBack>
@@ -52,8 +54,8 @@ const AccountPage = () => {
           </Link>
         </BottonBack>
 
-        {/* iconos de funciones -> settings y la de moneda */}
-        <Settings onClick={handleOpen}>
+        
+       {/*  <Settings onClick={handleOpen}>
           <svg
             width="30"
             height="30"
@@ -85,37 +87,49 @@ const AccountPage = () => {
               aqui ira la informacion del usuario que se quiera editar
             </Typography>
           </Box>
-        </Modal>
+        </Modal> */}
 
-        <Bag onClick={handleOpen}>
+  {/* moneda*/}
+
+
+        <Bag >
+        <div className="coin">
+        <div className="side heads">
+          {/*simbolo del euro frontal*/}
           <svg
-            width="30"
-            height="30"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
             viewBox="0 0 24 24"
-            fill="none"
+            height="1em"
+            width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M5 4H19C19.5523 4 20 4.44771 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44771 4 5 4ZM2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM12 12C9.23858 12 7 9.31371 7 6H9C9 8.56606 10.6691 10 12 10C13.3309 10 15 8.56606 15 6H17C17 9.31371 14.7614 12 12 12Z"
-              fill="currentColor"
-            />
+            <path d="M13.464,6c1.43,0,2.779,0.613,3.799,1.726l1.475-1.352C17.334,4.843,15.461,4,13.464,4c-1.998,0-3.87,0.843-5.272,2.375 C7.491,7.139,6.951,8.031,6.589,9H4v2h2.114c-0.038,0.33-0.064,0.663-0.064,1s0.026,0.67,0.064,1H4v2h2.589 c0.362,0.97,0.901,1.861,1.603,2.626C9.594,19.157,11.466,20,13.464,20c1.997,0,3.87-0.843,5.273-2.374l-1.475-1.352 C16.243,17.387,14.894,18,13.464,18s-2.778-0.612-3.798-1.726C9.316,15.893,9.041,15.457,8.801,15H13v-2H8.139 c-0.05-0.328-0.089-0.66-0.089-1s0.039-0.672,0.089-1H13V9H8.801c0.24-0.457,0.516-0.893,0.865-1.274 C10.686,6.613,12.034,6,13.464,6z"></path>
           </svg>
+        </div>
+
+        <div className="side tails">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M13.464,6c1.43,0,2.779,0.613,3.799,1.726l1.475-1.352C17.334,4.843,15.461,4,13.464,4c-1.998,0-3.87,0.843-5.272,2.375 C7.491,7.139,6.951,8.031,6.589,9H4v2h2.114c-0.038,0.33-0.064,0.663-0.064,1s0.026,0.67,0.064,1H4v2h2.589 c0.362,0.97,0.901,1.861,1.603,2.626C9.594,19.157,11.466,20,13.464,20c1.997,0,3.87-0.843,5.273-2.374l-1.475-1.352 C16.243,17.387,14.894,18,13.464,18s-2.778-0.612-3.798-1.726C9.316,15.893,9.041,15.457,8.801,15H13v-2H8.139 c-0.05-0.328-0.089-0.66-0.089-1s0.039-0.672,0.089-1H13V9H8.801c0.24-0.457,0.516-0.893,0.865-1.274 C10.686,6.613,12.034,6,13.464,6z"></path>
+          </svg>
+        </div>
+      </div>
+
         </Bag>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              <button>Suscribirte</button>
-              <button>Donar</button>
-            </Typography>
-          </Box>
-        </Modal>
+       
+
+
+
+
 
         {/*Component con la funcion de playlist*/}
         <AccountPerfile />
@@ -127,7 +141,16 @@ const AccountPage = () => {
 export default AccountPage;
 
 //STYLED COMPONENT----------------------
-
+const GlobalStyle = createGlobalStyle`
+body{
+  color: ${(props) => (props.blackColor ? "black" : "black")};
+   background-color: #F1ECE7;
+   color: #2f3132;
+    font-size: 18px ;
+    font-weight: 1000 ;
+    font-family: 'Rokkitt', serif;
+  }
+`;
 //modal for setting and bag
 const style = {
   position: "absolute",
@@ -164,13 +187,15 @@ const Settings = styled.button`
   margin-top: 14rem;
   margin-left: 4.5rem;
 `;
-const Bag = styled.button`
+const Bag = styled.div`
   position: absolute;
-  margin-top: 17rem;
-  margin-left: 4.5rem;
+  margin-top: 22rem;
+  margin-left: 11.5rem;
 `;
 
 const FondoDesing = styled.div`
-  background-color: #b5b6b5;
-  height: 25.5rem;
+
+
+  background-color: #114358;
+  height: 25.5rem; 
 `;

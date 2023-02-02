@@ -8,7 +8,7 @@ export const NavBarTop = () => {
   return (
     <>
       <NavBarTopStyle>
-        <NavBarName>Hi! {user.name}🎧</NavBarName>
+        <NavBarName>Hi! {user.nickname}🎧</NavBarName>
       </NavBarTopStyle>
     </>
   );
@@ -28,8 +28,10 @@ const NavBarName = styled.h1`
 `;
 
 const NavBarTopStyle = styled.div`
-  width: 100%;
-  height: auto;
-  margin: 0 5px;
-  line-height: 80px;
-`;
+    background-color: #f7f2eb;
+    width: 100%;
+    height: auto;
+    margin: 0 5px;
+    line-height: 80px;
+
+`

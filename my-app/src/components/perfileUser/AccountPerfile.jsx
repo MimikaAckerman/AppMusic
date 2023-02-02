@@ -14,7 +14,7 @@ import '../../assets/animation/Swipper.css'
 import styled from "styled-components";
 import { deleteplaylist } from "../../utils/deletePlaylist";
 
-
+import './../../assets/animation/animations.css'
 
 
 const AccountPerfile = () => {
@@ -47,9 +47,17 @@ deleteplaylist(playlistRemove._id)
 
   return (
     <>
+<div class="loader">
+    <div class="circle"></div>
+</div>
+
+
+
+
       {/* imagen del usuario*/}
       <ContainerImgUser>
-        <img src={user.picture} alt={user.name} />
+        <img src={user.picture} alt={user.name} 
+        style={{ borderRadius: 100, height: 150 }}/>
       </ContainerImgUser>
 
       <NameUser>Hi! {user.nickname}</NameUser>
@@ -91,12 +99,12 @@ export default AccountPerfile;
 //STYLED COMPONENT----------------------
 
 const ContainerImgUser = styled.div`
-  margin-top: 2rem;
+  margin-top: -2rem;
   margin-left: 7rem;
 `;
 const NameUser = styled.h1`
   margin-left: 6rem;
-  margin-top: 8rem;
+  margin-top: 6rem;
   color: #F8F9FC;
 `;
 
@@ -108,7 +116,7 @@ const MyPlaylist = styled.h1`
 
 const PlaylistDescription = styled.div`
 position: absolute;
-background-color:#D8D6D7;
+background-color:#F2AA1F;
 height: 6rem;
 width: 16rem;
 margin-top: 14rem;

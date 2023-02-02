@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination } from "swiper";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ArtistsContainer = () => {
   const { artists } = useFetchApi();
@@ -37,7 +38,9 @@ const ArtistsContainer = () => {
           <ArtistComponent artist={artist} key={artist._id}>
             <SwiperSlide>
               <ContainerArtist>
+                <Link to={`/ArtistInformation/${artist.name}`}>
                 <img src={artist.photoUrl} alt={artist.name} />
+                </Link>
               </ContainerArtist>
             </SwiperSlide>
           </ArtistComponent>
