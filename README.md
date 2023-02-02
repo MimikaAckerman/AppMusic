@@ -1,7 +1,9 @@
-# Hi there👋, This is Beta Music!
-We are a group of programmers who have developed a music application with the purpose of facilitating the use and acquisition of listening to different genres and singers to the user.
-# Logo
-<img src="https://i.pinimg.com/564x/7b/f0/96/7bf0966c14e09fba8792f94eba43a20d.jpg" width="60" height="60"/>
+
+# Hi!, this is BetaMusic! 🎶
+
+<img align="right" alt="Coding" width="300" height="350" src="https://i.pinimg.com/564x/7b/f0/96/7bf0966c14e09fba8792f94eba43a20d.jpg">
+
+We are a group of programmers who have developed a music application with the purpose of facilitating the use and acquisition of listening to different genres and singers to the user. 
 
 # Description🔤
 My Beta music is a music application based on the old Walkman players, where its purpose was to
@@ -12,11 +14,18 @@ The operation of beta music is that the user can by downloading on the device it
 from the laptop, import songs and create a playlist so that the user can upload songs created by himself
 as well as create a playlist based on your music or by other users.
 
-# Goal🏝️
-Our goal is to get to the alpha version where you can not only perform the functionalities of a
-music any if not also can interact with users.
-Upload podcast and lives where you can play live or interact with your followers.
-![33d35db8934632ded132d7cb171c8a21](https://user-images.githubusercontent.com/110461673/214562519-35dda891-0d74-4739-a07a-92ac5fe1d6a1.gif)
+# Techical Description 🤖
+The tools used for the development of the app are the following:
+
+ <h2>Frontend</h2> ⬇️
+Css , SASS, Styled-component ,React
+<h2>Backend</h2> ⬇️
+MongoDB and NodeJS
+
+
+
+
+
 
 ## Installation📥
 
@@ -26,7 +35,7 @@ Install dependencies with npm or yarn
   npm i (name of package)
   yarn i (name of package)
 ```
-## To start the project
+## To start the project 🚗
 ```bash
   npm start 
   yarn start 
@@ -51,16 +60,9 @@ Install dependencies with npm or yarn
 - [auth0](https://www.npmjs.com/package/@auth0/auth0-react)
 - [cloudinary](https://www.npmjs.com/package/cloudinary)
 
-## Languages and Tools:
-
-<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>  <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <img src="https://user-images.githubusercontent.com/99871689/215723240-f10d1119-86ba-4fde-826b-fc7c40a1012f.png" width="40" height="40"/> <img src="https://user-images.githubusercontent.com/99871689/215723708-1c9eb231-8ad8-4e44-8bee-c9059637c4d2.png" alt="css3" width="40" height="40"/> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/99871689/215723584-1ff19fe5-2961-4ca7-90cf-672344fe4107.png" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/99871689/215722933-cd3b0c56-153f-484e-8b5a-5f97b71c602e.png" alt="react" width="40" height="40"/> </a><img src="https://user-images.githubusercontent.com/99871689/215720374-5d2df0c9-df29-42a9-9ecc-72d1dbd8b77e.png" width="40" height="40"</>
-<img src="https://user-images.githubusercontent.com/99871689/215722032-20879663-d904-49de-9ffa-558331dae149.png" width="40" height="40"</> <img src="https://user-images.githubusercontent.com/99871689/215722302-155b6f96-1ea3-47c2-a91f-871ce570c82e.png" width="40" height="40"</><img src="https://user-images.githubusercontent.com/99871689/215722699-2f31ab07-e2f4-461d-952b-3e4540d0a933.png" width="40" height="40"</>
- </p>
 
 
-## Screenshots
-
-## Authors
+## Authors 🤖
 
 - [@MimikaAckerman](https://github.com/MimikaAckerman)
 
