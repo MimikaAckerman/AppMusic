@@ -9,18 +9,20 @@ import 'react-h5-audio-player/lib/styles.css';
 function TracksContainer()  {
   const [song,setSong] = useState('');
   const player = useRef();
-  useEffect(() => {
-    fetch.get('http://localhost:3000/MySongsPage').then(res=>setSong(res.data[0].track))
+  const { tracks } = useFetchApi();
+  useEffect((fetch) => {
+    fetch.get('http://localhost:4000/MySongsPage').then(res=>setSong(res.data[0].track))
   },[]);
+
   const audiofunction = () => {
-    player.current.audio.current.play();  
+    player.current.audio.current.play();
 };
 
 return(
   <>
   <div className="app">
     
-  <AudioPlayer 
+  <AudioPlayer
    preload='metadata'
     src={song}
     onPlay={e => console.log("onPlay")}

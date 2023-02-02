@@ -35,6 +35,7 @@ const AppMusic = () => {
                 path="/PlaylistInformation/:name"
                 element={<PlaylistInformation />}
               />
+              <Route path="/trackspage" element={<TracksPage />}/>
               {/*   pagina de informacion de albums*/}
               <Route
                 path="/AlbumsInformation/:name"
@@ -43,7 +44,7 @@ const AppMusic = () => {
               {/*   pagina de informacion de usuario*/}
               <Route
               path="/ArtistInformation/:name"
-              element={<ArtistInformation/>}
+              element={<ArtistInformation />}
               />
                 {/*donde se visualiza todas las canciones*/}
               <Route path="/MySongsPage" element={<MySongsPage />} />
