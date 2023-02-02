@@ -66,7 +66,6 @@ body{
   }
 `;
 const GridHomepage = styled.div`
-<<<<<<< HEAD
     width: 70%;
     font-size: 30px;
     margin-left: 30%;
@@ -77,30 +76,3 @@ const GridHomepage = styled.div`
       font-size: auto;
     }
     `
-=======
-  width: 70%;
-  margin-left: 30%;
-  text-align: center;
-  @media (max-width: 762px) {
-    width: 100%;
-    margin-left: 0%;
-  }
-`;
-const LoadingStyle = styled.div`
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-top: 200px;
-`;
-// const DivGrid1 = styled.div`
-//   grid-area: 1 / 2 / 2 / 6;
-// `
-
-// const DivGrid2 = styled.div`
-//   grid-area: 1 / 1 / 6 / 2;
-// `
-
-// const DivGrid3 = styled.div`
-//   grid-area: 2 / 2 / 6 / 6;
-// `
->>>>>>> daca450b81e0aab4041c20a18c0f28ec2e566bd4

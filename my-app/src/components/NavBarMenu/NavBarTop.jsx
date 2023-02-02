@@ -28,7 +28,6 @@ const NavBarName = styled.h1`
 `;
 
 const NavBarTopStyle = styled.div`
-<<<<<<< HEAD
     background-color: #f7f2eb;
     width: 100%;
     height: auto;
@@ -36,10 +35,3 @@ const NavBarTopStyle = styled.div`
     line-height: 80px;
 
 `
-=======
-  width: 100%;
-  height: auto;
-  margin: 0 5px;
-  line-height: 80px;
-`;
->>>>>>> daca450b81e0aab4041c20a18c0f28ec2e566bd4
