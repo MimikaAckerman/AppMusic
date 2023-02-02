@@ -26,7 +26,7 @@ export const NavBarMenu = () => {
             </NavLiMenuLeft>
 
             <NavLiMenuLeft>
-              <Link>
+              <Link to="/GenresPage">
                 <NavPMenuLeft>
                   <MenuIcon>
                     <SearchIcon fontSize="small" />
