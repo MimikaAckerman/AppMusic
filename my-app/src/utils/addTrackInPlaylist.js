@@ -1,6 +1,7 @@
-const urlTrack = "http://localhost:4000/tracks/updateTracks/";
+
 
 export function addTrackInPlaylist(ts) {
+  const urlTrack = `http://localhost:4000/tracks/updateTracks/${ts._id}`;
   fetch(urlTrack, {
     method: "PATCH",
     headers: {

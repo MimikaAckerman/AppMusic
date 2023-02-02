@@ -15,6 +15,7 @@ import styled from "styled-components";
 import { deleteplaylist } from "../../utils/deletePlaylist";
 
 import './../../assets/animation/animations.css'
+import { Link } from "react-router-dom";
 
 
 const AccountPerfile = () => {
@@ -70,8 +71,9 @@ deleteplaylist(playlistRemove._id)
         {myPlaylist.map((playlist) => (
           <div key={playlist.id}>
             <SwiperSlide>
+              <Link to={`/PlaylistInformation/${playlist.name}`}>
               <img src={playlist.thumbnail} alt="" />
-              
+              </Link>
               <PlaylistDescription>
               <h3>{playlist.name}</h3>
               </PlaylistDescription>

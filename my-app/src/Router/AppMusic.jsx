@@ -17,6 +17,8 @@ import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformatio
 import MySongsPage from "../pages/MySong/MySongsPage";
 import AlbumsInformation from "../pages/AlbumsInformation/AlbumsInformation";
 import ArtistInformation from "../pages/ArtistInformation/ArtistInformation";
+
+
 const AppMusic = () => {
   return (
     <>
@@ -34,22 +36,30 @@ const AppMusic = () => {
                 path="/PlaylistInformation/:name"
                 element={<PlaylistInformation />}
               />
-              <Route path="/trackspage" element={<TracksPage />}/>
+              <Route path="/trackspage" element={<TracksPage />} />
               {/*   pagina de informacion de albums*/}
               <Route
                 path="/AlbumsInformation/:name"
                 element={<AlbumsInformation />}
               />
-              {/*   pagina de informacion de usuario*/}
+              {/*   pagina de informacion del artista*/}
               <Route
-              path="/ArtistInformation/:name"
-              element={<ArtistInformation />}
+                path="/ArtistInformation/:name"
+                element={<ArtistInformation />}
               />
-                {/*donde se visualiza todas las canciones*/}
+              {/*donde se visualiza todas las canciones*/}
               <Route path="/MySongsPage" element={<MySongsPage />} />
+
+              {/*donde se visualiza la informacion de la playlist creada*/}
+
+              <Route
+                path="/PlaylistInformation/:name"
+                element={<AccountPage/>}
+              />
+
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
-                {/*el reproductor que reproduce la cancion especifica*/}
+              {/*el reproductor que reproduce la cancion especifica*/}
               <Route path="/TracksPage/:name" element={<TracksPage />} />
             </Routes>
           </Router>
