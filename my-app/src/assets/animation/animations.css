@@ -220,13 +220,13 @@
   }
   
   .flip h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     color: #fff;
     letter-spacing: 1px;
   }
   
   .flip p {
-    font-size: 1em;
+    font-size: 4em;
     color: #eee;
     line-height: 1.6em;
   }
@@ -239,7 +239,7 @@
     right: 0;
     bottom: 0;
     position: absolute;
-    background-image: linear-gradient(purple, red);
+    background-image: linear-gradient(#F2AA1F, #090909);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -248,7 +248,7 @@
   
   .flip::before {
     transform: none;
-    background-image: linear-gradient(violet, orange);
+    background-image: linear-gradient(#114358, #F1ECE7);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

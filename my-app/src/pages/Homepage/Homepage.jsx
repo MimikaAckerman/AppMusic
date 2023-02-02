@@ -56,7 +56,7 @@ body{
 `;
 
 const FooterContainer = styled.div`
-  margin-top: 3rem;
+  margin-top: -16rem;
 `;
 
 const NameUser = styled.div`
