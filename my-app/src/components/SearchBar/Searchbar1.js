@@ -7,22 +7,24 @@ const Searchbar1 = () => {
   const [result, setResult] = useState([]);
 
   const handleChange = (e) => setValue(e.target.value);
+
   useEffect(() => {
     if (value.length > 1) {
       fetch(`http://localhost:4000/search?name=${value}`)
-        .then((response) => console.log(response.json()) /* response.json() */)
+        .then((response) => response.json())
         .then((responseData) => {
-          console.log(responseData);
-          setResult([]);
+          const result = responseData.data;
+
+          console.log(result);
           let searchQuery = value.toLowerCase();
 
-          for (const key in responseData) {
-            let songs = responseData[key].name.toLowerCase();
+          for (const key in result) {
+            let songs = result[key].name.toLowerCase();
             if (
               songs.slice(0, searchQuery.length).indexOf(searchQuery) !== -1
             ) {
               setResult((prevResult) => {
-                return [...prevResult, responseData[key].name];
+                return [...prevResult, result[key].name];
               });
             }
           }
@@ -38,18 +40,20 @@ const Searchbar1 = () => {
   return (
     <Search>
       <InputSearch
-        placeholder="Search..."
+        placeholder="Search...🔍"
         type="text"
         onChange={handleChange}
         value={value}
       />
-      <div className="searchBack">
-        {result.map((result, index) => (
-          <SearchButton>
-            <Link href="#" key={index}>
-              <div className="searchEntry">{result}</div>
-            </Link>
-          </SearchButton>
+      <div>
+        {result.map((item, index, thumbnail) => (
+          <Link
+            style={{ textDecoration: "none" }}
+            key={index}
+            to={`/MySongsPage/${item}`}
+          >
+            <SearchButton>{item}</SearchButton>
+          </Link>
         ))}
       </div>
     </Search>
@@ -58,11 +62,12 @@ const Searchbar1 = () => {
 export default Searchbar1;
 
 //STYLED COMPONENT
+
 const Search = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-left: 5rem;
-  margin-top: -2.5rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 100px;
 `;
 const InputSearch = styled.input`
   font-size: 1.2rem;
@@ -88,9 +93,12 @@ const InputSearch = styled.input`
   }
 `;
 const SearchButton = styled.button`
+  border-radius: 0.2cm;
+  margin-bottom: 10px;
   border: none;
+  display: grid;
   background-color: #f4f2f2;
-  margin-top: 0.1em;
+  margin-top: 2em;
   &:hover {
     cursor: pointer;
   }
