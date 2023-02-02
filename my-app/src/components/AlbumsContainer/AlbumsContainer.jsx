@@ -15,42 +15,41 @@ const AlbumContainer = () => {
    /* console.log(albums);  */
   return (
     <>
-      <h1>Albums</h1>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={3}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={false}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        {albums?.map((album,_id) => (
-          <AlbumComponent album={album} key={album._id}>
-            <SwiperSlide>
-              <Link to={`/AlbumsInformation/${album.name}`}>
-                <img src={album.imageUrl} alt={album.name} />
-              </Link>
-            </SwiperSlide>
-          </AlbumComponent>
-        ))}
-      </Swiper>
-    </>
+    <h1>Albums</h1>
+    <Swiper
+      effect={"coverflow"}
+      grabCursor={true}
+      centeredSlides={false}
+      slidesPerView={3}
+      coverflowEffect={{
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      }}
+      pagination={false}
+      modules={[EffectCoverflow, Pagination]}
+      className="mySwiper"
+    >
+      {albums?.map((album, _id) => (
+        <AlbumComponent album={album} key={album._id}>
+          <SwiperSlide>
+            <Link to={`/AlbumsInformation/${album.name}`}>
+              <img src={album.imageUrl} alt={album.name} />
+            </Link>
+          </SwiperSlide>
+        </AlbumComponent>
+      ))}
+    </Swiper>
+  </>
   );
 };
 export default AlbumContainer;
 
 
-const AlbumComponent=styled.div`
-`
 
+const AlbumComponent = styled.div``;
 
 const Description = styled.div`
   background-color: red;

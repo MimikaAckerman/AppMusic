@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination } from "swiper";
 
+
 import styled from "styled-components";
 
 const PlaylistContainer = () => {
@@ -21,7 +22,7 @@ const PlaylistContainer = () => {
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
+        centeredSlides={false}
         slidesPerView={3}
         coverflowEffect={{
           rotate: 50,
@@ -35,7 +36,7 @@ const PlaylistContainer = () => {
         className="mySwiper"
       >
         {playlist.map((playlist) => (
-          <PlaylistComponent key={playlist._id}>
+          <PlaylistComponent key={playlist}>
             <SwiperSlide>
               <Link to={`/PlaylistInformation/${playlist.name}`}>
                 <img src={playlist.thumbnail} alt={playlist.name} />
@@ -54,9 +55,8 @@ const PlaylistContainer = () => {
   );
 };
 export default PlaylistContainer;
-
 //STYLED COMPONENT
-const PlaylistComponent = styled.div``
+const PlaylistComponent = styled.div``;
 
 const Description = styled.div`
   /* background-color:#D8D6D7; */
@@ -67,7 +67,7 @@ const Description = styled.div`
   margin-top: 11rem;
   border-radius: 5px 5px 25px 25px;
 `;
-const NamePlaylist = styled.h2`
+const NamePlaylist = styled.h1`
   font-size: 1rem;
   margin-top: 1.5rem;
   color: black;
