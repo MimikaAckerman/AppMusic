@@ -20,8 +20,8 @@ import { Link } from "react-router-dom";
 
 const AccountPerfile = () => {
   const { playlist, setPlaylist } = useAddPlaylistContext();
-/*  console.log(playlist); 
- */
+  console.log(playlist); 
+ 
   //auth0 -> sacar la imagen y el nombre del usuario
   const { user } = useAuth0();
   /* console.log(user); */
@@ -76,6 +76,7 @@ deleteplaylist(playlistRemove._id)
               </Link>
               <PlaylistDescription>
               <h3>{playlist.name}</h3>
+              <h2>{playlist.tracks}</h2>
               </PlaylistDescription>
 
                   {/*icon delete */}

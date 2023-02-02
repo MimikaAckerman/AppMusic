@@ -38,6 +38,7 @@ const MySongs = () => {
           <h2>{track.name}</h2>
           </Link>
           <h3>{track.artist}</h3>
+          <img src={tracks.playlists} alt="" />
 
 
 
@@ -54,6 +55,7 @@ const MySongs = () => {
           </select>
           <button onClick={(e) =>ReloadAdd(e,track)} >add</button>
           </form>
+
           
         </div>
       ))}

@@ -48,10 +48,10 @@ const TracksContainer = () => {
 
   return (
     <>
-      <div className="img-alet-desing">
+     {/*  <div className="img-alet-desing">
         {tracks
           .sort(() => Math.random() - 0.5)
-          .slice(1, 4)
+          .slice(1, 4) 
           .map((track) => (
             <div key={track.id}>
               <img
@@ -61,7 +61,7 @@ const TracksContainer = () => {
               />
             </div>
           ))}
-      </div>
+      </div> */}
 
       {/*   listen music--------------------------------------------------------------------------------  */}
       <div className="containerBody">
