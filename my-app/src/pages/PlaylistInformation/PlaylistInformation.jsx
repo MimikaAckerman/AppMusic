@@ -130,7 +130,7 @@ export default PlaylistInformation;
 const GlobalStyle = createGlobalStyle`
 body{
   color: ${(props) => (props.blackColor ? "black" : "black")};
-   background-color: #EBEEF3;
+   background-color: #F1ECE7;
    color: #2f3132;
     font-size: 18px ;
     font-weight: 1000 ;
@@ -140,7 +140,7 @@ body{
 `;
 
 const Globalcontainer = styled.div`
-  background-color: #989a97;
+  background-color: #114358;
   height: 25rem;
 `;
 

@@ -15,7 +15,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
 import { NavBarTop } from "../../components/NavBarMenu/NavBarTop";
 import { Loading } from "../../components/Loading/Loading";
-
+import { LogoutButton } from "../../components/Form/Logout/Logout";
 const Homepage = () => {
   const { isLoading } = useAuth0();
   if (isLoading) {
@@ -29,6 +29,7 @@ const Homepage = () => {
   return (
     <>
       <GlobalStyle />
+      <LogoutButton />
 
       {/* <DivGrid2> */}
       <NavBarMenu />
@@ -58,7 +59,7 @@ export default Homepage;
 const GlobalStyle = createGlobalStyle`
 body{
   color: ${(props) => (props.blackColor ? "black" : "black")};
-   background-color: #F2F2F2;
+   background-color: #F1ECE7;
    color: #2f3132;
     font-size: 18px ;
     font-weight: 1000 ;
@@ -76,3 +77,12 @@ const GridHomepage = styled.div`
       font-size: auto;
     }
     `
+
+const LoadingStyle = styled.div`
+ display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 200px;
+;
+`
+ 

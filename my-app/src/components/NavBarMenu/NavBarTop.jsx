@@ -8,7 +8,7 @@ export const NavBarTop = () => {
   return (
     <>
       <NavBarTopStyle>
-        <NavBarName>Hi! {user.name}🎧</NavBarName>
+        <NavBarName>Hi! {user.nickname}🎧</NavBarName>
       </NavBarTopStyle>
     </>
   );

@@ -104,6 +104,13 @@ const AlbumsInformation = () => {
             </div>
           ))}
         </ContainerAlbumtDetails>
+
+        {/*icono de añadir la playlist */}
+        <IconAdd>
+                <TextIconAdd>
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"></path></svg>
+                </TextIconAdd>
+            </IconAdd>
       </Globalcontainer>
     </>
   );
@@ -114,7 +121,7 @@ export default AlbumsInformation;
 const GlobalStyle = createGlobalStyle`
 body{
   color: ${(props) => (props.blackColor ? "black" : "black")};
-   background-color: #EBEEF3;
+   background-color: #F1ECE7;
    color: #2f3132;
     font-size: 18px ;
     font-weight: 1000 ;
@@ -123,7 +130,7 @@ body{
 }
 `;
 const Globalcontainer = styled.div`
-  background-color: #989a97;
+  background-color: #114358;
   height: 25rem;
 `;
 const BottonBack = styled.button`
@@ -146,7 +153,7 @@ const BottonBack = styled.button`
 `;
 
 const ContainerAlbumtDetails = styled.div`
-  margin-top: 1rem;
+  margin-top: -2rem;
 `;
 
 const ContainerImg = styled.div`
@@ -170,4 +177,29 @@ margin-top: -16rem;
 margin-left: 5rem;
 font-size: 1.5rem;
 color: white;
+`
+const IconAdd = styled.button`
+margin-top: 22rem;
+margin-left: 17rem;
+width: 100px;
+  height: 100px;
+  background: repeating-radial-gradient(circle at 50% 50%, rgba(200,200,200,.2) 0%, rgba(200,200,200,.2) 2%, transparent 2%, transparent 3%, rgba(200,200,200,.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
+  border-radius: 50%;
+  box-shadow: 0 0px 20px #0005, 0 -0px 20px #fff2;
+  outline: 1px solid #fff;
+  outline-offset: -2px;
+  transition: 1s;
+
+  &:hover{
+    transform: rotate(90deg);
+  }
+
+`
+const TextIconAdd = styled.span`
+font-size: 20px;
+  font-weight: 700;
+  color: #aaa;
+  text-align: center;
+  text-shadow: 1px 1px 1px #fff;
+
 `
