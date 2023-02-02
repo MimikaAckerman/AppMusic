@@ -1,10 +1,12 @@
 import React from "react";
 import MySongs from "../../components/Mysongs/MySongs";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
 const MySongsPage = () => {
   return (
     <>
+     <GlobalStyle />
       {/*boton de regreso a la homePage*/}
       <BottonBack>
         <Link to="/homePage">
@@ -30,6 +32,17 @@ const MySongsPage = () => {
 };
 
 export default MySongsPage;
+
+const GlobalStyle = createGlobalStyle`
+body{
+  color: ${(props) => (props.blackColor ? "black" : "black")};
+   background-color: #F1ECE7;
+   color: #2f3132;
+    font-size: 18px ;
+    font-weight: 1000 ;
+    font-family: 'Rokkitt', serif;
+  }
+`;
 
 const BottonBack = styled.button`
   margin-top: 1rem;

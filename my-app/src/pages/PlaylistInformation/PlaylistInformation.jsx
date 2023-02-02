@@ -9,7 +9,12 @@ const PlaylistInformation = () => {
   const { tracks } = useFetchApi();
   let { name } = useParams();
   const { playlist } = useFetchApi();
-  const playlistDetails = playlist.filter((pl) => pl.name === name);
+  /*    console.log(playlist);
+  //realizamos un filtro que nos permita sacar el nombre de la playlist seleecionada
+   */ const playlistDetails = playlist.filter((pl) => pl.name === name);
+
+  /* console.log(playlistDetails); */
+  /*   const { description, thumbnail ,primaryColor,tracks} = playlistDetails; */
 
   return (
     <>

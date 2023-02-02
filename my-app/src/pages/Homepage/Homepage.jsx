@@ -30,7 +30,6 @@ const Homepage = () => {
     <>
       <GlobalStyle />
       <LogoutButton />
-
       {/* <DivGrid2> */}
       <NavBarMenu />
       {/* </DivGrid2>
