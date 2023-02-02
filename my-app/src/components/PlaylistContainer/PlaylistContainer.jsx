@@ -15,14 +15,13 @@ const PlaylistContainer = () => {
 
   return (
     <>
-
       <h1>Playlist</h1>
 
       {/*carousel de imagenes de playlist */}
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        centeredSlides={true}
+        centeredSlides={false}
         slidesPerView={3}
         coverflowEffect={{
           rotate: 50,
@@ -57,7 +56,7 @@ const PlaylistContainer = () => {
 export default PlaylistContainer;
 
 //STYLED COMPONENT
-const PlaylistComponent = styled.div``
+const PlaylistComponent = styled.div``;
 
 const Description = styled.div`
   /* background-color:#D8D6D7; */
@@ -68,7 +67,7 @@ const Description = styled.div`
   margin-top: 11rem;
   border-radius: 5px 5px 25px 25px;
 `;
-const NamePlaylist = styled.h2`
+const NamePlaylist = styled.h1`
   font-size: 1rem;
   margin-top: 1.5rem;
   color: black;

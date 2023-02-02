@@ -30,7 +30,7 @@ export const LogoutButton = () => {
 };
 
 const ButtonLogout = styled.button`
-  text-align: right;
+  text-align: center;
   height: 50%;
   margin-top: 10px;
   margin-bottom: auto;
@@ -40,10 +40,8 @@ const ButtonLogout = styled.button`
   font-size: 12px;
   border-radius: 0.5em;
   background: #e8e8e8;
-  border: 1px solid #e8e8e8;
   transition: all 0.3s;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-  @media (min-width:762px){
+  @media (min-width: 762px) {
     margin-top: 30px;
   }
   &:hover {
