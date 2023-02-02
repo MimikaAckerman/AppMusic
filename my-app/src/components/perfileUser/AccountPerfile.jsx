@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react'
 
 import { useAddPlaylistContext } from "./../../context/AddPlaylistContext";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -14,6 +14,11 @@ import '../../assets/animation/Swipper.css'
 import styled from "styled-components";
 import { deleteplaylist } from "../../utils/deletePlaylist";
 
+//MY FAVORITE SONGS 
+
+import { getItem, setItem } from '../../services/LocalStorageFuncs';
+import { CiCircleRemove } from 'react-icons/ci'
+
 
 
 
@@ -27,6 +32,16 @@ const AccountPerfile = () => {
 
   //creamos una constante que haga un filtrado de las playlist y que estas sean igual al usuario que las ha creado
   const myPlaylist = playlist.filter((pl) => pl.emailUser === user.email);
+
+  //favorite album
+
+  const [data, setData] = useState( getItem('likeSongs') || [])
+
+  const removeItem = (obj) => {
+      const arrFilter = data.filter((al) => al.id !== obj.id)
+      setData(arrFilter) 
+      setItem('likeSongs', arrFilter)          
+  }
 
 
 
@@ -78,8 +93,30 @@ deleteplaylist(playlistRemove._id)
      
       </Swiper>
 
+      
+      
+   
+    <div>
+    <h1>My Albums</h1>
+        <div>
+            {
+                data.map((al) =>(
+                    <div key={al.id}>
+                        <h4>{al.name}</h4>
+                        <img src={al.imageUrl} alt={al.name} />
+                        <h4>{al.artist}</h4>
+                        <button 
+                          onClick={ () => removeItem(al)}
+                        >
+                        <CiCircleRemove />
+                        </button>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+  
 
-      <h1>My Albums</h1>
 
       <h1>My Artists</h1>
     </>
