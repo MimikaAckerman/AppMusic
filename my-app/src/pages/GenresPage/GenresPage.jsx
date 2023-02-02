@@ -15,8 +15,8 @@ const GenresPage = () => {
     <GenresContainer/>
 
     </>
-  )
-}
+  );
+};
 
 export default GenresPage
 
@@ -29,5 +29,5 @@ body{
     font-weight: 1000 ;
     font-family: 'Rokkitt', serif;
   }
-  
+
 `;
