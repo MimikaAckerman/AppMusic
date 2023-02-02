@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import GenresContainer from '../../components/GenresContainer/GenresContainer';
-import SearchBar from '../../components/SearchBar/SearchBar';
 import TracksContainer from '../../components/TracksContainer/TracksContainer';
 import styled, { createGlobalStyle } from "styled-components";
 

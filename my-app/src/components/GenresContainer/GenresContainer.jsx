@@ -54,7 +54,6 @@ const BtnContainer = styled.div`
   }
 `;
 const BtnGenres = styled.button`
-
   margin: 12px;
   height: 5rem;
   width: 18rem;

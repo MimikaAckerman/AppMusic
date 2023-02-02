@@ -13,10 +13,9 @@ export const DesingBackground = () => {
       <div key={art._id}>
        
        <ImgContainer>
-        <img 
-        src={art.photoUrl} 
-        alt={art.name} 
-        style={{ width: 390, height: 840 }}
+        <ImgBackG
+        src={art.photoUrl}
+        alt={art.name}
         />
         </ImgContainer>
       </div>
@@ -27,6 +26,26 @@ export const DesingBackground = () => {
 }
 
 const ImgContainer = styled.div`
-opacity: 0.4;
-z-index: -1;
+  margin-left: 30%;
+  opacity: 0.4;
+  z-index: -1;
+
+
+@media (max-width:840px){
+   margin-left:10px ;
+   width: 80%;
+   height: 60%;
+  }
+
+`
+
+const ImgBackG = styled.img`
+  width: 390px;
+  height: 840px;
+
+  @media (max-width:840px){
+   width: 400px;
+   height: 680px;
+   margin-left: -10px;
+  }
 `

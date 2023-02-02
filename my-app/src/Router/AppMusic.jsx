@@ -17,6 +17,7 @@ import PlaylistInformation from "../pages/PlaylistInformation/PlaylistInformatio
 import MySongsPage from "../pages/MySong/MySongsPage";
 import AlbumsInformation from "../pages/AlbumsInformation/AlbumsInformation";
 import SearchPage from "../pages/SearchPage/SearchPage";
+import ArtistInformation from "../pages/ArtistInformation/ArtistInformation"
 
 const AppMusic = () => {
   return (
@@ -26,8 +27,10 @@ const AppMusic = () => {
           <Router>
             <Routes>
               {/*   paginas principales*/}
+
               <Route path="/" element={<LoginPage />} />
               <Route path="/HomePage" element={<Homepage />} />
+
               {/*   pagina de informacion de playlist */}
               <Route
                 path="/PlaylistInformation/:name"
@@ -39,8 +42,21 @@ const AppMusic = () => {
                 path="/AlbumsInformation/:name"
                 element={<AlbumsInformation />}
               />
-              <Route path="/search" element={<SearchPage />} />"
+              {/*   pagina de informacion del artista*/}
+              <Route
+                path="/ArtistInformation/:name"
+                element={<ArtistInformation />}
+              />
+              {/*donde se visualiza todas las canciones*/}
               <Route path="/MySongsPage" element={<MySongsPage />} />
+
+              {/*donde se visualiza la informacion de la playlist creada*/}
+
+              <Route
+                path="/PlaylistInformation/:name"
+                element={<AccountPage/>}
+              />
+
               <Route path="/AccountPage" element={<AccountPage />} />
               <Route path="/GenresPage" element={<GenresPage />} />
               {/*el reproductor que reproduce la cancion especifica*/}
@@ -49,6 +65,7 @@ const AppMusic = () => {
           </Router>
         </ImageContextProvider>
       </AddPlaylistContextProvider>
+
     </>
   );
 };
