@@ -29,7 +29,7 @@ const Homepage = () => {
   return (
     <>
       <GlobalStyle />
-
+      <LogoutButton />
       {/* <DivGrid2> */}
       <NavBarMenu />
       {/* </DivGrid2>
