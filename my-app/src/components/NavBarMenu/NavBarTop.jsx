@@ -33,7 +33,7 @@ const NavBarName = styled.h1`
 `
 
 const NavBarTopStyle = styled.div`
-    background-color: green;
+    background-color: #f7f2eb;
     width: 100%;
     height: auto;
     margin: 0 5px;

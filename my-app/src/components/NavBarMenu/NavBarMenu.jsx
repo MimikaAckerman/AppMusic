@@ -67,7 +67,7 @@ const SideBarMenuLeft = styled.div`
   display: list-item;
   width: 25%;
   height: 100vh;
-  background: #C9C6C4;
+  background: #f7f2eb;
   font-size: 0.65em;
   @media (max-width: 840px){
     display: none;
