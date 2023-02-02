@@ -1,33 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-/* function SearchBar() {
-  const url = "http://localhost:4000/artists";
-  useEffect(() => {
-    const fetchUrl = async () => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {}
-    };
-  });
-} */
 
-function SearchBar(props) {
+const Searchbar1 = () => {
   const [value, setValue] = useState("");
   const [result, setResult] = useState([]);
-  // onChange quitar useEffect y poner la funcion = sin el
- 
+
+  const handleChange = (e) => setValue(e.target.value);
   useEffect(() => {
-    if (value.length > 0) {
-      fetch(
-        "https://music-app-7b84d-default-rtdb.europe-west1.firebasedatabase.app/playlists.json"
-      )
-        .then((response) => response.json())
+    if (value.length > 1) {
+      fetch(`http://localhost:4000/search?name=${value}`)
+        .then((response) => console.log(response.json()) /* response.json() */)
         .then((responseData) => {
+          console.log(responseData);
           setResult([]);
           let searchQuery = value.toLowerCase();
+
           for (const key in responseData) {
             let songs = responseData[key].name.toLowerCase();
             if (
@@ -44,76 +32,66 @@ function SearchBar(props) {
         });
     } else {
       setResult([]);
-      
     }
   }, [value]);
 
   return (
     <Search>
       <InputSearch
+        placeholder="Search..."
         type="text"
-        onChange={(event) => setValue(event.target.value)}
+        onChange={handleChange}
         value={value}
       />
       <div className="searchBack">
         {result.map((result, index) => (
           <SearchButton>
             <Link href="#" key={index}>
-              <div className="searchEntry">{result}
-              
-              </div>
+              <div className="searchEntry">{result}</div>
             </Link>
-        
           </SearchButton>
         ))}
       </div>
     </Search>
   );
-}
-export default SearchBar;
+};
+export default Searchbar1;
 
-
-//STYLED COMPONENT 
+//STYLED COMPONENT
 const Search = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 5rem;
   margin-top: -2.5rem;
-
-`
+`;
 const InputSearch = styled.input`
   font-size: 1.2rem;
-  background-color: #D8D6D7;
+  background-color: #d8d6d7;
   border: none;
   color: black;
   padding: 0.7rem 1rem;
   border-radius: 30px;
   width: 20em;
-  transition: all ease-in-out .5s;
+  transition: all ease-in-out 0.5s;
 
-  
-
-  &:hover , &:focus{
-    box-shadow: 0 0 1em #C2C1C6;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 1em #c2c1c6;
   }
-  &:focus{
+  &:focus {
     outline: none;
-  background-color: #f0eeee;
+    background-color: #f0eeee;
   }
-  &::-webkit-input-placeholder{
+  &::-webkit-input-placeholder {
     font-weight: 100;
-  color: #ccc;
+    color: #ccc;
   }
-  
-
-
-`
+`;
 const SearchButton = styled.button`
-border: none;
+  border: none;
   background-color: #f4f2f2;
-  margin-top: .1em;
-  &:hover{
+  margin-top: 0.1em;
+  &:hover {
     cursor: pointer;
   }
-
-`
+`;
