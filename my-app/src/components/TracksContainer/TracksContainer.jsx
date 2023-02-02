@@ -64,7 +64,7 @@ const TracksContainer = () => {
       </div> */}
 
       {/*   listen music--------------------------------------------------------------------------------  */}
-      <div className="containerBody">
+      {/* <div className="containerBody">
         <img className="imgTrack" src={thumbnail} alt="" />
 
         <div className="player">
@@ -84,8 +84,31 @@ const TracksContainer = () => {
         <div className="trackTitle">
           <h3 className="tracks-description">{name}</h3>
           <h4 className="tracks-description">{artist}</h4>
-          {/*  <p className="tracks-description">{genre}</p> */}
+       
         </div>
+      </div> */}
+       <div className="containerBody">
+        <section>
+          <div className="containerTrack">
+            <img className="imgTrack" src={thumbnail} alt="" />
+            <p className="nameTracks">{name}</p>
+            <p className="trackartist">{artist}</p>
+            <p className="genreTrack">{genre}</p>
+            <p>{{ liked } === false ? "❤" : "💘"}</p>
+
+            <AudioPlayer
+              // autoPlay
+              src={playlist}
+              onPlay={(e) => console.log("onPlay") }
+              // other props here
+              showSkipControls={true}
+              showJumpControls={true}
+              onClickNext={handleClickNext}
+              onClickPrevious={handleClickPrevious}
+              onEnded={handleEnd}
+            />
+          </div>
+        </section>
       </div>
     </>
   );

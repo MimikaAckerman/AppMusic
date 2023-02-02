@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useAddPlaylistContext } from "./../../context/AddPlaylistContext";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -16,6 +16,11 @@ import { deleteplaylist } from "../../utils/deletePlaylist";
 
 import './../../assets/animation/animations.css'
 import { Link } from "react-router-dom";
+
+//MY FAVORITE SONGS 
+
+import { getItem, setItem } from '../../services/LocalStorageFuncs';
+import { CiCircleRemove } from 'react-icons/ci'
 
 
 const AccountPerfile = () => {
@@ -40,7 +45,18 @@ function removePlaylist(playlistRemove){
   console.log(playlist.name);  
    
 deleteplaylist(playlistRemove._id)
+
 } 
+
+//favorite album
+
+const [data, setData] = useState( getItem('likeSongs') || [])
+
+const removeItem = (obj) => {
+    const arrFilter = data.filter((al) => al.id !== obj.id)
+    setData(arrFilter) 
+    setItem('likeSongs', arrFilter)          
+}
 
 
  
@@ -90,7 +106,29 @@ deleteplaylist(playlistRemove._id)
       </Swiper>
 
 
-      <h1>My Albums</h1>
+      <div>
+    <h1>My Albums</h1>
+        <div>
+            {
+                data.map((al) =>(
+                    <div key={al.id}>
+                        <h4>{al.name}</h4>
+                        <ContainerImgUser>
+                        <img src={al.imageUrl} alt={al.name}
+                        style={{ borderRadius: 100, height: 150 }} />
+                        </ContainerImgUser>
+                        
+                        <h4>{al.artist}</h4>
+                        <button 
+                          onClick={ () => removeItem(al)}
+                        >
+                        <CiCircleRemove />
+                        </button>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
 
       <h1>My Artists</h1>
     </>

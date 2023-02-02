@@ -55,7 +55,12 @@ export default ArtistsContainer;
 const ArtistComponent = styled.div``;
 
 const ContainerArtist = styled.div`
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
+  
+  
+
+  @media (max-width:840px) {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+  }
 `;

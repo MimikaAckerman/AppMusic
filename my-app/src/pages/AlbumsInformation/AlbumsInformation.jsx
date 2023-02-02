@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams } from "react-router-dom";
 import useFetchApi from "../../API/useFetchApi";
 import styled, { createGlobalStyle } from "styled-components";
 import { Link } from "react-router-dom";
 import '../../assets/animation/animations.css'
+import { AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai'
+import { getItem, setItem } from '../../services/LocalStorageFuncs';
+
 const AlbumsInformation = () => {
   let { name } = useParams();
   /*   console.log(name); */
+
+  const [like, setLike ] = useState( getItem('likeSongs') || []); 
+
   const { albums } = useFetchApi();
   /* console.log(albums); */
 
@@ -14,6 +20,18 @@ const AlbumsInformation = () => {
   const albumsDetails = albums.filter((al) => al.name === name);
 
  /*  console.log(albumsDetails); */
+
+ const handleClick = (obj) => {
+  const element = like.find((al) => al.id === obj.id)
+  if(element){
+    const arrFilter = like.filter((al) => al.id !== obj.id)
+    setLike(arrFilter)
+    setItem('likeSongs', arrFilter)
+  } else {
+    setLike([...like, obj])
+    setItem('likeSongs', [...like, obj])
+  }
+ }
 
   return (
     <>
@@ -101,6 +119,15 @@ const AlbumsInformation = () => {
               <Hartist>Artist</Hartist>
               <AlbumArtist>{al.artist}</AlbumArtist>
               <AlbumName>{al.name}</AlbumName>
+              <button onClick={() => handleClick(al)}>
+                {
+                  like.some((itemLike)=> itemLike.id === al.id) ? (
+                      <AiTwotoneHeart/>
+                  ) : (
+                    <AiOutlineHeart/>
+                  )
+                }
+              </button>
             </div>
           ))}
         </ContainerAlbumtDetails>
