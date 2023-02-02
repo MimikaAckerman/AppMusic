@@ -22,12 +22,14 @@ Css , SASS, Styled-component ,React
 <h2>Backend</h2> ⬇️
 MongoDB and NodeJS
 
+## To start the project 🚗
+```bash
+  npm start 
+  yarn start 
+```
 
 
-
-
-
-## Installation📥
+## Installation packed📥
 
 Install dependencies with npm or yarn
 
@@ -35,11 +37,7 @@ Install dependencies with npm or yarn
   npm i (name of package)
   yarn i (name of package)
 ```
-## To start the project 🚗
-```bash
-  npm start 
-  yarn start 
-```
+
 - [npm](https://www.npmjs.com/package/npm)
 - [react](https://www.npmjs.com/package/react)
 - [react-dom](https://www.npmjs.com/package/react-dom)
