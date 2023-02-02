@@ -9,7 +9,7 @@ import { addTrackInPlaylist } from "../../utils/addTrackInPlaylist";
 
 const MySongs = () => {
   const { tracks } = useFetchApi();
-    console.log(tracks); 
+/*     console.log(tracks);  */
 
   //por medio del context muevo la lista de playlist asi me aparecen al hacer click
   const { playlist} = useAddPlaylistContext();
