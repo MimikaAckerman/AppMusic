@@ -11,11 +11,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
-//MY FAVORITE SONGS 
+//MY FAVORITE SONGS
 
-import { getItem, setItem } from '../../services/LocalStorageFuncs';
-import { CiCircleRemove } from 'react-icons/ci'
-
+import { getItem, setItem } from "../../services/LocalStorageFuncs";
+import { CiCircleRemove } from "react-icons/ci";
 
 const AccountPage = () => {
   //CLOUDINARY
@@ -35,10 +34,9 @@ const AccountPage = () => {
   //modal form
   const [open, setOpen] = React.useState(false);
 
-
   return (
     <>
-        <GlobalStyle />
+      <GlobalStyle />
       <FondoDesing>
         {/*boton de regreso a la homePage*/}
         <BottonBack>
@@ -59,32 +57,43 @@ const AccountPage = () => {
           </Link>
         </BottonBack>
 
-        
-      
+        <Bag>
+          <div className="coin">
+            <div className="side heads">
+              {/*simbolo del euro frontal*/}
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M13.464,6c1.43,0,2.779,0.613,3.799,1.726l1.475-1.352C17.334,4.843,15.461,4,13.464,4c-1.998,0-3.87,0.843-5.272,2.375 C7.491,7.139,6.951,8.031,6.589,9H4v2h2.114c-0.038,0.33-0.064,0.663-0.064,1s0.026,0.67,0.064,1H4v2h2.589 c0.362,0.97,0.901,1.861,1.603,2.626C9.594,19.157,11.466,20,13.464,20c1.997,0,3.87-0.843,5.273-2.374l-1.475-1.352 C16.243,17.387,14.894,18,13.464,18s-2.778-0.612-3.798-1.726C9.316,15.893,9.041,15.457,8.801,15H13v-2H8.139 c-0.05-0.328-0.089-0.66-0.089-1s0.039-0.672,0.089-1H13V9H8.801c0.24-0.457,0.516-0.893,0.865-1.274 C10.686,6.613,12.034,6,13.464,6z"></path>
+              </svg>
+            </div>
 
-        <Bag >
-        <div className="coin">
-        <div className="side heads">
-          {/*simbolo del euro frontal*/}
-          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M227.346 21.72C166.6 21.42 106.33 48.002 65.633 99.272c-70.398 88.68-55.576 217.634 33.103 288.032 6.407 5.09 13.482 9.924 20.276 14.13C46.694 328.73 38.35 211.73 103.664 129.462c65.31-82.275 181.147-100.695 268.36-46.756-5.63-5.66-11.952-11.454-18.358-16.54-37.412-29.7-81.993-44.23-126.32-44.448zm40.79 68.012c-17.173-.17-34.464 4.025-50.984 13.588l.13.237-3.91 1.95c32.484 65.062 44.2 140.54 37.956 217.565-16.43-21.657-45.042-39.13-74.498-43.38-40.71-5.87-67.6 15.738-60.06 48.265 7.542 32.527 46.656 63.654 87.365 69.525 33.316 4.805 57.36-8.8 60.87-31.726h.005c8.48-53.158 9.01-106.548.57-157.475 59.49-1.135 110.173 84.413 71.965 171.062 80.733-78.593 6.76-226.6-81.28-213.508-1.872-6.79-3.92-13.516-6.144-20.176 76.357-22.337 165.25 73.996 134.405 190.856C461.34 235.536 366.66 90.718 268.137 89.732zm119.83 14.264c74.538 70.422 86.508 187.106 23.778 271.363-62.724 84.26-177.937 106.267-266.78 55.062 5.804 5.48 12.3 11.076 18.862 15.96 90.823 67.61 219.258 48.798 286.867-42.028 67.612-90.823 48.798-219.256-42.025-286.868-6.56-4.887-13.783-9.498-20.703-13.49z"></path></svg>
-        </div>
-
-        <div className="side tails">
-        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M227.346 21.72C166.6 21.42 106.33 48.002 65.633 99.272c-70.398 88.68-55.576 217.634 33.103 288.032 6.407 5.09 13.482 9.924 20.276 14.13C46.694 328.73 38.35 211.73 103.664 129.462c65.31-82.275 181.147-100.695 268.36-46.756-5.63-5.66-11.952-11.454-18.358-16.54-37.412-29.7-81.993-44.23-126.32-44.448zm40.79 68.012c-17.173-.17-34.464 4.025-50.984 13.588l.13.237-3.91 1.95c32.484 65.062 44.2 140.54 37.956 217.565-16.43-21.657-45.042-39.13-74.498-43.38-40.71-5.87-67.6 15.738-60.06 48.265 7.542 32.527 46.656 63.654 87.365 69.525 33.316 4.805 57.36-8.8 60.87-31.726h.005c8.48-53.158 9.01-106.548.57-157.475 59.49-1.135 110.173 84.413 71.965 171.062 80.733-78.593 6.76-226.6-81.28-213.508-1.872-6.79-3.92-13.516-6.144-20.176 76.357-22.337 165.25 73.996 134.405 190.856C461.34 235.536 366.66 90.718 268.137 89.732zm119.83 14.264c74.538 70.422 86.508 187.106 23.778 271.363-62.724 84.26-177.937 106.267-266.78 55.062 5.804 5.48 12.3 11.076 18.862 15.96 90.823 67.61 219.258 48.798 286.867-42.028 67.612-90.823 48.798-219.256-42.025-286.868-6.56-4.887-13.783-9.498-20.703-13.49z"></path></svg>
-        </div>
-      </div>
-
+            <div className="side tails">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M13.464,6c1.43,0,2.779,0.613,3.799,1.726l1.475-1.352C17.334,4.843,15.461,4,13.464,4c-1.998,0-3.87,0.843-5.272,2.375 C7.491,7.139,6.951,8.031,6.589,9H4v2h2.114c-0.038,0.33-0.064,0.663-0.064,1s0.026,0.67,0.064,1H4v2h2.589 c0.362,0.97,0.901,1.861,1.603,2.626C9.594,19.157,11.466,20,13.464,20c1.997,0,3.87-0.843,5.273-2.374l-1.475-1.352 C16.243,17.387,14.894,18,13.464,18s-2.778-0.612-3.798-1.726C9.316,15.893,9.041,15.457,8.801,15H13v-2H8.139 c-0.05-0.328-0.089-0.66-0.089-1s0.039-0.672,0.089-1H13V9H8.801c0.24-0.457,0.516-0.893,0.865-1.274 C10.686,6.613,12.034,6,13.464,6z"></path>
+              </svg>
+            </div>
+          </div>
         </Bag>
-       
-
-
-
-
 
         {/*Component con la funcion de playlist*/}
+
         <AccountPerfile />
       </FondoDesing>
-      
     </>
   );
 };
@@ -92,6 +101,7 @@ const AccountPage = () => {
 export default AccountPage;
 
 //STYLED COMPONENT----------------------
+
 const GlobalStyle = createGlobalStyle`
 body{
   color: ${(props) => (props.blackColor ? "black" : "black")};
@@ -102,7 +112,7 @@ body{
     font-family: 'Rokkitt', serif;
   }
 `;
-//modal for setting and bag
+//modal for setting and bag`
 const style = {
   position: "absolute",
   top: "50%",
@@ -116,7 +126,7 @@ const style = {
 };
 
 const BottonBack = styled.button`
-  margin-top:1rem ;
+  margin-top: 1rem;
   color: #090909;
   padding: 0.2em 1.2em;
   font-size: 18px;
@@ -135,13 +145,12 @@ const BottonBack = styled.button`
 
 const Bag = styled.div`
   position: absolute;
+  justify-content: center;
   margin-top: 22rem;
   margin-left: 11.5rem;
 `;
 
 const FondoDesing = styled.div`
-
-
   background-color: #114358;
-  height: 25.5rem; 
+  height: 25.5rem;
 `;

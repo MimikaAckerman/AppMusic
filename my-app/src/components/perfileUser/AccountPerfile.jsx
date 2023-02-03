@@ -20,7 +20,6 @@ import { Link } from "react-router-dom";
 //MY FAVORITE SONGS
 
 import { getItem, setItem } from "../../services/LocalStorageFuncs";
-import { CiCircleRemove } from "react-icons/ci";
 
 const AccountPerfile = () => {
   const { playlist, setPlaylist } = useAddPlaylistContext();
@@ -72,7 +71,7 @@ const AccountPerfile = () => {
         />
       </ContainerImgUser>
 
-      <NameUser>Hi! {user.nickname}</NameUser>
+      <NameUser>Hi! {user.name}</NameUser>
 
       {/*carousel de imagenes de las playlist creadas por el usuario*/}
 
