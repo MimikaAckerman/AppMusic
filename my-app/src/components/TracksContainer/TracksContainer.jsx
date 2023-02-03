@@ -106,6 +106,6 @@ const DivTracks = styled.div`
   position: fixed;
   display: grid;
   text-align: center;
-  margin-left: 30%;
+  margin-left: none;
   margin-top: 35%;
 `
