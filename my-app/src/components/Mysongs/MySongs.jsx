@@ -9,8 +9,6 @@ import { addTrackInPlaylist } from "../../utils/addTrackInPlaylist";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
-
-
 const MySongs = () => {
   const { tracks } = useFetchApi();
   console.log(tracks);
@@ -33,54 +31,44 @@ const MySongs = () => {
     console.log(track);
     addTrackInPlaylist(track);
   };
- 
-  
-
-
 
   return (
     <>
       {/*devuelveme la lista de los tracks */}
-      <MySongTracksh1>name tracks</MySongTracksh1>
+
       {tracks?.map((track) => (
         <div key={track._id}>
-          <Link to={`/TracksPage/${track.name}`}>
-            <h2>{track.name}</h2>
+          <Link
+            to={`/TracksPage/${track.name}`}
+            style={{ textDecoration: "none", color: "#114358" }}
+          >
+            <h2> Name track ➡️ {track.name}</h2>
           </Link>
-          <h3>Artists : {track.artist}</h3>
+          <h3>Name Artists ➡️ {track.artist}</h3>
           <img src={tracks.playlists} alt="" />
 
-       {/*devuelveme la lista de playlist */}
+          {/*devuelveme la lista de playlist */}
 
-          <h1>name playlist</h1>
           <form action="#">
+            <label>Name Playlist ➡️</label>
             <select name="" id="">
               {showAllPlaylist.map((lp) => (
-             
                 <option value={lp.name}>{lp.name}</option>
               ))}
             </select>
-            
-           
+
             <MySongAdd onClick={(e) => ReloadAdd(e, track)}>add</MySongAdd>
           </form>
 
           {/* 
          /> */}
-
-         
         </div>
-
       ))}
-
-
-
     </>
   );
 };
 
 export default MySongs;
-
 
 const MySongAdd = styled.button`
   margin: 10px;
@@ -96,8 +84,6 @@ const MySongAdd = styled.button`
   &:hover {
     transform: translate(5px, -5px);
   }
-`
+`;
 
-const MySongTracksh1 = styled.h1`
-
-`
+const MySongTracksh1 = styled.h1``;
