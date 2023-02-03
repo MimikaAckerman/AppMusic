@@ -5,28 +5,27 @@ import useFetchApi from "../../API/useFetchApi";
 
 import "./TracksContainer.css";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+
+
 
 const TracksContainer = () => {
   const { tracks } = useFetchApi();
 
   const [currentTrack, setTrackIndex] = useState(0);
-  console.log(currentTrack);
   // Wasn't working until i put optional chaining operator "?" before url in playlist
   const playlist = tracks[currentTrack]?.url;
-  const thumbnail = tracks[currentTrack]?.thumbnail;
+  console.log(playlist);
+
+
+
   const name = tracks[currentTrack]?.name;
 
   const artist = tracks[currentTrack]?.artist;
 
   const genre = tracks[currentTrack]?.genre;
-  const liked = tracks[currentTrack]?.liked;
+ 
 
-  console.log(playlist);
+
 
   const handleClickNext = () => {
     setTrackIndex((currentTrack) =>
@@ -48,53 +47,17 @@ const TracksContainer = () => {
 
   return (
     <>
-     {/*  <div className="img-alet-desing">
-        {tracks
-          .sort(() => Math.random() - 0.5)
-          .slice(1, 4) 
-          .map((track) => (
-            <div key={track.id}>
-              <img
-                src={track.thumbnail}
-                alt={track.name}
-                className="img-alet"
-              />
-            </div>
-          ))}
-      </div> */}
-
-      {/*   listen music--------------------------------------------------------------------------------  */}
-      {/* <div className="containerBody">
-        <img className="imgTrack" src={thumbnail} alt="" />
-
-        <div className="player">
-          <AudioPlayer
-            // autoPlay
-            src={playlist}
-            onPlay={(e) => console.log("onPlay")}
-            // other props here
-            showSkipControls={true}
-            showJumpControls={true}
-            onClickNext={handleClickNext}
-            onClickPrevious={handleClickPrevious}
-            onEnded={handleEnd}
-          />
-        </div>
-
-        <div className="trackTitle">
-          <h3 className="tracks-description">{name}</h3>
-          <h4 className="tracks-description">{artist}</h4>
-       
-        </div>
-      </div> */}
+    
        <div className="containerBody">
         <section>
           <div className="containerTrack">
-            <img className="imgTrack" src={thumbnail} alt="" />
+            <h1>nametrack</h1>
             <p className="nameTracks">{name}</p>
+            <h2>trackartist</h2>
             <p className="trackartist">{artist}</p>
+            <h2>genretrack</h2>
             <p className="genreTrack">{genre}</p>
-            <p>{{ liked } === false ? "❤" : "💘"}</p>
+            
 
             <AudioPlayer
               // autoPlay
@@ -107,9 +70,13 @@ const TracksContainer = () => {
               onClickPrevious={handleClickPrevious}
               onEnded={handleEnd}
             />
+
+
           </div>
         </section>
       </div>
+
+
     </>
   );
 };
