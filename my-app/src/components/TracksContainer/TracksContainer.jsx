@@ -16,18 +16,20 @@ const TracksContainer = () => {
   const { tracks } = useFetchApi();
 
   const [currentTrack, setTrackIndex] = useState(0);
-  console.log(currentTrack);
   // Wasn't working until i put optional chaining operator "?" before url in playlist
   const playlist = tracks[currentTrack]?.url;
-  const thumbnail = tracks[currentTrack]?.thumbnail;
+  console.log(playlist);
+
+
+
   const name = tracks[currentTrack]?.name;
 
   const artist = tracks[currentTrack]?.artist;
 
   const genre = tracks[currentTrack]?.genre;
-  const liked = tracks[currentTrack]?.liked;
+ 
 
-  console.log(playlist);
+
 
   const handleClickNext = () => {
     setTrackIndex((currentTrack) =>
@@ -54,11 +56,13 @@ const TracksContainer = () => {
        <DivTracks>
 
           <div className="containerTrack">
-            <img className="imgTrack" src={thumbnail} alt="" />
+            <h1>nametrack</h1>
             <p className="nameTracks">{name}</p>
+            <h2>trackartist</h2>
             <p className="trackartist">{artist}</p>
+            <h2>genretrack</h2>
             <p className="genreTrack">{genre}</p>
-            <p>{{ liked } === false ? "❤" : "💘"}</p>
+            
 
             <AudioPlayer
               // autoPlay
@@ -70,10 +74,13 @@ const TracksContainer = () => {
               onClickNext={handleClickNext}
               onClickPrevious={handleClickPrevious}
               onEnded={handleEnd}
-              />
+            />
+
+
           </div>
-       
-        </DivTracks>
+      </DivTracks>
+
+
     </>
   );
 };

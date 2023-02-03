@@ -1,11 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import useFetchApi from "../../API/useFetchApi";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
 
 import { addTrackInPlaylist } from "../../utils/addTrackInPlaylist";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
+
+import Player from "@madzadev/audio-player";
+import "@madzadev/audio-player/dist/index.css";
+
+
 
 const MySongs = () => {
   const { tracks } = useFetchApi();
@@ -29,6 +36,11 @@ const MySongs = () => {
     console.log(track);
     addTrackInPlaylist(track);
   };
+ 
+  
+
+
+
   return (
     <>
       {/*devuelveme la lista de los tracks */}
@@ -55,8 +67,17 @@ const MySongs = () => {
            
             <MySongAdd onClick={(e) => ReloadAdd(e, track)}>add</MySongAdd>
           </form>
+
+          {/* 
+         /> */}
+
+         
         </div>
+
       ))}
+
+
+
     </>
   );
 };
@@ -81,5 +102,5 @@ const MySongAdd = styled.button`
 `
 
 const MySongTracksh1 = styled.h1`
-  
+
 `
