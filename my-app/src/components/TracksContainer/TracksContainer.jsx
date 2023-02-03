@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import styled,{createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const TracksContainer = () => {
   const { tracks } = useFetchApi();
@@ -20,16 +20,11 @@ const TracksContainer = () => {
   const playlist = tracks[currentTrack]?.url;
   console.log(playlist);
 
-
-
   const name = tracks[currentTrack]?.name;
 
   const artist = tracks[currentTrack]?.artist;
 
   const genre = tracks[currentTrack]?.genre;
- 
-
-
 
   const handleClickNext = () => {
     setTrackIndex((currentTrack) =>
@@ -51,42 +46,34 @@ const TracksContainer = () => {
 
   return (
     <>
-  
-        <GlobalStyle/>
-       <DivTracks>
+      <GlobalStyle />
+      <DivTracks>
+        <div className="containerTrack">
+          <h1>nametrack</h1>
+          <p className="nameTracks">{name}</p>
+          <h2>trackartist</h2>
+          <p className="trackartist">{artist}</p>
+          <h2>genretrack</h2>
+          <p className="genreTrack">{genre}</p>
 
-          <div className="containerTrack">
-            <h1>nametrack</h1>
-            <p className="nameTracks">{name}</p>
-            <h2>trackartist</h2>
-            <p className="trackartist">{artist}</p>
-            <h2>genretrack</h2>
-            <p className="genreTrack">{genre}</p>
-            
-
-            <AudioPlayer
-              // autoPlay
-              src={playlist}
-              onPlay={(e) => console.log("onPlay") }
-              // other props here
-              showSkipControls={true}
-              showJumpControls={true}
-              onClickNext={handleClickNext}
-              onClickPrevious={handleClickPrevious}
-              onEnded={handleEnd}
-            />
-
-
-          </div>
+          <AudioPlayer
+            // autoPlay
+            src={playlist}
+            onPlay={(e) => console.log("onPlay")}
+            // other props here
+            showSkipControls={true}
+            showJumpControls={true}
+            onClickNext={handleClickNext}
+            onClickPrevious={handleClickPrevious}
+            onEnded={handleEnd}
+          />
+        </div>
       </DivTracks>
-
-
     </>
   );
 };
 
 export default TracksContainer;
-
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -108,4 +95,4 @@ const DivTracks = styled.div`
   text-align: center;
   margin-left: 30%;
   margin-top: 35%;
-`
+`;
