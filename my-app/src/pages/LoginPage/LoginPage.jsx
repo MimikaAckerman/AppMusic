@@ -21,7 +21,7 @@ export default LoginPage;
 
 const ButtonLogin = styled.div`
   position: absolute;
-  margin-top: 40rem;
+  margin-top: 38rem;
   margin-left: 10rem;
 `;
 
