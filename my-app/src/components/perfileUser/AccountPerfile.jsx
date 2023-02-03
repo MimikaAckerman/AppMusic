@@ -114,7 +114,7 @@ const AccountPerfile = () => {
           <div key={al.id}>
             <SwiperSlide>
               <Link to={`/AlbumsInformation/${al.name}`}>
-                <img src={al.imageUrl} alt={al.name}  style={{height:300}}/>
+                <img src={al.imageUrl} alt={al.name} style={{ height: 300 }} />
               </Link>
               <AlbumsDestription>
                 <H3Artist>{al.name}</H3Artist>
@@ -188,11 +188,11 @@ const AlbumsDestription = styled.div`
   border-radius: 5px 5px 25px 25px;
 `;
 const H1Artist = styled.h1`
-margin-top: 3rem;
-`
+  margin-top: 3rem;
+`;
 const H3Artist = styled.h3`
-margin-top: 1rem;
-`
+  margin-top: 1rem;
+`;
 const H4Artist = styled.h4`
-margin-top: -1rem;
-`
+  margin-top: -1rem;
+`;
