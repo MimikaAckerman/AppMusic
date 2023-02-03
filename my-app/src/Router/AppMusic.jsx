@@ -30,8 +30,10 @@ const AppMusic = () => {
           <Router>
             <Routes>
               {/*   paginas principales*/}
+
               <Route path="/" element={<LoginPage />} />
               <Route path="/HomePage" element={<Homepage />} />
+
               {/*   pagina de informacion de playlist */}
               <Route
                 path="/PlaylistInformation/:name"
@@ -70,6 +72,7 @@ const AppMusic = () => {
           </Router>
         </ImageContextProvider>
       </AddPlaylistContextProvider>
+
     </>
   );
 };

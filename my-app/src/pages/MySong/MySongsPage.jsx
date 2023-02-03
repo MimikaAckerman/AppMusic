@@ -41,12 +41,12 @@ body{
     font-size: 18px ;
     font-weight: 1000 ;
     font-family: 'Rokkitt', serif;
+    margin-left: 20px;
   }
 `;
 
 const BottonBack = styled.button`
   margin-top: 1rem;
-  margin-left: 1rem;
   color: #090909;
   padding: 0.2em 1.2em;
   font-size: 18px;

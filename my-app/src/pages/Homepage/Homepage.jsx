@@ -28,9 +28,7 @@ const Homepage = () => {
   return (
     <>
       <GlobalStyle />
-      <Logout>
-        <LogoutButton />
-      </Logout>
+      <LogoutButton />
       {/* <DivGrid2> */}
       <NavBarMenu />
       {/* </DivGrid2>
@@ -85,5 +83,7 @@ const LoadingStyle = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
-  margin-top: 200px; ;
-`;
+  margin-top: 200px;
+;
+`
+ 

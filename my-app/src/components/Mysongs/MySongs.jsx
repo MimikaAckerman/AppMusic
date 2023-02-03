@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import useFetchApi from "../../API/useFetchApi";
 import { useAddPlaylistContext } from "../../context/AddPlaylistContext";
 
@@ -43,7 +44,7 @@ const MySongs = () => {
   return (
     <>
       {/*devuelveme la lista de los tracks */}
-      <h1>name tracks</h1>
+      <MySongTracksh1>name tracks</MySongTracksh1>
       {tracks?.map((track) => (
         <div key={track._id}>
           <Link to={`/TracksPage/${track.name}`}>
@@ -51,8 +52,9 @@ const MySongs = () => {
           </Link>
           <h3>Artists : {track.artist}</h3>
           <img src={tracks.playlists} alt="" />
-          
-          {/*devuelveme la lista de playlist */}
+
+       {/*devuelveme la lista de playlist */}
+
           <h1>name playlist</h1>
           <form action="#">
             <select name="" id="">
@@ -63,7 +65,7 @@ const MySongs = () => {
             </select>
             
            
-            <button onClick={(e) => ReloadAdd(e, track)}>add</button>
+            <MySongAdd onClick={(e) => ReloadAdd(e, track)}>add</MySongAdd>
           </form>
 
           {/* 
@@ -81,3 +83,24 @@ const MySongs = () => {
 };
 
 export default MySongs;
+
+
+const MySongAdd = styled.button`
+  margin: 10px;
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  background-color: #000;
+  border: 3px solid #f2f2f2;
+  border-radius: 1em;
+  color: #fff;
+  font-weight: bolder;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px #114358;
+  &:hover {
+    transform: translate(5px, -5px);
+  }
+`
+
+const MySongTracksh1 = styled.h1`
+
+`

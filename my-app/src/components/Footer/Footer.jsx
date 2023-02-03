@@ -18,11 +18,10 @@ export default function Footer() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  /*   const [isOpen, setIsOpen] = useState(false);
-
-  function toggleModal(e) {
-    setIsOpen(!isOpen); */
+  
+  const [isOpen, setisOpen] = React.useState(false);
+  const ishandleOpen = () => setisOpen(true);
+  const ishandleClose = () => setisOpen(false);
 
   //creationPlaylist---------------------------------
 

@@ -5,8 +5,12 @@ import useFetchApi from "../../API/useFetchApi";
 
 import "./TracksContainer.css";
 
-
-
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import styled,{createGlobalStyle} from "styled-components";
 
 const TracksContainer = () => {
   const { tracks } = useFetchApi();
@@ -47,9 +51,10 @@ const TracksContainer = () => {
 
   return (
     <>
-    
-       <div className="containerBody">
-        <section>
+  
+        <GlobalStyle/>
+       <DivTracks>
+
           <div className="containerTrack">
             <h1>nametrack</h1>
             <p className="nameTracks">{name}</p>
@@ -73,8 +78,7 @@ const TracksContainer = () => {
 
 
           </div>
-        </section>
-      </div>
+      </DivTracks>
 
 
     </>
@@ -82,3 +86,26 @@ const TracksContainer = () => {
 };
 
 export default TracksContainer;
+
+
+const GlobalStyle = createGlobalStyle`
+body{
+  color: ${(props) => (props.blackColor ? "black" : "black")};
+   background-color: #F1ECE7;
+   color: #2f3132;
+    font-size: 18px ;
+    font-weight: 1000 ;
+    font-family: 'Rokkitt', serif;
+  }
+`;
+
+const DivTracks = styled.div`
+  background: #efe2d5;
+  width: 400px;
+  height: 640px;
+  position: fixed;
+  display: grid;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 35%;
+`
