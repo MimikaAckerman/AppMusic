@@ -9,7 +9,6 @@ import Footer from "../../components/Footer/Footer";
 
 //STYLED COMPONENT
 import styled, { createGlobalStyle } from "styled-components";
-import WebContainer from "../../components/WebContainer/WebContainer";
 //AUTH0
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
@@ -29,7 +28,9 @@ const Homepage = () => {
   return (
     <>
       <GlobalStyle />
-      <LogoutButton />
+      <Logout>
+        <LogoutButton />
+      </Logout>
       {/* <DivGrid2> */}
       <NavBarMenu />
       {/* </DivGrid2>
@@ -39,7 +40,6 @@ const Homepage = () => {
       {/* </DivGrid1>
         <DivGrid3> */}
       <GridHomepage>
-        <WebContainer />
         <ArtistsContainer />
         <PlaylistContainer />
         <AlbumContainer />
@@ -51,7 +51,6 @@ const Homepage = () => {
 };
 
 // mas responsive por tamaño
-
 
 export default Homepage;
 
@@ -66,22 +65,25 @@ body{
   }
 `;
 const GridHomepage = styled.div`
-    width: 70%;
-    font-size: 30px;
-    margin-left: 30%;
-    text-align: center;
-    @media (max-width:840px) {
-      width: 100%;
-      margin-left: 0%;
-      font-size: auto;
-    }
-    `
-
+  width: 70%;
+  font-size: 30px;
+  margin-left: 30%;
+  text-align: center;
+  @media (max-width: 840px) {
+    width: 100%;
+    margin-left: 0%;
+    font-size: auto;
+  }
+`;
+const Logout = styled.button`
+  @media (min-width: 840px) {
+    border: none;
+    display: none;
+  }
+`;
 const LoadingStyle = styled.div`
- display: flex;
+  display: flex;
   align-content: center;
   justify-content: center;
-  margin-top: 200px;
-;
-`
- 
+  margin-top: 200px; ;
+`;
