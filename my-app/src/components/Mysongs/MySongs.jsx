@@ -9,9 +9,6 @@ import { addTrackInPlaylist } from "../../utils/addTrackInPlaylist";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
-import Player from "@madzadev/audio-player";
-import "@madzadev/audio-player/dist/index.css";
-
 
 
 const MySongs = () => {
