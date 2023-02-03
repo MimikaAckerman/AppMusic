@@ -71,7 +71,7 @@ const AccountPerfile = () => {
         />
       </ContainerImgUser>
 
-      <NameUser>Hi! {user.name}</NameUser>
+      <NameUser>👋! {user.nickname}</NameUser>
 
       {/*carousel de imagenes de las playlist creadas por el usuario*/}
 
@@ -152,8 +152,8 @@ const ContainerImgUser = styled.div`
   margin-left: 7rem;
 `;
 const NameUser = styled.h1`
-  margin-left: 6rem;
-  margin-top: 6rem;
+  margin-left: 7rem;
+  margin-top: 5rem;
   color: #f8f9fc;
 `;
 
