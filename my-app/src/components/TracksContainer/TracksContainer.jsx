@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import styled,{createGlobalStyle} from "styled-components";
 
 const TracksContainer = () => {
   const { tracks } = useFetchApi();
@@ -48,47 +49,10 @@ const TracksContainer = () => {
 
   return (
     <>
-     {/*  <div className="img-alet-desing">
-        {tracks
-          .sort(() => Math.random() - 0.5)
-          .slice(1, 4) 
-          .map((track) => (
-            <div key={track.id}>
-              <img
-                src={track.thumbnail}
-                alt={track.name}
-                className="img-alet"
-              />
-            </div>
-          ))}
-      </div> */}
+  
+        <GlobalStyle/>
+       <DivTracks>
 
-      {/*   listen music--------------------------------------------------------------------------------  */}
-      {/* <div className="containerBody">
-        <img className="imgTrack" src={thumbnail} alt="" />
-
-        <div className="player">
-          <AudioPlayer
-            // autoPlay
-            src={playlist}
-            onPlay={(e) => console.log("onPlay")}
-            // other props here
-            showSkipControls={true}
-            showJumpControls={true}
-            onClickNext={handleClickNext}
-            onClickPrevious={handleClickPrevious}
-            onEnded={handleEnd}
-          />
-        </div>
-
-        <div className="trackTitle">
-          <h3 className="tracks-description">{name}</h3>
-          <h4 className="tracks-description">{artist}</h4>
-       
-        </div>
-      </div> */}
-       <div className="containerBody">
-        <section>
           <div className="containerTrack">
             <img className="imgTrack" src={thumbnail} alt="" />
             <p className="nameTracks">{name}</p>
@@ -106,12 +70,35 @@ const TracksContainer = () => {
               onClickNext={handleClickNext}
               onClickPrevious={handleClickPrevious}
               onEnded={handleEnd}
-            />
+              />
           </div>
-        </section>
-      </div>
+       
+        </DivTracks>
     </>
   );
 };
 
 export default TracksContainer;
+
+
+const GlobalStyle = createGlobalStyle`
+body{
+  color: ${(props) => (props.blackColor ? "black" : "black")};
+   background-color: #F1ECE7;
+   color: #2f3132;
+    font-size: 18px ;
+    font-weight: 1000 ;
+    font-family: 'Rokkitt', serif;
+  }
+`;
+
+const DivTracks = styled.div`
+  background: #efe2d5;
+  width: 400px;
+  height: 640px;
+  position: fixed;
+  display: grid;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 35%;
+`

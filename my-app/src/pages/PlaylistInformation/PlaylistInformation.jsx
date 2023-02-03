@@ -47,7 +47,7 @@ const PlaylistInformation = () => {
                   <img
                     src={pl.thumbnail}
                     alt=""
-                    style={{ width: 400, height: 400, borderRadius: 400 }}
+                    style={{ width: 300, height: 300, borderRadius: 400 }}
                     className="animationImg"
                   />
                 </ContainerImg>
@@ -118,7 +118,7 @@ const Name = styled.h1`
 `;
 const NavbarImg = styled.div`
   display: flex;
-  margin-left: 30px;
+  margin-left: -70px;
   margin-bottom: 100px;
 `;
 const Globalcontainer = styled.div`
@@ -128,6 +128,7 @@ const Globalcontainer = styled.div`
 const TracksStyle = styled.div`
   display: block;
   text-align: right;
+  margin: 20px;
 `;
 
 const BottonBack = styled.button`

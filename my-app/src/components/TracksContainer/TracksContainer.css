@@ -13,23 +13,14 @@
   margin-top: 1rem;
 }
 
-
-
-/* .containerTrack {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
-} */
 .imgTrack {
   border-radius: 3rem;
   width: 18rem;
-  margin-bottom: 20px;
-  margin-top:-25rem;
-  margin-left: 7vh;
+  margin-left: -35%;
   position: absolute;
-
+  text-align: center;
+  margin-top: -350px;
+  background-color: #efe2d5;
 }
 .player{
   margin-top: 19.2rem;
@@ -50,86 +41,6 @@
 
 }
 
-/* .trackContainer .trackCard {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: red;
-  margin: 20px;
-  box-shadow: 0 15px 35px red;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(10px);
-} */
-
-/* .trackContainer .trackCard .content {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transition: 0.5s;
-}
-
-.trackContainer .trackCard:hover .content {
-  transform: translateY(-20px);
-}
-
-.trackContainer .trackCard .content .trackImage {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-} */
-
-/* .trackContainer .trackCard .content .trackImage img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
-/* .trackContainer .trackCard .content .contentBx h3 {
-  color: red;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-  margin: 20px 0 10px;
-  line-height: 1.1em;
-} */
-
-/* .trackContainer .trackCard .content .contentBx h3 {
-  font-size: 12px;
-  font-weight: 300;
-  text-transform: initial;
-} */
-
-/* .trackContainer .trackCard .sci {
-  position: absolute;
-  bottom: 10px;
-  display: flex;
-} */
-
-/* .trackContainer .trackCard .sci li {
-  list-style: none;
-  margin: 0 10px;
-  transform: translateY(40px);
-  transition: 0.5s;
-  opacity: 0;
-}
-
-.trackContainer .trackCard:hover .sci li {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
- */
 .trackTitle{
 position: absolute;
 display: block;
@@ -146,7 +57,6 @@ width: 43.3vh;
 text-align: center;
 margin-top: 2vh;
 }
- 
 
 
 

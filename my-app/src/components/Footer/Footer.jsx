@@ -18,11 +18,10 @@ export default function Footer() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  /*   const [isOpen, setIsOpen] = useState(false);
-
-  function toggleModal(e) {
-    setIsOpen(!isOpen); */
+  
+  const [isOpen, setisOpen] = React.useState(false);
+  const ishandleOpen = () => setisOpen(true);
+  const ishandleClose = () => setisOpen(false);
 
   //creationPlaylist---------------------------------
 
@@ -121,10 +120,18 @@ export default function Footer() {
               />
             <br></br>
 
-            <SubmitForm type="submit" value="Create Playlist" />
+            <SubmitForm type="submit" value="Create Playlist" onClick={ishandleOpen}/>
           </form>
         </Card>
       </Modal>
+       <Modal
+        open={isOpen}
+        onClose={ishandleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        >
+          <p>DONE !!!!!!</p>
+        </Modal>
 
       <Mysongs>
         <Link to="/MySongsPage">

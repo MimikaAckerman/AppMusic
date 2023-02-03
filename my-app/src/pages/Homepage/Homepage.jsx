@@ -29,7 +29,6 @@ const Homepage = () => {
   return (
     <>
       <GlobalStyle />
-      <LogoutButton />
       {/* <DivGrid2> */}
       <NavBarMenu />
       {/* </DivGrid2>
@@ -84,4 +83,3 @@ const LoadingStyle = styled.div`
   margin-top: 200px;
 ;
 `
- 
